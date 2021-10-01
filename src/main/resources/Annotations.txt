@@ -1,0 +1,124 @@
+Springboot-->
+Main class Annotations-->
+@SpringBootApplication
+@EnableTransactionManagement
+@EnableAsync
+@EnableScheduling
+@EnableLogging
+
+
+On top of controller class use annotation-->@RestController
+
+Method level annotations-->
+ @PostMapping("uri")
+ @GetMapping("uri")
+@RequestHeader("header")
+@RequestBody(..)
+@RequestParam..
+
+Exception Annotation--->
+@ExceptionHandler
+
+Service class Annotation--->
+@Service
+
+Configuration annotation-->
+@EnableConfigurationProperties
+@Bean
+
+
+Spring JPA annotations----->
+
+
+@Repository
+public interface GenericDB2Repository extends CrudRepository<MockEntity, Integer>
+@Query(value = "SELECT IRQ_FLD_ISSUE_IND FROM IKT_INSUR_RQST WHERE IRQ_POLICY_NBR = ?1 ; ", nativeQuery = true)
+    String getFieldIssueIndicator(String policyNumber);
+Transactional(transactionManager = "db2TransactionManager")
+    @Modifying
+    @Query
+@Configuration
+@EnableJpaRepositories
+
+@Table(name = "LQT_RECORD_DATA")
+@ToString(includeFieldNames = true)
+@Entity
+@Data
+@IdClass(NarrativeTextPK.class)
+public class NarrativeText {
+    @Id
+    @Column(nullable = false, name = "LRD_POLICY_NBR")
+
+ @Transient
+    private String state;
+
+@Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "GARBAGE")
+    @SequenceGenerator(name = "GARBAGE", sequenceName = "GARBAGE", allocationSize = 1)
+    @Column(nullable = false, name = "ID")
+    private Long id;
+
+@JsonSerialize(using = ToStringSerializer.class)
+
+@ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "CML_SEQUENCE_ID", insertable = false, updatable = false)
+    @JsonBackReference
+    private PolicyDetails policyDetails;
+
+@Param("deliveryStatus") Integer deliveryStatus)
+
+@Configuration
+@EnableJpaRepositories(entityManagerFactoryRef = "oracleEntityManagerFactory",
+        transactionManagerRef = "oracleTransactionManager", repositoryImplementationPostfix = "tory")
+public class OracleConfiguration {
+
+
+@Data
+@ConfigurationProperties("spring.datasource.oracle")
+public class OracleProperties {
+    private String driverClassName;
+    private String url;
+    private String username;
+    private String password;
+}
+
+
+@OneToMany(fetch = LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "policyDetails")
+    @JsonManagedReference
+    @Fetch(FetchMode.SUBSELECT)
+    private List<MailedLetters> mailedLetters;
+
+
+Kafka--->
+
+Environment details of kafka  in application.yml file
+
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      enable-auto-commit: true
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: com.allstate.underwriting.n4pi
+
+appfabric:
+  kafka:
+    environment: nonprod
+    dataCenterMode: geo
+    principal: sys-uwt-de
+    namespace: com.allstate.underwriting.n4pi
+    topicEnvironment: rs.dev
+    topics:
+      topicName:
+        v1: ${n4pi_kafka_dev_topic}
+      topicCategory:
+        v1: ${n4pi_kafka_dev_topic}
+    ktab: ${appfabric_kafka_ktab_encoded}
+
+implementation group: 'org.springframework.kafka', name: 'spring-kafka', version: '2.7.6'
+
+After doing all these basic setups next needs to creates on pojo class with name Topic which will have two fields value(Message which wants to publish) and topic name .
+
+Used KafkaTemplate<Object, Object> kafkaTemplate; to send message to queue
