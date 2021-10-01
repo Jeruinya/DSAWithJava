@@ -48,7 +48,7 @@ public class LongestPrefixSuffixArray {
 		for (int i = 0; i < txt.length(); i++) 
 			System.out.print(lps[i] + " ");
 			
-			
+		System.out.println();
 			//For efficient solution
 			String txt1 = "abacabad";
 			int[] lps1 = new int[txt1.length()];
