@@ -75,7 +75,7 @@ public class ConvertListToSet {
 		List<Integer> listOut=listOfList.stream().flatMap(x->x.stream()).collect(Collectors.toList());
 		System.out.println("FlatMap:"+listOut);
 		
-		
+		System.out.println("Hello");
 		//Deutsche bank what will be the output of belowprogram
 		System.out.println("---------"+IntStream.range(1, 5).reduce(2,(a,b)->a+b));
 	}
