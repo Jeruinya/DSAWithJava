@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class HCFOfMultipleNum {
 
 	public static void main(String[] args) {
+
 		Scanner s = new Scanner(System.in);
 		int n = s.nextInt();
 		for (int i = 0; i < n; i++) {
@@ -26,5 +27,22 @@ public class HCFOfMultipleNum {
 			System.out.println(result);
 		}
 
+		System.out.println(gcd(1, 0));
+
+	}
+
+	// Efficient Solution
+	public static int gcd(int a, int b) {
+		if (a == 0 && b != 0)
+			return b;
+		else if (b == 0 && a != 0)
+			return a;
+		while (a != b) {
+			if (a > b)
+				a = a - b;
+			else
+				b = b - a;
+		}
+		return a;
 	}
 }
