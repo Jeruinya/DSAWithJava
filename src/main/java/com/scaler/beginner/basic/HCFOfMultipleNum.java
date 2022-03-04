@@ -45,4 +45,15 @@ public class HCFOfMultipleNum {
 		}
 		return a;
 	}
+
+	public static int gcdMoreEfficient(int a, int b) {
+		int a1, b1;
+		while (a > 0) {
+			a1 = b % a;
+			b1 = a;
+			a = a1;
+			b = b1;
+		}
+		return b;
+	}
 }

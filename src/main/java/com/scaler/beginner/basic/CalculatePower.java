@@ -20,4 +20,14 @@ public class CalculatePower {
 		}
 		System.out.println(pow);
 	}
+
+	public static int power(int n, int m) {
+
+		int res = 1;
+		while (m > 0) {
+			res = res * n;
+			m--;
+		}
+		return res;
+	}
 }

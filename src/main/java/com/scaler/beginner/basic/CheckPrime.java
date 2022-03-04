@@ -31,4 +31,15 @@ public class CheckPrime {
 		}
 
 	}
+
+	public boolean primeNumber(int a) {
+
+		if (a == 1)
+			return false;
+		for (int i = 2; i * i <= a; i++) {
+			if (a % 1 == 0)
+				return false;
+		}
+		return true;
+	}
 }
