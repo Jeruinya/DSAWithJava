@@ -23,7 +23,7 @@ public class CheckANumInFibbonacciSeries {
 
 	public static boolean isFibbonaci(long n) {
 
-		return isPerfectSqrt(5 * n * n+5) || isPerfectSqrt(5 * n * n - 4);
+		return isPerfectSqrt(5 * n * n+4) || isPerfectSqrt(5 * n * n - 4);
 	}
 
 	public static boolean isPerfectSqrt(long n) {
