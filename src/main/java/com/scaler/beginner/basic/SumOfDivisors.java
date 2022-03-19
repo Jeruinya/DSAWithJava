@@ -1,10 +1,20 @@
 package com.scaler.beginner.basic;
 
+import java.util.Scanner;
+
 public class SumOfDivisors {
 
 	public static void main(String[] args) {
 
-		int n = 36;
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+
+		System.out.println(sumOfDivisorsNaive(n));
+		System.out.println(sumOfDivisorsEfficientSol(n));
+
+	}
+
+	private static int sumOfDivisorsEfficientSol(int n) {
 		int sum = 0;
 		for (int i = 1; i * i <= n; i++) {
 			if (n % i == 0) {
@@ -15,6 +25,16 @@ public class SumOfDivisors {
 				}
 			}
 		}
-		System.out.println(sum);
+		return sum;
 	}
+
+	private static int sumOfDivisorsNaive(int n) {
+		int sum = 0;
+		for (int i = 1; i <= n; i++)
+			if (n % i == 0)
+				sum = sum + n / i;
+
+		return sum;
+	}
+
 }
