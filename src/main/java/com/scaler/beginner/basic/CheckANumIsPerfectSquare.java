@@ -15,16 +15,36 @@ public class CheckANumIsPerfectSquare {
 		int n = s.nextInt();
 		for (int i = 0; i < n; i++) {
 			int a = s.nextInt();
-			int sum = 1;
-			for (int j = 2; j < a; j++) {
-				if (a % j == 0)
-					sum = sum + j;
-			}
-			if (sum == a)
+
+			boolean flag = isPerfectSquareNaive(a);
+
+			if (flag == true)
 				System.out.println("YES");
 			else
 				System.out.println("NO");
-		}
 
+			boolean flag1 = isPerfectSquareEfficient(a);
+
+			if (flag1 == true)
+				System.out.println("YES");
+			else
+				System.out.println("NO");
+
+		}
+	}
+
+	public static boolean isPerfectSquareNaive(int a) {
+		for (int i = 1; i < a; i++) {
+			if (i * i == a)
+				return true;
+		}
+		return false;
+	}
+
+	public static boolean isPerfectSquareEfficient(int a) {
+		for (int i = 1; i * i <= a; i++) 
+			if (i* i == a)
+				return true;
+		return false;
 	}
 }

@@ -13,21 +13,33 @@ public class CalculatePower {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		int a = s.nextInt();
-		int b = s.nextInt();
-		long pow = 1;
-		for (int i = 1; i <= b; i++) {
-			pow = pow * a;
-		}
-		System.out.println(pow);
+		int n = s.nextInt();
+		System.out.println(powerNaive(a, n));
+		System.out.println(powerEfficient(a, n));
+
 	}
 
-	public static int power(int n, int m) {
-
-		int res = 1;
-		while (m > 0) {
-			res = res * n;
-			m--;
+	//Time complexity O(logn)
+	private static long powerEfficient(int a, int n) {
+		long res = 1;
+		while (n > 0) {
+			if (n % 2 != 0) {
+				res = res * a;
+			}
+			a = a * a;
+			n = n / 2;
 		}
 		return res;
 	}
+
+	//Theta(n)
+	private static long powerNaive(int a, int n) {
+		int res = 1;
+		while (n > 0) {
+			res = res * a;
+			n--;
+		}
+		return res;
+	}
+
 }
