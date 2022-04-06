@@ -15,7 +15,7 @@ public class ConvertListToSet {
 
 	public static <T> Set<T> convertListToSet(List<T> list) {
 		// create a set from the List
-		return new HashSet<>(list);
+		return new HashSet<T>(list);
 	}
 
 	public static void main(String args[]) {
@@ -49,7 +49,7 @@ public class ConvertListToSet {
 
 		// Converting to set using stream
 		List<Integer> l = Arrays.asList(1, 2, 3, 4, 5, 4, 4, 5, 6, 1, 2, 3);
-		Set<Integer> newSet = l.stream().collect(Collectors.toSet());
+		Set<Object> newSet = l.stream().collect(Collectors.toSet());
 		System.out.println(newSet);
 		
 		//Deutche Bank what willbe output of below program?

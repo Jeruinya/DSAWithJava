@@ -20,7 +20,7 @@ public class CountDistElementINEveryWindowEfficient
     //Distinct elements in each windows are -- 3,4,3
     static void printDistinct(int arr[], int n, int k)
     {
-        HashMap<Integer, Integer> m=new HashMap<>(); 
+        HashMap<Integer, Integer> m=new HashMap<Integer, Integer>(); 
        
         for (int i = 0; i < k; i++) { 
             m.put(arr[i], m.getOrDefault(arr[i], 0) + 1); 

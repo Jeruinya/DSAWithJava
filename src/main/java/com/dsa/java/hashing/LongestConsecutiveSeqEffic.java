@@ -14,7 +14,7 @@ public class LongestConsecutiveSeqEffic {
 	//Here we are using hashing to find the longest consecutive sequence
 	static int findLongest(int arr[], int n)
 	    {
-	        HashSet<Integer> s=new HashSet<>();
+	        HashSet<Integer> s=new HashSet<Integer>();
 	        int res = 0;
 	     
 	        for (int i = 0; i < n; i++)

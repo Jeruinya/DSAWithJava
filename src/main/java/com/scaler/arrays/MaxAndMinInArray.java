@@ -13,14 +13,14 @@ public class MaxAndMinInArray {
 		for (int i = 0; i < n; i++)
 			arr[i] = s.nextInt();
 
-		int max = 0;
+		int max = Integer.MIN_VALUE;
 		for (int i = 0; i < n; i++) {
 			if (arr[i] > max)
 				max = arr[i];
 		}
 
-		int min = arr[0];
-		for (int i = 1; i < n; i++) {
+		int min = Integer.MAX_VALUE;
+		for (int i = 0; i < n; i++) {
 			if (arr[i] < min)
 				min = arr[i];
 		}

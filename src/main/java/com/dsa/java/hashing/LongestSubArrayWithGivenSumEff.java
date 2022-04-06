@@ -14,7 +14,7 @@ public class LongestSubArrayWithGivenSumEff {
 
 	static int largestSubarrayWithSumX(int arr[], int n, int sum) {
 		int prefix_sum = 0;
-		HashSet<Integer> us = new HashSet<>();
+		HashSet<Integer> us = new HashSet<Integer>();
 		us.add(0);
 		for (int i = 0; i < n; i++) {
 			prefix_sum += arr[i];

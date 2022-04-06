@@ -10,7 +10,7 @@ import java.util.Scanner;
  * odd elements in the array.
  */
 
-public class DifferenceOfEvenElementAndOddElement {
+public class DifferenceOfEvenElementAndOddElementCount {
 	public static void main(String[] args) {
 
 		Scanner s = new Scanner(System.in);

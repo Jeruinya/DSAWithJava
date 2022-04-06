@@ -14,7 +14,7 @@ public class PairsWithGivenSumInArray {
 	//Number of pairs could be-{3,8},{8,4},{4,7},{7,6},{6,1},......
 	//Number of pairs=n*(n-1)/2
 	static int pairWithSumX(int arr[], int n, int X) {
-		HashSet<Integer> us = new HashSet<>();
+		HashSet<Integer> us = new HashSet<Integer>();
 		for (int i = 0; i < n; i++) {
 			if (us.contains(X - arr[i]))
 				return 1;

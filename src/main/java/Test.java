@@ -1,29 +1,18 @@
-import java.util.Scanner;
+import java.util.TreeSet;
 
 public class Test {
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		int n = s.nextInt();
-
-		if (n >= 1 && n <= 10) {
-			for (int i = 0; i < n; i++) {
-
-				int a = s.nextInt();
-				boolean flag = false;
-				for (int j = 1; j * j <= a; j++) {
-					if (j * j == a) {
-						flag = true;
-						break;
-					}
-
-				}
-
-				if (flag == true)
-					System.out.println("YES");
-				else
-					System.out.println("NO");
-			}
-		}
-
+		TreeSet<Character> se = new TreeSet<>();
+		se.add('a');
+		se.add('e');
+		se.add('i');
+		se.add('o');
+		se.add('u');
+		se.add('A');
+		se.add('E');
+		se.add('I');
+		se.add('O');
+		se.add('U');
+		System.out.println(se);
 	}
 }
