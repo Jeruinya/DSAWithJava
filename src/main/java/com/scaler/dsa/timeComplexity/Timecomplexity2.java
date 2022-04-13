@@ -1,4 +1,4 @@
-package com.scaler.timeComplexity;
+package com.scaler.dsa.timeComplexity;
 
 public class Timecomplexity2 {
 
