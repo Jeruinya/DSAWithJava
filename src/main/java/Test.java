@@ -1,18 +1,34 @@
-import java.util.TreeSet;
-
 public class Test {
-	public static void main(String[] args) {
-		TreeSet<Character> se = new TreeSet<>();
-		se.add('a');
-		se.add('e');
-		se.add('i');
-		se.add('o');
-		se.add('u');
-		se.add('A');
-		se.add('E');
-		se.add('I');
-		se.add('O');
-		se.add('U');
-		System.out.println(se);
-	}
+    public int[] solve(int[] A) {
+
+        int n=A.length;
+        //end initialized with -1 instead of 0
+        int i=0,j=0,end=-1,start=0;
+        while(i<n &&j<n){
+            if(A[j]>=0)
+                j++;
+            else{
+                    if(j-i>end-start+1){
+                        start=i;
+                        end=j-1;
+                    }
+                i=j+1;
+                j++;
+            }
+        }
+        //this condition is neccesary
+        if(j-i>end-start+1){
+            start=i;
+            end=j-1;
+        }
+
+        int arr[]=new int [end-start+1];
+
+        int indx=start;
+        //it should be k++
+        for(int k=0;k<end-start+1;k++)
+            arr[k]=A[indx++];
+
+      return arr;
+    }
 }
