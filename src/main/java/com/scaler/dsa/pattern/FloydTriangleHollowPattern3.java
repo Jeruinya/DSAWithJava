@@ -1,5 +1,19 @@
 package com.scaler.dsa.pattern;
 
+/*
+********
+*     *
+*    *
+*   *
+*  *
+* *
+**
+*
+
+ 
+ 
+ */
+
 import java.util.Scanner;
 
 public class FloydTriangleHollowPattern3 {

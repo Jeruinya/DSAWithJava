@@ -13,13 +13,17 @@ public class RotatingArrayByB {
 
 	public static void main(String[] args) {
 
-		Scanner s = new Scanner(System.in);
-		int n = s.nextInt();
-		int arr[] = new int[n];
-		for (int i = 0; i < n; i++)
-			arr[i] = s.nextInt();
+		int arr[] = { 1, 2, 3, 4, 5 };
+		int n=arr.length;
+		int b=30;
+		 b=b%n;
+	//	Scanner s = new Scanner(System.in);
+		//int n = s.nextInt();
+		//int arr[] = new int[n];
+		//for (int i = 0; i < n; i++)
+			//arr[i] = s.nextInt();
 
-		int b = s.nextInt() % n;
+		//int b = s.nextInt() % n;
 
 		reverse(arr, 0, n - 1);
 		reverse(arr, 0, b - 1);

@@ -2,6 +2,17 @@ package com.scaler.dsa.pattern;
 
 import java.util.Scanner;
 
+/*
+1
+01
+101
+0101
+10101
+010101
+1010101
+01010101
+
+ */
 public class ZeroOneToggle {
 
 	public static void main(String[] args) {

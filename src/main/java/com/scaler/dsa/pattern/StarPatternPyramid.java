@@ -2,6 +2,17 @@ package com.scaler.dsa.pattern;
 
 import java.util.Scanner;
 
+/*
+       *
+      ***
+     *****
+    *******
+   *********
+  ***********
+ *************
+***************
+
+ */
 public class StarPatternPyramid {
 
 	public static void main(String[] args) {

@@ -22,7 +22,29 @@ public class MultipleLeftRotationOfArray {
 		int res[][] = getAfterleftRotateKtimes(A, B);
 		for (int i = 0; i < res.length; i++)
 			System.out.println(Arrays.toString(res[i]));
+		
+		int arr[]= {1,2,3,4,5,6,7};
+		int l=1;
+		reverse(arr,0,l-1);
+		reverse(arr,l,arr.length-1);
+		reverse(arr,0,arr.length-1);
+		
+	System.out.println(Arrays.toString(arr));
+		
 
+	}
+
+	private static void reverse(int[] arr, int s, int e) {
+		
+		while(s<e) {
+			int temp=arr[s];
+			arr[s]=arr[e];
+			arr[e]=temp;
+			s++;
+			e--;
+		}
+		
+		
 	}
 
 	public static int[][] getAfterleftRotateKtimes(int[] A, int[] B) {

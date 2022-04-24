@@ -1,6 +1,18 @@
 package com.scaler.dsa.pattern;
 
 import java.util.Scanner;
+/*
+
+  	   1
+      232
+     34543
+    4567654
+   567898765
+  67891011109876
+ 78910111213121110987
+89101112131415141312111098
+
+ */
 
 public class FullNumericPyramid {
 

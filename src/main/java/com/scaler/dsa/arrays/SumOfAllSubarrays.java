@@ -21,7 +21,6 @@ public class SumOfAllSubarrays {
 	}
 
 	public static long subarraySum(int[] A) {
-
 		int n = A.length;
 		long ans = 0;
 		for (int i = 0; i < n; i++) {
