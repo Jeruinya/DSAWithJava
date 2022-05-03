@@ -1,0 +1,34 @@
+package com.scaler.dsa.java.string;
+
+import java.util.Arrays;
+
+public class GivenACharacterArrayAndSortIt {
+
+	public static void main(String[] args) {
+		char c[] = { 'd', 'a', 'b', 'a', 'c', 'd', 'b' };
+		// T.C -O(nlogn)
+		// Arrays.sort(c);
+		// System.out.println(Arrays.toString(c));
+
+		sortChar(c);
+		System.out.println(c);
+
+	}
+	//TC-O(n)
+	private static void sortChar(char[] c) {
+		int arr[] = new int[26];
+		for (int i = 0; i < c.length; i++) {
+			int index = c[i] - 97;
+			arr[index]++;
+		}
+		int curr_index=0;
+		for(int i=0;i<26;i++) {
+			for(int j=0;j<arr[i];j++) {
+				c[curr_index]=(char)('a'+i);
+				curr_index++;
+			}
+		}
+
+	}
+
+}

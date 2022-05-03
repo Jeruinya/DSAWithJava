@@ -33,5 +33,24 @@ public class ReversingWords {
 		System.out.println("After reversing words in the string:");
 		reverseWords(str, n);
 		System.out.println(str);
+		
+		String s1 = "sky is blue  ";
+		 String res=reverseWordsSimple(s1);
+		System.out.println(res);
+	}
+
+	//Here checking  if(i!=0) {sb.append(s[i]+" ");} because after every work we ahve to add space otherwise all the words will be combined with one
+	//word only. and if i=0 means the last work we need to print and no need to print space after that.
+	private static String reverseWordsSimple(String A) {
+		String [] s=A.trim().split(" ");
+		StringBuilder sb= new StringBuilder();
+		for(int i=s.length-1;i>=0;i--) {
+			if(i!=0) {
+				sb.append(s[i]+" ");
+			}
+			else
+				sb.append(s[i]);
+		}
+		return sb.toString();
 	}
 }
