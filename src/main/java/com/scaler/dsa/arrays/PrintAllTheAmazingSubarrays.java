@@ -32,6 +32,20 @@ public class PrintAllTheAmazingSubarrays {
 
 		int count1 = printSubstringEfficient(str);
 		System.out.println(count1);
+		
+		int count2 = printSubstringEfficient1(str);
+		System.out.println(count2);
+	}
+
+	private static int printSubstringEfficient1(String str) {
+		int n=str.length();
+		int res=0;
+		String vowel="aeiouAEIOU";
+		for(int i=0;i<n;i++) {
+			if(vowel.contains(String.valueOf(str.charAt(i))))
+				res=res+n-i;
+		}
+		return res%10003;
 	}
 
 	private static int printSubstringEfficient(String A) {

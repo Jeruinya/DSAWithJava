@@ -1,5 +1,8 @@
 package com.scaler.dsa.java.hashing;
 
+/*
+Given and array of N elements , find the frequency of each elements given in the array
+ */
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,16 +16,15 @@ public class CountFreqOfArrayElements {
 	}
 
 	static void countFreq(int arr[], int n) {
-		Map<Integer, Integer> hmp = new HashMap<Integer, Integer>();
+		Map<Integer, Integer> hm = new HashMap<Integer, Integer>();
 		for (int i = 0; i < n; i++) {
-			int key = arr[i];
-			if (hmp.containsKey(arr[i]) == true)
-				hmp.put(arr[i], hmp.get(arr[i]) + 1);
+			if (hm.containsKey(arr[i]))
+				hm.put(arr[i], hm.get(arr[i]) + 1);
 			else
-				hmp.put(arr[i], 1);
+				hm.put(arr[i], 1);
 		}
 
-		for (Map.Entry<Integer, Integer> itr : hmp.entrySet())
+		for (Map.Entry<Integer, Integer> itr : hm.entrySet())
 			System.out.println(itr.getKey() + " " + itr.getValue());
 	}
 }

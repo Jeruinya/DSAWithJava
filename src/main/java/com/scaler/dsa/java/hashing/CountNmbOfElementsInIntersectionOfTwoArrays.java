@@ -3,7 +3,7 @@ package com.scaler.dsa.java.hashing;
 import java.util.HashSet;
 import java.util.Set;
 
-public class IntersectionOfUnsortedArrays {
+public class CountNmbOfElementsInIntersectionOfTwoArrays {
 
 	public static void main(String[] args) {
 		int arr1[] = new int[] { 15, 17, 27, 27, 28, 15 };
