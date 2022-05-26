@@ -1,4 +1,4 @@
-package com.scaler.dsa.java.string;
+package com.interview.questions;
 
 /*
 Problem Description
@@ -26,6 +26,8 @@ String s="abc";
 String s1= "abcd";
 int d=s.indexOf(s1);  indexOf() method will check whther two strings are equal or not , if equal returns zero else return -1;
  */
+
+//Asked in Oracle
 public class FindLongestCommonPrefix {
 
 	public static void main(String[] args) {
