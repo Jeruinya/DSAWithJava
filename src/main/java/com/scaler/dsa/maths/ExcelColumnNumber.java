@@ -22,21 +22,40 @@ Explanation 1:
  Z -> 26
  AA -> 27
  AB -> 28
+ 
+ (ABCD)26----> 26^0 *4 + 26^1 * 3 + 26^2* 2 +26^3*1===>19010
+ 
+ So we have to do same as we convert from hexadecimal to decimal or octal to decimal like that
  */
 public class ExcelColumnNumber {
 
 	public static void main(String[] args) {
-		String A="AB";
-		int power=1,ans =0;
-		int n=A.length();
-		
-		for(int i=n-1;i>=0;i--) {
-			System.out.println(A.charAt(i));
-			ans=ans+(int)(A.charAt(i)-64)*power;
-			power=power*26;
+		String A = "ABCD";
+		int res = titleToNumber(A);
+		System.out.println(res);
+
+		int res1 = titleToNumber1(A);
+		System.out.println(res1);
+	}
+
+	private static int titleToNumber1(String A) {
+		int power = 1, ans = 0;
+		int n = A.length();
+		for (int i = n - 1; i >= 0; i--) {
+			ans = ans + (A.charAt(i) - 'A'+1) * power;
+			power = power * 26;
 		}
-		
-		System.out.println(ans);
+		return ans;
+	}
+
+	private static int titleToNumber(String A) {
+		int power = 1, ans = 0;
+		int n = A.length();
+		for (int i = n - 1; i >= 0; i--) {
+			ans = ans + (int) (A.charAt(i) - 64) * power;
+			power = power * 26;
+		}
+		return ans;
 	}
 
 }

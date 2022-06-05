@@ -1,4 +1,4 @@
-package com.scaler.dsa.beginner.basic;
+package com.scaler.dsa.java.string;
 
 import java.util.Scanner;
 

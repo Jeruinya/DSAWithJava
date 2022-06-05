@@ -7,6 +7,9 @@ package com.scaler.dsa.arrays;
  * Input Format :First argument contains an array A of integers of size N.Second argument contains integer k.
  * 
  * Output Format : Return the index of the first element of the subarray of size k that has least average.Array indexing starts from 0.
+ * 
+ * start index could be 0,1,2,3,4,......n-k;
+ * here initial start index is 0 and we will update as if we find a subarray with minimum value later.
  */
 public class FindMinAvgSubarray {
 

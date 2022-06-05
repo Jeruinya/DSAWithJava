@@ -17,13 +17,18 @@ import java.util.Arrays;
  * 
  * Output Format: Return an integer array containing indices(0-based) in sorted
  * order. If no such index exists, return an empty integer array.
+ * 
+ * Observations:
+ * 1-center=1 then end left==start right.
+ * 
+ * Note--Number of subarrays of length n will be n-2B+1+1(len = 2B+1)===>n-len+1
  */
 
 public class AlternatingSubarraysT {
 
 	public static void main(String[] args) {
 		 int []A = {1, 0, 1, 0, 1};
-		int B = 1;
+		int B = 2;
 		
 		int arr[]=findAlternatingSubarrays(A,B);
 		System.out.println(Arrays.toString(arr));

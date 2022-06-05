@@ -1,6 +1,11 @@
 package com.scaler.dsa.maths;
 /*
 
+1-if(F>=D) :second rectangle is on top
+2-if(H<=B): Second rectangle is on Bottom.
+3-if(E>=C): Second rectangle is on right.
+4-if(G<=A): Second rectangle in on left
+
 Fist rectangle in left and second rectangle in the right:
 If C<=E then Rectangle is not overlapping---A,B(1,1) C,D(4,4)  E,F(5,6) G,H(7,7)
 

@@ -1,4 +1,4 @@
-package com.scaler.dsa.beginner.basic;
+package com.scaler.dsa.arrays;
 
 import java.util.Arrays;
 

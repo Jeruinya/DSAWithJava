@@ -1,5 +1,6 @@
 package com.scaler.dsa.java.hashing;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 

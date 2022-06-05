@@ -1,4 +1,4 @@
-package com.scaler.dsa.beginner.basic;
+package com.scaler.dsa.arrays;
 
 // print [1,2,3,4,5,5,6]
 // 1

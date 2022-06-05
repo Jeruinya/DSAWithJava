@@ -17,6 +17,19 @@ package com.scaler.dsa.arrays;
  B = [2, 5, 7, 3, 2, 7]
  
  output: 7
+ 
+ Criteria i- i<j<k   	ii: Ai<Aj<Ak 		iii-Bi+Bj+Bk should be minimum.
+ 
+ A[]=[1 2 4 6]
+ 	  1 2 3 4
+ B[]=[1 9 1 2]
+indexes--> {1,2,3}  		{1,3,4}			{1,2,4} 		{2,3,4}
+A values-->(1,2,4)  		(1,4,6)			(1,2,6)			(2,4,6)
+ B value--> (1,9,1)--11	 	(1,1,2)	--4		(1,9,2)	--12	(9,1,2)-->12
+ Here minimum value of Bi+Bj+Bk==>4
+ 
+ 
+Indexes can be non contiguous .
  */
 
 public class ChristmasTreeProblem {

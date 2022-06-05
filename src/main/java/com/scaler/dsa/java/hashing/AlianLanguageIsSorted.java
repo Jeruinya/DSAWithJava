@@ -1,5 +1,7 @@
 package com.scaler.dsa.java.hashing;
 
+import java.util.HashMap;
+
 /*
 Problem Description
 Surprisingly, in an alien language, they also use English lowercase letters, 
@@ -39,12 +41,45 @@ Explanation 2:
 		--If we find the first different letter and the two words are in the correct order, then we can exit from the current iteration and proceed to the next pair of words.
 		--If we find the first different letter and the two words are in the wrong order, then we can safely return false.
 3-If we reach this point, it means that we have examined all pairs of adjacent words and that they are all sorted. Therefore we can return true.
+
+Step 1:build hashmap which store each character as key from string B with Value as its position i
+Step 2: we are doing compare operation for each string in string array A
+Step 3:if we got “false” (meaning array A does not follow dictionary order as per alien languages) from the below function 
+	   then we are returning true in the if statement hence if statement is true we return 0.
+Step 4:find min string size. between a and b
+Step 5:if ith character in both the string not equal then just check their order as per alien style
  */
 public class AlianLanguageIsSorted {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		String A[] = { "fine", "none", "no" };
+		String B = "qwertyuiopasdfghjklzxcvbnm";
+		int res = solve(A, B);
+		System.out.println(res);
 
 	}
 
+	public static int solve(String[] A, String B) {
+		HashMap<Character, Integer> hm = new HashMap<>();
+		for (int i = 0; i < B.length(); i++)
+			hm.put(B.charAt(i), i);
+
+		for (int i = 1; i < A.length; i++) {
+			if (!compare(hm, A[i - 1], A[i]))
+				return 0;
+		}
+		return 1;
+	}
+
+	public static boolean compare(HashMap<Character, Integer> hm, String s1, String s2) {
+		for (int i = 0; i <= Math.min(s1.length(), s2.length()); i++) {
+			char c1 = s1.charAt(i);
+			char c2 = s2.charAt(i);
+			if (hm.get(c1) > hm.get(c2))
+				return false;
+			else if (hm.get(c1) < hm.get(c2))
+				return true;
+		}
+		return false;
+	}
 }

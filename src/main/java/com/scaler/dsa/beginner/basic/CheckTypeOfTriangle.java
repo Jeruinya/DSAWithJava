@@ -18,13 +18,13 @@ public class CheckTypeOfTriangle {
 		int a = s.nextInt();
 		int b = s.nextInt();
 		int c = s.nextInt();
-		if (a >= 1 && a <= 100000 && b >= 1 && b <= 100000 && c >= 1 && c <= 100000) {
+		//if (a >= 1 && a <= 100000 && b >= 1 && b <= 100000 && c >= 1 && c <= 100000) {
 			if (a == b && a == c)
 				System.out.println("equilateral");
 			else if (a != b && a != c && b != c)
 				System.out.println("scalene");
 			else
 				System.out.println("isosceles");
-		}
+		//}
 	}
 }

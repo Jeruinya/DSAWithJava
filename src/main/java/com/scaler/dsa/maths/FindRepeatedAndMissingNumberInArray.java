@@ -1,6 +1,7 @@
 package com.scaler.dsa.maths;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 /*
 There are certain problems which are asked in the interview to also check how you take care of overflows in your problem.
@@ -22,12 +23,93 @@ Example:
 Input:[3 1 2 5 3] 
 Output:[3, 4] 
 A = 3, B = 4
+
+1+2+3+y+y+.........N--->Sum of arrays, y is the repeating element
+1+2+3+4+x+y+.......N--->Sum of n natural numbers.
+sum of natural numbers - sum of arrays===> x-y=A------(1)
+
+1^2+2^2+3^2+x^2+y^2+......N^2 -	1^2+2^2+3^2+y^2+y^2+......N^2====>x^2-y^2==>(x+y)(x-y)=B
+
+(x+y)(x-y)=B==>(x+y)*A=B==>x+y=B/A-----(2) eqn1
+
+from equation 1 and 2:
+x+y+x-y=A+B/A
+2x=A+B/A
+x=(A+B/A)/2-------put value of x into any equation to find the value of y.
+
+y=B/2A-A/2
+
+
+
  */
 public class FindRepeatedAndMissingNumberInArray {
 
 	public static void main(String[] args) {
 		int A[] = { 3, 1, 2, 5, 3 };
 
+		int arr1[] = findMisAndRepeatingNum(A);
+		System.out.println(Arrays.toString(arr1));
+
+		int arr2[] = findMisAndRepeatingNumMap(A);
+		System.out.println(Arrays.toString(arr2));
+
+		int arr3[] = findMisAndRepeatingNumEfficient(A);
+		System.out.println(Arrays.toString(arr3));
+
+	}
+
+	// TC-O(N) SC-O(N)
+	private static int[] findMisAndRepeatingNumEfficient(int[] A) {
+		long alpha = 0;
+		long beta = 0;
+		int n = A.length;
+		for (int i = 0; i < n; i++) {
+			alpha = alpha + (i + 1);
+			alpha = alpha - A[i];
+
+			long temp = (i + 1);
+			beta = beta + temp * temp;
+			long temp1 = A[i];
+			beta = beta - temp1 * temp1;
+		}
+		long x = (alpha + beta / alpha) / 2;
+		long y = (beta / alpha - alpha) / 2;
+
+		int res[] = new int[2];
+		res[0] = (int) y;
+		res[1] = (int) x;
+
+		return res;
+	}
+
+	// TC-O(N) SC-O(N)
+	private static int[] findMisAndRepeatingNumMap(int[] A) {
+		HashMap<Integer, Integer> hm = new HashMap<>();
+		int rep = 0, mis = 0;
+		for (int i = 0; i < A.length; i++) {
+			if (hm.containsKey(A[i]))
+				hm.put(A[i], hm.get(A[i]) + 1);
+			else
+				hm.put(A[i], 1);
+		}
+		for (int i = 0; i < A.length; i++) {
+			if (hm.get(A[i]) == 2)
+				rep = A[i];
+		}
+
+		for (int i = 1; i <= A.length; i++) {
+			if (!hm.containsKey(i))
+				mis = i;
+		}
+		int res[] = new int[2];
+		res[0] = rep;
+		res[1] = mis;
+
+		return res;
+	}
+
+	// TC-O(nLogN) SC-O(1)
+	private static int[] findMisAndRepeatingNum(int[] A) {
 		int n = A.length;
 		int rep = -1;
 		int sum = 0;
@@ -43,8 +125,7 @@ public class FindRepeatedAndMissingNumberInArray {
 		int res[] = new int[2];
 		res[0] = rep;
 		res[1] = miss;
-		System.out.println(Arrays.toString(res));
-
+		return res;
 	}
 
 }

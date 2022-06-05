@@ -8,7 +8,6 @@ public class CheckANumberIsPerfectNumber {
 
 		Scanner s = new Scanner(System.in);
 		int n = s.nextInt();
-		if (n >= 1 && n <= 10) {
 			for (int i = 1; i <= n; i++) {
 				int sum = 1;
 				int a = s.nextInt();
@@ -30,4 +29,3 @@ public class CheckANumberIsPerfectNumber {
 		}
 
 	}
-}
