@@ -13,7 +13,7 @@ package com.scaler.dsa.arrays;
  * 
  * Output Format: Return the count of good subarrays in A.
  */
-public class CountNumberOfGoodSubarrays {
+public class Sub_CountNumberOfGoodSubarrays {
 
 	public static void main(String[] args) {
 		int[] A = { 1, 2, 3, 4, 5 };

@@ -6,7 +6,7 @@ package com.scaler.dsa.arrays;
  * if i != j and (A[i] + A[j] == B). Check if any good pair exist or not.
  */
 
-public class FindAGoodPairPresentInArray {
+public class Sub_FindAGoodPairPresentInArray {
 
 	public static void main(String[] args) {
 		int arr[] = { 1, 2, 32, 4, 56, 73, 10, 23, 10 };

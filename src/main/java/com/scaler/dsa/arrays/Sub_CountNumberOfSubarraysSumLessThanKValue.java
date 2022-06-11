@@ -1,6 +1,6 @@
 package com.scaler.dsa.arrays;
 
-public class CountNumberOfSubarraysSubLessThanKValue {
+public class Sub_CountNumberOfSubarraysSumLessThanKValue {
 
 	public static void main(String[] args) {
 		int A[] = { 1, 11, 2, 3, 15 };

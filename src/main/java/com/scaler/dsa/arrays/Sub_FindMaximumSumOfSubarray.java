@@ -14,7 +14,7 @@ Output 2: 6
 *
  */
 
-public class FindMaximumSumOfSubarray {
+public class Sub_FindMaximumSumOfSubarray {
 
 	public static void main(String[] args) {
 

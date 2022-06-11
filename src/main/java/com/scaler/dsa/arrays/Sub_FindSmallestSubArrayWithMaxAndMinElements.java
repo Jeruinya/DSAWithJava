@@ -1,6 +1,6 @@
 package com.scaler.dsa.arrays;
 
-public class FindSmallestSubArrayWithMaxAndMinElementsT {
+public class Sub_FindSmallestSubArrayWithMaxAndMinElements {
 
 	public static void main(String[] args) {
 		int A[] = { 2, 2, 6, 4, 5, 1, 5, 2, 6, 4, 1 };

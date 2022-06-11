@@ -1,6 +1,6 @@
 package com.scaler.dsa.arrays;
 
-public class FindSumOfAllTheSubarraysSum {
+public class Sub_FindSumOfAllTheSubarraysSum {
 
 	public static void main(String[] args) {
 		int arr[]= {10,20,30};

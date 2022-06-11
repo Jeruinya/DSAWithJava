@@ -1,7 +1,8 @@
 package com.scaler.dsa.bitManipulation;
 
 /*
- You are given x and y values and you have to set as 1 for these values in the given 8 bit 16 bits of 64 bits where all the bits are initially zero.
+ You are given x and y values and you have to set as 1 for these values in the given 8 bit 16 bits of 64 
+ bits where all the bits are initially zero.
  */
 public class SetXthAndYthBitAsOneInValueZero {
 

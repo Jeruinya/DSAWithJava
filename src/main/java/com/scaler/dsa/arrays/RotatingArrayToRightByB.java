@@ -9,7 +9,7 @@ import java.util.Scanner;
  * NOTE: You can use extra memory.
  */
 
-public class RotatingArrayByB {
+public class RotatingArrayToRightByB {
 
 	public static void main(String[] args) {
 

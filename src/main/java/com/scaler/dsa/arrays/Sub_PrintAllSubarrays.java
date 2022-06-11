@@ -1,6 +1,6 @@
 package com.scaler.dsa.arrays;
 
-public class PrintAllSubarrays {
+public class Sub_PrintAllSubarrays {
 
 	public static void main(String[] args) {
 		int arr[] = { 1, 2, 3, 4, 5 };

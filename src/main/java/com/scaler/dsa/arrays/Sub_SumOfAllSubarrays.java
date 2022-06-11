@@ -10,7 +10,7 @@ package com.scaler.dsa.arrays;
  * Output Format--->Return a single integer denoting the sum of all subarray sums of the given array.
  */
 
-public class SumOfAllSubarrays {
+public class Sub_SumOfAllSubarrays {
 
 	public static void main(String[] args) {
 		int A[] = { 1, 2, 3 };

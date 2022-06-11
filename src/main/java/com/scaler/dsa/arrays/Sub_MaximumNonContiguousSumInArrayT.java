@@ -18,7 +18,7 @@ package com.scaler.dsa.arrays;
 *  Output 2: 2
  */
 
-public class MaximumNonContiguousSumInArrayT {
+public class Sub_MaximumNonContiguousSumInArrayT {
 
 	public static void main(String[] args) {
 

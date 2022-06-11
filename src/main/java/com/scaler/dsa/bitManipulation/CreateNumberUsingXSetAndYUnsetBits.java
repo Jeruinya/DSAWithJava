@@ -26,9 +26,6 @@ x+y ones=====1111....1===2^x+y-1
 y ones =====1111.....1===2^y-1
 
 x+y ones - y ones= 2^x+y-1 -(2^y-1)=2^x+y-2^y==(1<<x+y)-(1<<y)
-
-
-
  */
 public class CreateNumberUsingXSetAndYUnsetBits {
 

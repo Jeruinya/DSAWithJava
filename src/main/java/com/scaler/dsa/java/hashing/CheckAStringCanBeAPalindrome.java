@@ -54,6 +54,11 @@ public class CheckAStringCanBeAPalindrome {
 			else
 				hm.put(A.charAt(i), 1);
 		}
+		int c=0;
+		for(Map.Entry<Character, Integer> h:hm.entrySet()) {
+			if(h.getValue()%2!=0)
+				c++;
+		}
 		int temp = 0;
 		for (Integer i : hm.values()) {
 			if (i % 2 == 1)

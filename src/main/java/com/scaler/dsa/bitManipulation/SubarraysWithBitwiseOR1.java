@@ -41,9 +41,8 @@ public class SubarraysWithBitwiseOR1 {
 		long count = 0;
 		long last = 0;
 		for (int i = 0; i < A; i++) {
-			if (B[i] == 1) {
+			if (B[i] == 1) 
 				last = i + 1;
-			}
 			count = count + last;
 		}
 		return count;

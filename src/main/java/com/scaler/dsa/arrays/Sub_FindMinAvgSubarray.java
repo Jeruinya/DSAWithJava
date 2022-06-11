@@ -11,7 +11,7 @@ package com.scaler.dsa.arrays;
  * start index could be 0,1,2,3,4,......n-k;
  * here initial start index is 0 and we will update as if we find a subarray with minimum value later.
  */
-public class FindMinAvgSubarray {
+public class Sub_FindMinAvgSubarray {
 
 	public static void main(String[] args) {
 

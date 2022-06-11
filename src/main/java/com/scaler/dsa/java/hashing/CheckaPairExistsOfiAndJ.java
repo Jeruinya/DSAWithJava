@@ -7,7 +7,7 @@ import java.util.HashSet;
 Given N array elements , check if there exists a pair (i,j)  such that a[i]+a[j]=k && i!=j.
 A=[8,9,1,-2,4,5,11,-6,7,5]  k=22.
 a+b= k==> b=k-a. This intuition we have to use to get the answer.
-HashSet=[8,9,1,-2,4,5,-6,7,5]
+HashSet=[8,9,1,-2,4,5,-6,7]
 a		b(k-a)
 8		14
 9		13

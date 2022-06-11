@@ -19,7 +19,7 @@ import java.util.Arrays;
  * Output 1: [5, 6] Output 2: [1, 2, 3, 4, 5, 6]
  */
 
-public class FindMaximumLengthPositiveSubarray {
+public class Sub_FindMaximumLengthPositiveSubarray {
 
 	public static void main(String[] args) {
 

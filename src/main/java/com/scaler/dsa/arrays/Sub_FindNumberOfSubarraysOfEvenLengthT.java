@@ -6,7 +6,7 @@ package com.scaler.dsa.arrays;
  * of even length such that the first and last element of all subarrays will be even.
  * Return "YES" if it is possible; otherwise, return "NO" (without quotes).
  */
-public class FindNumberOfSubarraysOfEvenLengthT {
+public class Sub_FindNumberOfSubarraysOfEvenLengthT {
 
 	public static void main(String[] args) {
 		int[] A = {4, 5, 3, 8 };

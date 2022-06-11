@@ -35,7 +35,7 @@ b3=[0 1 1 1 0 0]	21-4=17
 b4=[0 0 1 0 0 1]	21-6=15
 	
  */
-public class CountHowManyORSubarrays0thBitIsZero {
+public class Sub_CountHowManyORSubarrays0thBitIsZero {
 
 	public static void main(String[] args) {
 		int A[] = { 1, 2, 3, 4, 5};

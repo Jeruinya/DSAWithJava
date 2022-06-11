@@ -11,7 +11,7 @@ Output 2:
     7
  */
 
-public class LongestConsicutiveOne {
+public class Sub_LongestConsicutiveOne {
 
 	public static void main(String[] args) {
 		String A = "01";

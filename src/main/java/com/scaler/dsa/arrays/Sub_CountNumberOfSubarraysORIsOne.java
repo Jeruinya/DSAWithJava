@@ -1,7 +1,7 @@
 package com.scaler.dsa.arrays;
 
 /*
-Given a binary array , calculate number of subarrays whose OR is zero.
+Given a binary array , calculate number of subarrays whose OR is one.
 A[]=[1,0,1,0,0]
 subarrays---> [1]-1  	[1,0] [1,0,1] [1,0,1,0] [1,0,1,0,0]
 			  [0]-0 	[0,1] [0,1,0] [0,1,0,0]
@@ -10,16 +10,17 @@ subarrays---> [1]-1  	[1,0] [1,0,1] [1,0,1,0] [1,0,1,0,0]
 			  [0]-0
 
 In every subarray we only needs to have zeros in all the subarrays to get zero as resultant OR.
+once we find the total number of subarrays with zero OR , just subtract the total number of subarrays with zero from total number of subarrays.
  */
-public class CountNumberOfSubarraysORIsZero {
+public class Sub_CountNumberOfSubarraysORIsOne {
 
 	public static void main(String[] args) {
 		int A[] = { 1, 0, 1, 0, 0 };
-		int count = countNumberOfSubarraysWithORZero(A);
+		int count = countNumberOfSubarraysWithOROne(A);
 		System.out.println(count);
 	}
 
-	private static int countNumberOfSubarraysWithORZero(int[] A) {
+	private static int countNumberOfSubarraysWithOROne(int[] A) {
 		int n = A.length;
 		int ans = 0, c = 0;
 		for (int i = 0; i < n; i++) {
@@ -31,7 +32,8 @@ public class CountNumberOfSubarraysORIsZero {
 			}
 		}
 		ans = ans + c * (c + 1) / 2;
-		return ans;
+		int totalSubarrays=n*(n+1)/2;
+		return totalSubarrays-ans;
 
 	}
 }

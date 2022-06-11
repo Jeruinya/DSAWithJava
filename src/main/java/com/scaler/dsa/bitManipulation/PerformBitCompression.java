@@ -49,4 +49,12 @@ public class PerformBitCompression {
 
 		System.out.println(res);
 	}
+	//Above one and this one is same 
+	public int compressBits(int[] A) {
+        int ans = 0;
+        for(int i = 0;i < A.length; i++){
+            ans ^= A[i];
+        }
+        return ans;
+    }
 }

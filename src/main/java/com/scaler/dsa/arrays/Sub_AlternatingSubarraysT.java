@@ -24,7 +24,7 @@ import java.util.Arrays;
  * Note--Number of subarrays of length n will be n-2B+1+1(len = 2B+1)===>n-len+1
  */
 
-public class AlternatingSubarraysT {
+public class Sub_AlternatingSubarraysT {
 
 	public static void main(String[] args) {
 		 int []A = {1, 0, 1, 0, 1};

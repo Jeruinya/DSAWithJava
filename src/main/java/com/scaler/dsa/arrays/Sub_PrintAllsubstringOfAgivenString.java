@@ -1,7 +1,7 @@
 
 package com.scaler.dsa.arrays;
 
-public class PrintAllsubstringOfAgivenString {
+public class Sub_PrintAllsubstringOfAgivenString {
 
 	public static void main(String[] args) {
 		String str = "abcd";

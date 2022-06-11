@@ -24,6 +24,10 @@ Example Explanation
 NOTE : If there are multiple correct answers, return the sequence which occurs first in the array.
 A : [ 1, 2, -3, 3 ]--ans--1 2 -3 
 
+Observation:
+1: if PS value repeats than there exists a subarray with sum 0.
+2:if value repeats at index1 and index2 then s=index1+1 and e= index2.
+
  */
 public class FindLongestSubarrayWithSumZero {
 

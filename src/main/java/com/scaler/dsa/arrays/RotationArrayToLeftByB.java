@@ -12,7 +12,7 @@ import java.util.Arrays;
  * matrix where ith row represents the rotated array for the ith value in B.
  */
 
-public class MultipleLeftRotationOfArray {
+public class RotationArrayToLeftByB {
 
 	public static void main(String[] args) {
 
