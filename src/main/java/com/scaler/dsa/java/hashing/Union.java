@@ -4,25 +4,22 @@ package com.scaler.dsa.java.hashing;
 Find the Union of two arrays-- Union of two arrays is the common elemnts once+ non common elements.
  */
 import java.util.HashSet;
-import java.util.Set;
 
 class Union {
 	public static void main(String[] args) {
-		int arr1[] = new int[] { 2, 8, 3, 5, 6 };
-		int arr2[] = new int[] { 4, 8, 3, 6, 1 };
-		int m = arr1.length;
-		int n = arr2.length;
+		int A1[] = new int[] { 2, 8, 3, 5, 6 };
+		int A2[] = new int[] { 4, 8, 3, 6, 1 };
 
-		System.out.println(unionSize(arr1, m, arr2, n));
+		HashSet<Integer> hs= unionOfTwoArrays(A1,A2);
+		System.out.println(hs);
 	}
 
-	static int unionSize(int arr1[], int m, int arr2[], int n) {
-		Set<Integer> hs = new HashSet<Integer>();
-		for (int i = 0; i < m; i++)
-			hs.add(arr1[i]);
-		for (int i = 0; i < n; i++)
-			hs.add(arr2[i]);
-
-		return hs.size();
+	private static HashSet<Integer> unionOfTwoArrays(int[] A1, int[]A2) {
+		HashSet<Integer> hs = new HashSet<Integer>();
+		for (int i = 0; i < A1.length; i++)
+			hs.add(A1[i]);
+		for (int i = 0; i < A2.length; i++)
+			hs.add(A2[i]);
+		return hs;
 	}
 }

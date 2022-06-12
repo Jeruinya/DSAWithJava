@@ -43,13 +43,13 @@ public class FindLongestSubarrayWithSumZero {
 		for (int i = 1; i < n; i++)
 			ps[i] = ps[i - 1] + A[i];
 
-		hm.put(ps[0], 0);
-		if (ps[0] == 0) {
-			s = 0;
-			e = 0;
-			max = 1;
-		}
-		for (int i = 1; i < n; i++) {
+		//hm.put(ps[0], 0);
+		//if (ps[0] == 0) {
+			//s = 0;
+			//e = 0;
+			//max = 1;
+		//}
+		for (int i = 0; i < n; i++) {
 			if (ps[i] == 0) {
 				int l = Math.max(max, i + 1);
 				if (max < l) {

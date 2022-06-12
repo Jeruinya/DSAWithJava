@@ -33,7 +33,7 @@ Only possibility is choosing A[1] and A[2].
 public class MinimumDistanceBetweenTwoPairsOfIJ {
 
 	public static void main(String[] args) {
-		int[] A = { 7, 1, 3, 4, 1, 7 };
+		int[] A = { 7, 1, 3, 4,5, 7 };
 
 		int res = minDistanceBetweenIAndJNavie(A);
 		System.out.println(res);
@@ -47,8 +47,8 @@ public class MinimumDistanceBetweenTwoPairsOfIJ {
 		Map<Integer,Integer> hm= new HashMap<>();
 		for(int i=0;i<A.length;i++) {
 			if(hm.containsKey(A[i])) {
-				hm.put(A[i], i-hm.get(A[i]));
-				res=Math.min(res, hm.get(A[i]));
+				int len=i-hm.get(A[i]);
+				res=Math.min(res, len);
 			}
 			else
 				hm.put(A[i], i);
