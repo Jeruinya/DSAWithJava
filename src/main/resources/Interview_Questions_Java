@@ -1,6 +1,8 @@
 Interview Questions----------->Core java
                            ===================
-
+what is the difference between Object level lock and class level lock in multithreading?
+	https://www.geeksforgeeks.org/object-level-class-level-lock-java/
+	
 Question-1:what is diff between abstract class and interface?.when we should go for abstract class & when inteface?
 
 Question-2:what is siarialization & deserialization? What is the rule for serialization?
@@ -62,7 +64,29 @@ Question 26. When Threads Are Not Lightweight Process In Java?
 Answer :Threads are lightweight process only if threads of same process are executing concurrently. 
 	  But if threads of different processes are executing concurrently then threads are heavy weight process.
 
-Question 27 : How priorityQueue works internall?
+Question 27 : How priorityQueue works internally?
+
+28-Difference between collection and Stream?	
+
+	Collection:
+		-->It stores/holds all the data that the data structure currently has in a particular data structure like Set, List or Map.
+		-->They don’t use functional interfaces.
+		-->They are non-consumable i.e; can be traversable multiple times without creating it again.
+		-->It supports parallel processing and parallel processing can be very helpful in achieving high performance.
+		-->Specific classes for primitive types such as IntStream, LongStream, and DoubleStream are used in collections since primitive data types such as int, 
+		   long in the collections using auto-boxing and these operations could take a lot of time.
+		-->These are modifiable i.e one can easily add to or remove elements from collections
+		-->Collections are iterated externally using loops.
+	
+	Stream:
+	
+		-->It doesn’t store data, it operates on the source data structure i.e collection.
+		-->They use functional interfaces like lambda which makes it a good fit for programming language.
+		-->Java Streams are consumable i.e; to traverse the stream, it needs to be created every time.
+		-->Java streams support both sequential and parallel processing.
+		-->All the Java stream API interfaces and classes are in java.util.stream package.
+		-->Streams are not modifiable i.e one can’t add or remove elements from streams.
+		-->Streams are iterated internally by just mentioning the operations.
 
 
 =======================================================================================================
