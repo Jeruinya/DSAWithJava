@@ -13,8 +13,8 @@ public class LongestSubstringPalindrome {
 		int len = longestSubstringpalindromeNaive(str);
 		System.out.println(len);
 
-		String str1 = "abb";
-		String len1 = longestSubstringpalindromeEfficient(str1);
+		//String str1 = "abb";
+		String len1 = longestSubstringpalindromeEfficient(str);
 		System.out.println(len1);
 
 	}
@@ -22,7 +22,6 @@ public class LongestSubstringPalindrome {
 	private static String longestSubstringpalindromeEfficient(String A) {
 		String ans = "";
 		int n = A.length();
-		// int arr[]= new int [2];
 		System.out.println(A.substring(0, 0));
 
 		for (int i = 0; i < n; i++) {
@@ -30,7 +29,7 @@ public class LongestSubstringPalindrome {
 			if (str.length() > ans.length())
 				ans = str;
 		}
-
+		//This loop we are running when two adjacent characters are same
 		for (int i = 0; i < n - 1; i++) {
 			String str1 = expand(A, i, i + 1);
 			if (str1.length() > ans.length())
@@ -39,6 +38,7 @@ public class LongestSubstringPalindrome {
 
 		return ans;
 	}
+
 //In case of substring() method startIndex is inclusive and endIndex is exclusive.
 //here not taking j-1 because if we take j-1 then it will exclude the j-1 and take from j-2.
 // so taking j and it will take all the characters from i+1 to j-1.

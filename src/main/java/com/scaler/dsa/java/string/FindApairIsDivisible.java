@@ -31,9 +31,8 @@ public class FindApairIsDivisible {
 	}
 
 	private static boolean isDivisible(String str, int B) {
-		int temp = str.charAt(0) - '0';
-		temp = temp % B;
-		for (int i = 1; i < str.length(); i++) {
+		int temp =0;
+		for (int i = 0; i < str.length(); i++) {
 			temp = temp * 10 + str.charAt(i) - '0';
 			temp = temp % B;
 		}

@@ -21,14 +21,12 @@ public class ConvertToUppercase {
 		char A[] = { 'S', 'c', 'A', 'L', 'E', 'r', 'A', 'c', 'a', 'D', 'e', 'm', 'y' };
 
 		int n = A.length;
-		char s[] = new char[n];
 		for (int i = 0; i < n; i++) {
 			if (A[i] >= 97 && A[i] <= 122)
-				s[i] = (char) (A[i] ^ 32);
-			else
-				s[i] = A[i];
+				A[i] = (char) (A[i] ^ 32);
+
 		}
-		System.out.println(Arrays.toString(s));
+		System.out.println(Arrays.toString(A));
 
 	}
 

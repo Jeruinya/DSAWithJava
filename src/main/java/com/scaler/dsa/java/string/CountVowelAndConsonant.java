@@ -18,10 +18,10 @@ public class CountVowelAndConsonant {
 				
 				// Check for any special characters present
 				// in the given string
-				if ((str.charAt(i) >= 'A'
-					&& str.charAt(i) <= 'Z')
-					|| (str.charAt(i) >= 'a'
-						&& str.charAt(i) <= 'z')) {
+				if ((str.charAt(i) >= 65
+					&& str.charAt(i) <= 90)
+					|| (str.charAt(i) >= 97
+						&& str.charAt(i) <= 122)) {
 					if (ref.indexOf(str.charAt(i)) != -1)
 						vow++;
 					else

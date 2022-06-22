@@ -2,9 +2,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Test {
+	int val = 10;
+
 	public static void main(String[] args) {
-		if("String".endsWith("")) 
-			System.out.println(true);
-		else
-			System.out.println(false);
-	}}//output--True
+		Test t = new Test();
+		System.out.println(t.val);
+	}
+}

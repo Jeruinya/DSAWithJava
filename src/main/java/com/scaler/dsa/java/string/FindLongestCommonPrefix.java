@@ -29,7 +29,7 @@ int d=s.indexOf(s1);  indexOf() method will check whther two strings are equal o
 public class FindLongestCommonPrefix {
 
 	public static void main(String[] args) {
-		String str[] = { "abcdefgh", "aefghijk", "abcefgh" };
+		String str[] = { "aabcdefgh", "aaefghijk", "aabcefgh" };
 
 		String longestPref = findLongestPrefix(str);
 		System.out.println(longestPref);

@@ -1,7 +1,5 @@
 package com.scaler.dsa.recursion;
 
-import java.util.Scanner;
-
 /*
 Problem Description
 Write a recursive function that, given a string S, prints the characters of S in reverse order.
@@ -21,17 +19,23 @@ Explanation 1: Print the reverse of the string in a single line.
 public class ReverseString {
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		String str = s.next();
-		printReverse(str);
+		String str = "Allstate";
+		String s = printReverse(str);
+		System.out.println(s);
+
+		String res = recursiveRevers(str);
+		System.out.println(res);
 	}
 
-	public static void printReverse(String str) {
+	public static String printReverse(String str) {
 		if (str.length() - 1 <= 0)
-			System.out.print(str);
-		else {
-			System.out.print(str.charAt(str.length() - 1));
-			printReverse(str.substring(0, str.length() - 1));
-		}
+			return str;
+		return str.charAt(str.length() - 1) + printReverse(str.substring(0, str.length() - 1));
+	}
+
+	public static String recursiveRevers(String s) {
+		if (s == null || s.length() <= 1)
+			return s;
+		return recursiveRevers(s.substring(1)) + s.charAt(0);
 	}
 }

@@ -11,7 +11,7 @@ public class GivenACharacterArrayAndSortIt {
 		// System.out.println(Arrays.toString(c));
 
 		sortChar(c);
-		System.out.println(c);
+		System.out.println(Arrays.toString(c));
 
 	}
 	//TC-O(n)
@@ -24,7 +24,7 @@ public class GivenACharacterArrayAndSortIt {
 		int curr_index=0;
 		for(int i=0;i<26;i++) {
 			for(int j=0;j<arr[i];j++) {
-				c[curr_index]=(char)('a'+i);
+				c[curr_index]=(char)(i+'a');
 				curr_index++;
 			}
 		}

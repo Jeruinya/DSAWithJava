@@ -17,6 +17,14 @@ Example Output 1: 30
 Example Output 2: 650
 
  */
+
+
+
+
+
+
+
+
 public class FindnthMagicNumber {
 
 	public static void main(String[] args) {

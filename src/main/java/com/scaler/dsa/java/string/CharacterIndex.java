@@ -12,8 +12,6 @@ public class CharacterIndex {
 	public static String solve(String A) {
 		String res = "";
 		for (int i = 0; i < A.length(); i++) {
-			// char c= A.charAt(i);
-			// int ascii=(int)c;
 			res = res + A.charAt(i) + (A.charAt(i) - 'a' + 1);
 		}
 		return res;

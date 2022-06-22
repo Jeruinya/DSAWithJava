@@ -11,16 +11,15 @@ import java.util.Scanner;
 public class CalculatePower {
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		int a = s.nextInt();
-		int n = s.nextInt();
+		long a=2;
+		int n=32;
 		System.out.println(powerNaive(a, n));
 		System.out.println(powerEfficient(a, n));
 
 	}
 
 	//Time complexity O(logn)
-	private static long powerEfficient(int a, int n) {
+	private static long powerEfficient(long a, int n) {
 		long res = 1;
 		while (n > 0) {
 			if (n % 2 != 0) {
@@ -33,8 +32,8 @@ public class CalculatePower {
 	}
 
 	//Theta(n)
-	private static long powerNaive(int a, int n) {
-		int res = 1;
+	private static long powerNaive(long a, int n) {
+		long res = 1;
 		while (n > 0) {
 			res = res * a;
 			n--;

@@ -1,7 +1,8 @@
 package com.scaler.dsa.java.hashing;
 
 /*
-Find the Union of two arrays-- Union of two arrays is the common elemnts once+ non common elements.
+Find the Union of two arrays-- Union of two arrays is the common elements once
+ non common elements.
  */
 import java.util.HashSet;
 

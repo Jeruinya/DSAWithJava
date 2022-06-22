@@ -1,12 +1,9 @@
 package com.scaler.dsa.java.string;
 
-import java.util.Scanner;
-
 public class ReversingEachWords {
 
 	public static void main(String[] args) {
-		 Scanner s= new Scanner(System.in);
-	        String str=s.next();
+		String str="Allstate is a insurance company";
 	        String []words=str.split("\\s");
 
 	        String reversWords="";

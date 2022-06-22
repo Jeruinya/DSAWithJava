@@ -20,11 +20,14 @@ public class FindNthFibonacciNumber {
 	}
 
 	private static int findNthFibonaccieTerm(int n) {
-		if (n == 0)
+		
+		if(n==0)
 			return 0;
-		if (n == 1 || n == 2)
+		else if (n == 1)
+			return 0;
+		else if(n==2)
 			return 1;
-
+		
 		return findNthFibonaccieTerm(n - 1) + findNthFibonaccieTerm(n - 2);
 
 	}
