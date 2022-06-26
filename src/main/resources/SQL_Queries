@@ -1,0 +1,2 @@
+1- Display three highest scorer records
+	select * from (select * from Employee order by score desc) where rownum<=3 order by score;

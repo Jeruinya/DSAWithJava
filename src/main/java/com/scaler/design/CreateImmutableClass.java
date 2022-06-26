@@ -93,7 +93,9 @@ public final class CreateImmutableClass {
 		CreateImmutableClass s1 = new CreateImmutableClass("Ram", 2300, map1);
 		System.out.println(s.getName());
 		System.out.println(s.getRegNo());
-		System.out.println(s.getMetadata());
+		Map<String,String> hm=s.getMetadata();
+		hm.put("ktrix", "onetrix");
+		System.out.println(hm);
 
 		map.put("3", "third");
 		System.out.println(s.getMetadata());

@@ -1,0 +1,1777 @@
+Introduction-->
+I am Kamlesh Tripathi From Gorakhpur U.P.
+Working as a Lead Software Engineer for Allstate in Pune location.
+I have a 6.5 years of experience in core java/ J2EE , Spring framework, Hibernate, microservices, design pattern, , PCF, jenkins, git etc.
+I have worked on projects like Decision Engine, Property Inspection, MVR,URP, NLA, Tdoc and Domain is Insurance.
+My role and responsibilities are -
+	-Requirement gathering and analysis.
+	-Design and development.
+	-Unit testing
+	-supporting testing 
+	-Doing performance testing
+	-Production support etc.
+
+
+
+Mockito-->
+https://www.baeldung.com/mockito-seriessd
+https://github.com/eugenp/tutorials/tree/master/testing-modules/mockito/src/test/java/com/baeldung/mockito
+
+Spring MVC--https://www.baeldung.com/spring-mvc-tutorial
+
+https://inst.eecs.berkeley.edu/~cs162/sp07/Nachos/chess.shtml
+https://www.interviewbit.com/oops-interview-questions/
+
+
+
+
+
+Interview Questions----------->
+
+                           Core java
+                           ===================
+
+Question-1:what is diff between abstract class and interface?.when we should go for abstract class & when inteface?
+
+Question-2:what is siarialization & deserialization? What is the rule for serialization?
+         If super class does not implements serializable interface and sub class implements
+         and we are serializing sub class then wath will happen?
+         write program to serialize and deserialize an object.
+
+Question-3:what is diff between Array and ArrayList,ArrayList & Vector, HashMap & Hashtable,Comparable & Comparatore?
+
+Question-4:Tell me the internal working of HashMap(very frequent asked ques) , Treeset, HashSet, TreeMap.
+
+Question-5:overloading and overrriding (they will ask by givinig different different conditions like if child class 
+            throws checked exception then what should throw  the parent method etc read well both with example and scenario)
+
+Question-6:what are the features of java5,java6,java7 & java8 ?
+
+Question-7:what is try with resource?. what is multiple catch block?.why finaly block is given.how try with resource eliminates
+           the requirement of finally block.
+Question-8:How we are achieving abstraction in java ?
+
+Question-9:what is cohesion and coupling ?
+
+Question-10:what is ConccurentHashMap? what is the diff betweeb HashMap & ConcurrentHashMap?
+
+Question-11:what is the diff between fail-fast and fail-safe iterator?
+
+Question-12:what is inner class? tell purpose and differnt types of inner classes? what is annonymous inner class?
+
+Question-13:what is syncronization? how many types of lock are there?what is syncronized block? what is diff btw syncronized method & syncronized block?
+
+Question-14:what is RadWriteLock?
+
+Question-15:what are differnt memories in java? what is class loader sub system?
+
+Question-16:what is difference btw string & stringBuffer?what is SCP?what is mutability & immutability? and many more programmatic ques on string.
+
+Question-17:how to make a class as immutable?
+
+Question-18:what is singleton class? how to make a class as singleton?
+
+Question-19:what is contract btw hashCode() & equals() method?
+
+Question-20:what diff btw == & equals() method?
+
+Question-21:how you will override equals() method?
+
+Question-22:what is data hiding? how we will achieve it ?
+
+Question-23:what is generic class? why we use generics?
+
+Question 24: How Hash collision handled in java stream?---->https://www.nagarro.com/en/blog/post/24/performance-improvement-for-hashmap-in-java-8
+Question 25: How to maintain the indexing in set?
+Ans:      Using an array------------>create array with size set and convert set to array------String[] arr = set.toArray(new String[set.size()]);
+	    Using a for loop
+	    Using ArrayList------>List<String> list = new ArrayList<String>(set);
+Question 25: How locking mechanism handled in ConcurrentHashMap?----
+
+Question 26. When Threads Are Not Lightweight Process In Java?
+Answer :Threads are lightweight process only if threads of same process are executing concurrently. 
+	  But if threads of different processes are executing concurrently then threads are heavy weight process.
+
+Question 27 : How priorityQueue works internall?
+
+How to convert List of integers to Set of Integers using java 8 streaming?
+	Set<Integer> s=list.stream().collect(Collectors.toSet())
+
+Question: What is stream in java 8?
+	-> Introduced in Java 8, the Stream API is used to process collections of objects. 
+	-> A stream is a sequence of objects that supports various methods which can be pipelined to produce the desired result
+	-> Stream supports many aggregate operations like filter, map, limit, reduce, find, and match to customize the original 
+	   data into a different form according to the need of the programme.
+	-> The operations performed on a stream do not modify its source hence a new stream is created according to the operation applied to it. 
+	   The new data is a transformed copy of the original form.
+
+Question: What is Sequential Stream?
+	Sequential Streams are non-parallel streams that use a single thread to process the pipelining. Any stream operation without explicitly specified as parallel is 
+	treated as a sequential stream. Sequential stream’s objects are pipelined in a single stream on the same processing system hence it never takes the advantage of 
+	the multi-core system even though the underlying system supports parallel execution. Sequential stream performs operation one by one.
+
+	stream() method returns a sequential stream in Java.
+	 we are using stream() method for sequential stream Iterate and print each element of the stream
+        list.stream().forEach(System.out::print);
+
+Question: what is parallel stream?
+	Parallel streams divide the provided task into many and run them in different threads, utilizing multiple cores of the computer
+
+Question :	What are some Funtional interfaces?
+		Consumer,Producer,Funtion, Suppliers,Operator,Predicate,java.lang.Runnable,java.util.Comparator,java.util.concurrent.Callable,java.io.FileFilter
+
+Question: What is Intermediate Operations and  termimal oprations in java 8?
+	-> A terminal operation in Java is a method applied to a stream as the final step.They return final result.forEach,count,toArray.They can be used to produce results.
+	->These operations are used to pipeline other methods and to transform into the other streams.They only return another stream.sorted(Comparator<T>),peek(Consumer<T>),distinct()
+	 These operations should be used to transform stream into another stream
+
+Question: What use of reduce in java 8 stream?
+	Many times, we need to perform operations where a stream reduces to single resultant value, for example, maximum, minimum, sum, product, etc. 
+	Reducing is the repeated process of combining all elements.
+List<String> words = Arrays.asList("GFG", "Geeks", "for","GeeksQuiz", "GeeksforGeeks");
+Optional<String> longestString = words.stream().reduce((word1, word2)-> word1.length() > word2.length()? word1 : word2);//This will print the longest string from list
+
+ String[] array = { "Geeks", "for", "Geeks" };
+ Optional<String> String_combine = Arrays.stream(array).reduce((str1, str2)-> str1 + "-" + str2);// this will combined all the string into one string
+	
+
+
+
+=======================================================================================================
+                   Programs
+               =========================
+
+WAP to find number of occurrences of each character in a string?
+
+import java.util.Scanner;
+
+public class CountingOccurences {
+public static void main(String[] args){
+
+    String s ="aaabbbbccccccdd";
+    String result="";
+    StringBuilder sb = new StringBuilder(s);
+    while(sb.length() != 0){
+        int count = 0;
+        char test = sb.charAt(0);
+        while(sb.indexOf(test+"") != -1){
+            sb.deleteCharAt(sb.indexOf(test+""));
+            count++;
+			
+        }
+        //System.out.println(test+" is repeated "+count+" number of times");
+        //result=result+test+count;
+		System.out.print(test+"= "+count);
+    }
+             
+}
+}
+
+WAP to find common elements from list?
+
+import java.util.List;
+import java.util.ArrayList;
+class CommmonElementIAL 
+{
+	public static void main(String[] args) 
+	{
+		List l1=new ArrayList();
+		l1.add(10);
+		l1.add(20);
+		l1.add(30);
+		List l2= new ArrayList();
+		l2.add(10);
+		l2.add(20);
+		l2.add(90);
+		List l3=new ArrayList(l2);
+		l3.retainAll(l1);
+		System.out.println(l3);
+	}
+}
+
+
+WAP to sort 1 million number btw 0 to 9.
+
+import java.util.*;
+class Buearo 
+{
+	public static void main(String[] args) 
+	{
+		ArrayList l= new ArrayList();
+		l.add(0);
+		l.add(1);
+		l.add(2);
+		l.add(3);
+		l.add(4);
+		l.add(1);
+		l.add(0);
+		l.add(0);
+		l.add(2);
+		l.add(2);
+		l.add(6);
+		l.add(9);
+		l.add(9);
+		l.add(6);
+		l.add(4);
+		l.add(8);
+		System.out.println(l);
+		Collections.sort(l);
+		System.out.println(l);
+	}
+}
+
+
+
+WAP to print abbrevation of a string like if Panjab National Bank then print P.N.B
+
+import java.io.*;
+import java.util.Scanner;
+class CyberQ
+{
+public static void main(String args[])throws IOException
+{
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+Scanner sn= new Scanner(System.in);
+String s;
+char x;
+int l;
+System.out.print("Enter any sentence: ");
+s=br.readLine();
+
+System.out.println(s);
+s=" "+s; //adding a space infront of the inputted sentence or a name
+s=s.toUpperCase(); //converting the sentence into Upper Case (Capital Letters)
+l=s.length(); //finding the length of the sentence</span>
+System.out.print("Output = ");
+ 
+for(int i=0;i<l;i++)
+{
+x=s.charAt(i); //taking out one character at a time from the sentence
+if(x==' ') //if the character is a space, printing the next Character along with a fullstop
+System.out.print(s.charAt(i+1)+".");
+}
+}
+}
+
+
+
+WAP to reverse a string.
+
+import java.util.Scanner;
+
+class ReversingString 
+{
+	public static void main(String[] args) 
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter any string:");
+		String str=s.next();
+		reverse(str);
+
+	}
+	public static void reverse(String s)
+	{
+		char[]c=s.toCharArray();
+		String revStr="";
+		for(int i=c.length-1;i>=0;i--)
+		{
+			revStr+=c[i];
+		}
+		System.out.println("The reversed string is:"+revStr);
+	}
+}
+
+
+WAP to reverse a sentence.
+
+import java.util.Scanner;
+class SentenceRev
+{
+	public static void main(String args[]) 
+	{
+
+
+         String str="state bank of India";
+		// Scanner s=new Scanner(System.in);
+		 //System.out.println("Enetr any sentence :");
+		 //str=s.next();
+         String revStr = reverseWordByWord(str);
+		 System.out.println(revStr);
+	}
+
+
+ public static  String reverseWordByWord(String str){
+        int strLeng = str.length()-1;
+        String reverse = "", temp = "";
+
+        for(int i = 0; i <=strLeng; i++){
+            temp += str.charAt(i);
+            if((str.charAt(i) == ' ') || (i == strLeng)){
+                for(int j = temp.length()-1; j >= 0; j--){
+                    reverse += temp.charAt(j);
+                    if((j == 0) && (i != strLeng))
+                        reverse += " ";
+                }
+                temp = "";
+            }
+        }
+        return reverse;
+    }
+}
+
+
+
+WAP to find factorial of a number using recurssion
+
+class RecurssionFactorial 
+{
+	public static void main(String[] args) 
+	{
+		int n=7;
+		int res=factorial(n);
+		System.out.println("Result="+res);
+	}
+	public static int factorial(int n)
+	{
+		if(n<=0)
+			return 1;
+		else
+			return n*factorial(n-1);
+}
+}
+
+
+
+WAP to read file date and store into any collection.
+
+import java.util.*;
+import java.io.*;
+class ReadingFile 
+{
+	public static void main(String[] args) throws Exception
+	{
+		HashSet a = new HashSet(); 
+         Scanner s = new Scanner(new File("E:\\programs\\imp_programs\\file.txt"));
+
+          while(s.hasNextLine()) {
+           String nextLine = s.nextLine();
+          a.add(nextLine);
+		  }
+		  s.close();
+		  System.out.println(a);
+		  }
+	}
+
+
+WAP to find no of digits.
+
+import java.util.Scanner;
+class NumberOfDigits 
+{
+	public static void main(String[] args) 
+	{
+		int count=0;
+
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter any number:");
+		long l=s.nextLong();
+		while(l>0)
+		{
+			l=l/10;
+			count++;
+		}
+
+		System.out.println(count);
+	}
+}
+
+
+WAP to override equals() method
+
+class OverridindEqualsMethod 
+{
+	String name;
+	int rollno;
+	String add;
+   OverridindEqualsMethod(String name, int rollno,String add) {
+	   this.name=name;
+	   this.rollno=rollno;
+	   this.add=add;
+   }
+   public boolean equals(Object obj) {
+	   try{
+
+	   OverridindEqualsMethod o=(OverridindEqualsMethod)obj;
+	   if(name.equals(o.name)&& rollno==o.rollno && add.equals(o.add))
+		   return true;
+		   else
+			   return false;
+	   }
+	   catch(ClassCastException e)
+		   {
+		   return false;
+		   }
+	  catch(NullPointerException e1)
+	   {
+		  return false;
+	   }
+   }
+
+
+	public static void main(String[] args) 
+	{
+		OverridindEqualsMethod a1=new OverridindEqualsMethod("ram",101,"delhi");
+		OverridindEqualsMethod a2=new OverridindEqualsMethod("ram",101,"delhi");
+
+		System.out.println(a1.equals(a2));
+	}
+}
+
+
+WAP to make a class as immutable.
+
+
+final class Immutable
+{
+	 private final String name;
+	 private final int rollno;
+
+
+   Immutable(String name , int rollno) {
+	   this.name=name;
+	   this.rollno=rollno;
+   }
+   public Immutable modify(String name , int rollno) {
+	   if(this.name==name && this.rollno==rollno)
+	   
+		   return this;
+		   else
+			   return (new Immutable(name,rollno));
+   }
+   public static  void main(String args[]){
+	   Immutable e1=new Immutable("ram",1001);
+	   Immutable e2=e1.modify("raju",2001);
+	   Immutable e3=e1.modify("ram",1001);
+	   Immutable e4=e2.modify("raju",2001);
+	   System.out.println(e1+" "+e2+"   "+e3+"    "+e4);
+
+   }
+
+}
+
+
+
+What will be the output.
+
+
+class Innodata 
+{
+	public static void main(String[] args) 
+	{
+		int []a=new int[10];
+		for(int i=0;i<10;i++)
+		{
+			a[i]=i;
+		System.out.println(a[i]);
+		}
+	}
+}
+
+
+
+What will be the output.
+
+import java.util.Scanner;
+class Innodata1 
+{
+	public static void main(String[] args) 
+	{
+		try
+		{
+			double d =15.0;
+			System.out.println(d/0);
+		}
+		catch (ArithmeticException ae)
+		{
+		}
+	}
+}
+
+What will be the output.
+
+import java.util.ArrayList;
+class Infogain 
+{
+	public static void main(String[] args) 
+	{
+		ArrayList al=new ArrayList();
+		al.add(1);
+		al.add(2);
+		al.add(3);
+		al.add(4);
+		al.add(5);
+		al.add(6);
+		al.add(7);
+		al.add(8);
+		al.add(9);
+		al.add(10);
+		System.out.println(al.size());
+		System.out.println(al);
+		for(int i=0;i<al.length;i++)
+		{
+			al.remove(i);
+		}
+		System.out.println(al);
+	}
+}
+
+What will be the output.
+
+
+class Infogain1 
+{
+	public static void main(String[] args) 
+	{
+		String s="hi";
+		String s1=new String("hi");
+		System.out.println(s==s1);
+		System.out.println(s.equals(s1));
+	}
+}
+
+
+What will be the output.
+
+class Infogain2 
+{
+	public void show(String s)
+	{
+		System.out.println("Hello !");
+	}
+	public void show(Integer i)
+	{
+		System.out.println("Hi");
+	}
+
+	public static void main(String[] args) 
+	{
+	    Infogain2 i=new Infogain2();
+		i.show(null);
+	}
+}
+
+What will be the output.
+
+
+import java.util.*;
+class  LinchPin1
+{
+	public static void main(String[] args) 
+	{
+		ArrayList l= new ArrayList();
+		l.add(10);
+		l.add(8);
+		l.add(9);
+		l.add(78);
+		l.add(20);
+	   System.out.println(l);
+	   TreeSet t = new TreeSet(l);
+	   System.out.println(t);
+	}
+}
+
+
+WAP to print this pattern( i am giving the code for all the pattern which i faced)
+
+1---
+
+*       * 
+ *     *  
+  *   *   
+   * *    
+    *     
+   * *    
+  *   *   
+ *     *  
+
+import java.util.Scanner;
+class Pat3 
+{
+	public static void main(String[] args) 
+	{
+		int i,j,k,num;
+		Scanner s= new Scanner(System.in);
+		System.out.println("Enter any number:");
+		num=s.nextInt();
+		i=0;
+		while(i<num)
+		{
+			j=0;
+			while(j<=num)
+			{
+				if(i==j||i+j==num)
+				System.out.print("*");
+				else
+					System.out.print(" ");
+				j++;
+			}
+			System.out.println(" ");
+			i++;
+			}
+
+
+	}
+}
+
+
+2---
+
+
+import java.util.Scanner;
+class Pat5
+{
+	public static void main(String[] args) 
+	{
+		int i,j,k,l,n;
+		Scanner s= new Scanner(System.in);
+		System.out.println("enter any number:");
+		n=s.nextInt();
+		i=n;
+		while(i>0)
+		{
+			j=1;
+			while(j<=n-i)
+			{
+				System.out.print(" ");
+				j++;
+			}
+			k=1;
+			while(k<=i)
+			{
+				System.out.print("*");
+				k++;
+			}
+			 l=1;
+			 while(l<i)
+			{
+				 System.out.print("*");
+				 l++;
+			}
+		      System.out.println();
+			  i--;
+		}
+	}
+}
+
+
+
+WAP to swap two no with and without 3 variable
+
+
+
+import java.util.Scanner;
+class Swapping 
+{
+	public static void main(String[] args) 
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter two numbers:");
+		int a=s.nextInt();
+		int b=s.nextInt();
+		swap(a,b);
+		swap1(a,b);
+	}
+	public static void swap(int a, int b) {
+		int temp=0;
+		temp=a;
+		a=b;
+		b=temp;
+		System.out.println("After swapping:"+a+"  "+b);
+	}
+	public static void swap1(int a, int b) {
+		a=a+b;
+		b=a-b;
+		a=a-b;
+		System.out.println(a+"   "+b);
+	}
+
+}
+
+
+
+what is the out put of below program
+
+
+class Xa 
+{
+	public static void main(String[] args) 
+	{
+		String[] str=new String[0];
+		System.out.println(str[0]);
+	}
+}
+
+
+
+What will be the output of below program?
+
+class Test{
+
+	Integer id;
+	Test(int id){
+	this.id=id;
+	}
+	
+	public String toString(){
+	return this.id.toString();
+	}
+	
+	public static void main(String[] args)
+	{
+		Test t1 = new Test(1);
+		Test t2 = new Test(1);
+		
+		Map m=new HashMap();
+		m.put(t1,1);
+		m.put(t2,1);
+		System.out.println(m);//{1=1, 1=1} as t1 and t2 are objects and not premitive so its different
+		}
+	}
+	
+	
+What will be the output of below code?
+
+	public class Test {
+	
+	Integer id;
+	Test(int id){
+	this.id=id;
+	}
+	
+	public String toString(){
+	return this.id.toString();
+	}
+	
+	public int hashCode() {
+		int result =1;
+		result=31+((id==null)?0:id.hashCode());
+		return result;
+	}
+	
+	public boolean equals(Test obj) {
+		return this.id.equals(((Test)obj).id);
+	}
+
+	public static void main(String[] args) {
+		TreeSet s =new TreeSet();
+		Test t1 = new Test(1);
+		Test t2 = new Test(2);
+		s.add(t1);
+		s.add(t2);
+		System.out.println(s.size());
+		Iterator itr=s.iterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+	}
+}
+	Output--> ClassCastException --class Test cannot be cast to class java.lang.Comparable
+	
+
+What will be the output of below code?
+
+public class Test {	
+	Integer id;
+	Test(int id){
+	this.id=id;
+	}	
+	public String toString(){
+	return this.id.toString();
+	}	
+	public static void main(String[] args) {
+		Map m =new HashMap();
+		Test t1 = new Test(1);
+		Test t2 = new Test(1);
+		m.put(t1,1);
+		m.put(t2,1);
+		System.out.println(m.size());//2
+		Set s=m.keySet();
+		Iterator itr=s.iterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next());//1	1
+		}}} 
+
+
+What will be the output of below code?
+
+	public class Test {
+		
+		public static void main(String[] args) {
+			List l= new ArrayList<>();
+			Test t1= new Test();
+			Test t2= new Test();
+			l.add(t1);
+			l.add(t2);
+			Collections.sort(l);
+			for(int  i=0;i<l.size();i++)
+				System.out.println(l.get(i));
+		}
+	}
+Output--java.lang.ClassCastException: class Test cannot be cast to class java.lang.Comparable
+
+//intern(): It creates an exact copy of the heap string object in the String Constant Pool.
+What will be the output of below code?	
+	public class Test {
+		public static void main(String[] args) {
+			String s1="xyx";
+			String s2= new String("xyx");
+			System.out.println(s1==s2);//False
+			s2.intern();
+			System.out.println(s1==s2);//False
+		}}
+		
+What will be the output of below code?	
+	
+	public class Test {
+	static String s="Instance";
+	public static void method(String s) {
+		s+="Add";
+		}
+	public static void main(String[] args) {
+		Test t=new Test();
+		s="New Instance";
+		String s="Local";
+		method(s);
+		System.out.println(s);//Local
+		System.out.println(t.s);// New Instance
+	}}
+
+What will be the output of below code?	
+//The Java String class compareTo() method compares the given string with the current string lexicographically. It returns a positive number, negative number, or 0.
+	public class Test {
+		public static void main(String[] args) {
+			String s1="Manish";
+			String s2="Manish Kumar";
+			System.out.println(s1.compareTo(s2));//-6
+		}}
+
+What will be the output of below code?
+	public class Test {
+		public static void main(String[] args) {
+			if("String".endsWith("")) 
+				System.out.println(true);
+			else
+				System.out.println(false);
+		}}//output--True
+
+
+What will be the output of below code?
+public class Test {
+	int val = 10;
+
+	public static void main(String[] args) {
+		Test t = new Test();
+		System.out.println(t.val);
+	}
+}
+output:10
+
+What will be the output of below code?
+public class Test {
+
+	public static void main(String[] args) {
+		Integer [] arr= new Integer[]{10,3,10,2,20};
+		List<Integer> list =Arrays.asList(arr);
+		OptionalDouble avg=list.stream().mapToInt(n-> n*n).filter(n->n>=10).average();
+		System.out.println(avg);
+	}
+}
+Output: 200.0
+
+What will be the output of below code?
+public class Test {
+	
+	public static Iterator reverse(List list) {
+		Collections.sort(list);
+		return list.iterator();
+	}
+
+	public static void main(String[] args) {
+		List list= new ArrayList();
+		list.add("1");
+		list.add("2");
+		list.add("3");
+		for(Object obj: reverse(list)) {
+			System.out.println(obj);
+			
+		}
+	}
+}
+Output: compilation fails, Can only iterate over an array or an instance of java.lang.Iterable
+
+
+
+
+1-What is SOLID design principle?--https://www.baeldung.com/solid-principles
+2-What is the difference between TDD and BDD?--https://www.geeksforgeeks.org/difference-between-bdd-vs-tdd-in-software-engineering/
+
+4-Retrival is fast in SQL or NOSql?
+5-How to break a monolith application into microservices?--https://www.youtube.com/watch?v=tuJqH3AV0e8
+6-MongoDb ---https://www.youtube.com/watch?v=t4wPUQ5RElY&t=127s          https://www.youtube.com/watch?v=oSIv-E60NiU
+7-What is 4-eyes principle
+8-Which is not valid JPM message type:1-TextMessager  2-ObjectMessage  3-FileMessage  4-mapMessage---Ans:ObjectMessage
+
+9-Authentication Vs Authorization.-->
+	Authentication is the process of verifying who someone is, whereas authorization is the process of verifying what specific applications, files, and data a user has access to.
+
+10-What are valid RetentionPolicy forannotation->RetentionPolicy.CLASS,RetentionPolicy.SOURCE,RetentionPolicy.RUNTIME
+11-What is the difference between PUT and POST?
+
+POST is always for creating a resource ( does not matter if it was duplicated ) PUT is for checking if resource exists then update, else create new resource. 
+PATCH is always for updating a resource.
+
+	PUT and POST can be used to create resources, there are significant differences between them in terms of their intended applications.
+	PUT HTTP Request
+	PUT is a request method supported by HTTP used by the World Wide Web. The PUT method requests that the enclosed entity be stored under the supplied URI. 
+	If the URI refers to an already existing resource, it is modified and if the URI does not point to an existing resource, then the server can create the 
+	resource with that URI. 
+	
+	Example:
+	@PutMapping("/addresses/{id}")
+    Address replaceEmployee(@RequestBody Address newAddress, @PathVariable Long id) {
+
+        return repository.findById(id)
+            .map(address -> {
+                address.setCity(newAddress.getCity());
+                address.setPin(newAddress.getPostalCode());
+                return repository.save(address);
+            })
+            .orElseGet(() -> {
+                return repository.save(newAddress);
+            });
+    }
+	
+	
+	POST HTTP Request:
+
+	POST is a request method supported by HTTP used by the World Wide Web. By design, the POST request method requests that 
+	a web server accepts the data enclosed in the body of the request message, most likely for storing it. It is often used 
+	when uploading a file or when submitting a completed web form. 
+	
+	@PostMapping("/addresses")
+    Address createNewAddress(@RequestBody Address newAddress) {
+        return repository.save(newAddress);
+    }
+	
+	-->PUT method is idempotent. So if you send retry a request multiple times, that should be equivalent to single request modification.
+	-->POST is NOT idempotent. So if you retry the request N times, you will end up having N resources with N different URIs created on server.
+	
+	-->Use PUT when you want to modify a single resource which is already a part of resources collection. 
+	   PUT overwrites the resource in its entirety. Use PATCH if request updates part of the resource. 	   
+	-->Use POST when you want to add a child resource under resources collection.
+	
+	-->Generally, in practice, always use PUT for UPDATE operations.
+	-->Always use POST for CREATE operations.
+	
+	
+12-@PathVariable vs @RequestParam------------>Rest: @QueryParam vs @PathParam?
+
+	@PathVariable(Springboot) or @PathParam(Rest API):PathVariables extract values from the URI path	
+		@GetMapping("/foos/{id}")
+		@ResponseBody
+		public String getFooById(@PathVariable(required = false) String id) {
+			return "ID: " + id;
+		}
+		Then we can map based on the path:
+		http://localhost:8080/foos/abc
+		----
+		ID: abc
+		http://localhost:8080/foos
+		----
+		ID: null
+
+	@RequestParam(Springboot) or @QueryParam(Rest API): RequestParams extract values from the query string
+	annotation's attributes: name, value, required, and defaultValue.
+	
+		@GetMapping("/foos")
+		@ResponseBody
+		public String getFooByIdUsingQueryParam(@RequestParam String id) {
+			return "ID: " + id;
+		}
+		which would give us the same response, just a different URI:
+
+		http://localhost:8080/foos?id=abc
+		----
+		ID: abc
+		
+		
+		A single @RequestParam can have multiple values:
+
+		@GetMapping("/api/foos")
+		@ResponseBody
+		public String getFoos(@RequestParam List<String> id) {
+			return "IDs are " + id;
+		}
+			http://localhost:8080/api/foos?id=1,2,3        Or http://localhost:8080/api/foos?id=1 & name="Raju"
+			----
+			IDs are [1,2,3]
+	
+
+		
+14-What are HTTP methods?--->GET,PUT ,POST ,DELETE, HEAD,OPTIONS,CONNECR,TRACE
+
+15-What is the difference between @Controller and @RestController?
+	It's a convenient annotation that combines @Controller and @ResponseBody, which eliminates the need to annotate every request 
+	handling method of the controller class with the @ResponseBody annotation.
+			@RestController
+			@RequestMapping("books-rest")
+			public class SimpleBookRestController {
+				
+				@GetMapping("/{id}", produces = "application/json")
+				public Book getBook(@PathVariable int id) {
+					return findBookById(id);
+				}
+
+				private Book findBookById(int id) {
+					// ...
+				}
+			}
+
+16-what is the difference between URL and URI?
+	Uniform Resource Identifier (URI) − a sequence of characters that allows the complete identification of any abstract or physical resource
+	Uniform Resource Locator (URL) − a subset of URI that, in addition to identifying where a resource is available, describes the primary mechanism to access it
+
+
+	Syntax:
+	Every URI, regardless if it's a URL or not, follows a particular form:
+	scheme:[//authority][/path][?query][#fragment]
+
+	Where each part is described as follows:
+		scheme − for URLs, is the name of the protocol used to access the resource, for other URIs, is a name that refers to a specification for assigning identifiers within that scheme
+		authority − an optional part comprised of user authentication information, a host and an optional port
+		path − it serves to identify a resource within the scope of its scheme and authority
+		query − additional data that, along with the path, serves to identify a resource. For URLs, this is the query string
+		fragment − an optional identifier to a specific part of the resource
+
+
+		ftp://ftp.is.co.za/rfc/rfc1808.txt
+		https://tools.ietf.org/html/rfc3986
+		mailto:john@doe.com
+
+		tel:+1-816-555-1212
+		urn:oasis:names:docbook:dtd:xml:4.1
+		urn:isbn:1234567890
+
+17-What is the difference between HTTP and HTTPS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Spring 
+==========================================Spring core===============================================================================
+Question : What is IOC?
+	Spring IoC Container is the core of Spring Framework. It creates the objects, configures and assembles their dependencies, manages their entire life cycle. 
+	The Container uses Dependency Injection(DI) to manage the components that make up the application
+	Since the Controlling of Java objects and their lifecycle is not done by the developers, hence the name Inversion Of Control. 
+	ApplicationContext and BeanFactory
+
+Question:What is dependency injection in spring?
+		Dependency Injection is the main functionality provided by Spring IOC(Inversion of Control). The Spring-Core module is responsible for injecting dependencies through either 
+		Constructor or Setter methods.
+
+Question:What are types of Spring Dependency Injection?
+	1-Setter Dependency Injection (SDI)
+	2-Constructor Dependency Injection (CDI)
+		
+Question: What is cyclic dependency and how to resolve it?
+	Circular dependency in Spring happens when two or more beans require instance of each other through constructor dependency injections
+	Bean A → Bean B → Bean C
+	Spring will create bean C, then create bean B (and inject bean C into it), then create bean A (and inject bean B into it).
+	But with a circular dependency, Spring cannot decide which of the beans should be created first since they depend on one another. 
+	In these cases, Spring will raise a BeanCurrentlyInCreationException while loading context.
+
+	It can happen in Spring when using constructor injection. If we use other types of injections, we shouldn't have this problem since 
+	the dependencies will be injected when they are needed and not on the context loading.
+
+Question: What is difference between setter and constructor dependency injection?
+
+Question: what are bean scopes in Spring?
+	Singleton scope: 
+@Bean
+@Scope("singleton") or @Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
+public Person personSingleton() {
+    return new Person();
+}
+
+Prototype:
+@Bean
+@Scope("prototype")  or @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+public Person personPrototype() {
+    return new Person();
+}
+
+request:
+@Bean
+@RequestScope
+public HelloMessageGenerator requestScopedBean() {
+    return new HelloMessageGenerator();
+}
+
+session:
+@Bean
+@SessionScope
+public HelloMessageGenerator sessionScopedBean() {
+    return new HelloMessageGenerator();
+}
+
+global session.
+
+Question : How to inject prototype bean into singleton bean?
+	By default, Spring beans are singletons. The problem arises when we try to wire beans of different scopes. For example, a prototype bean into a singleton. 
+	This is known as the scoped bean injection problem.
+
+@Configuration
+public class AppConfig {
+    @Bean
+    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    public PrototypeBean prototypeBean() {
+        return new PrototypeBean();
+    }
+    @Bean
+    public SingletonBean singletonBean() {
+        return new SingletonBean();
+    }
+}
+
+
+Question: What are the basic annotations of Spring core module?
+
+@Component is a generic stereotype for any Spring-managed component.
+@Service annotates classes at the service layer.
+@Repository annotates classes at the persistence layer, which will act as a database repository.
+The major difference between these stereotypes is that they are used for different classifications. When we annotate a class for auto-detection, we should use the respective stereotype.
+
+ @Component:We can use @Component across the application to mark the beans as Spring's managed components. Spring will only pick up and register beans with @Component, 
+		and doesn't look for @Service and @Repository in general
+
+
+@Autowired: We can use this annotation with a constructor, setter, or field injection
+
+Constructor injection:
+class Car {
+    Engine engine;
+
+    @Autowired
+    Car(Engine engine) {
+        this.engine = engine;
+    }
+}
+
+Setter injection:
+class Car {
+    Engine engine;
+
+    @Autowired
+    void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+}
+
+Field injection:
+class Car {
+    @Autowired
+    Engine engine;
+}
+
+
+
+@Bean:  marks a factory method which instantiates a Spring bean:
+@Bean
+Engine engine() {
+    return new Engine();
+}
+
+@Bean("engine")
+	Engine getEngine() {
+    	return new Engine();
+}
+
+-->Note, that all methods annotated with @Bean must be in @Configuration classes.
+
+@Qualifier : We use   @Qualifier along with @Autowired to provide the bean id or bean name we want to use in ambiguous situations.
+
+class Bike implements Vehicle {}
+class Car implements Vehicle {}
+
+Using constructor injection:
+
+@Autowired
+Biker(@Qualifier("bike") Vehicle vehicle) {
+    this.vehicle = vehicle;
+}
+
+Using setter injection:
+@Autowired
+void setVehicle(@Qualifier("bike") Vehicle vehicle) {
+    this.vehicle = vehicle;
+}
+
+Using field injection:
+@Autowired
+@Qualifier("bike")
+void setVehicle(Vehicle vehicle) {
+    this.vehicle = vehicle;
+}
+
+@Required:  A method-level annotation applied to the setter method of a bean property and thus making the setter-injection mandatory
+public class Company { 
+    private Integer cid;
+    private String cname; 
+   
+ @Required
+    public void setCid(Integer cid) {
+        this.cid = cid;
+    }
+    public Integer getCid() {
+        return cid;
+    }
+}
+
+
+@Value: We can use @Value for injecting property values into beans. It's compatible with constructor, setter, and field injection.
+
+Constructor injection:
+Engine(@Value("8") int cylinderCount) {
+    this.cylinderCount = cylinderCount;
+}
+
+
+Setter injection:
+@Autowired
+void setCylinderCount(@Value("8") int cylinderCount) {
+    this.cylinderCount = cylinderCount;
+}
+
+Field injection:
+@Value("8")
+int cylinderCount;
+
+@Value("${engine.fuelType}")
+String fuelType;
+
+
+@DependsOn:  Spring guarantees that the defined beans will be initialized before attempting an initialization of the current bean.
+
+@Bean
+@DependsOn("fuel")
+Engine engine() {
+    return new Engine();
+}
+
+@Lazy:  We use @Lazy when we want to initialize our bean lazily. By default, Spring creates all singleton beans eagerly at the startup/bootstrapping of the application context.
+@Configuration
+@Lazy
+class VehicleFactoryConfig {
+
+    @Bean
+    @Lazy(false)
+    Engine engine() {
+        return new Engine();
+    }
+}
+
+@Lookup:	A method annotated with @Lookup tells Spring to return an instance of the method’s return type when we invoke it.
+@Primary:	Sometimes we need to define multiple beans of the same type. In these cases, the injection will be unsuccessful because Spring has no clue which bean we need.
+		We already saw an option to deal with this scenario: marking all the wiring points with @Qualifier and specify the name of the required bean.
+		However, most of the time we need a specific bean and rarely the others. We can use @Primary to simplify this case: 
+		if we mark the most frequently used bean with @Primary it will be chosen on unqualified injection points
+
+@Scope: We use @Scope to define the scope of a @Component class or a @Bean definition. It can be either singleton, prototype, request, session, globalSession or some custom scope.
+@Component
+@Scope("prototype")
+class Engine {}
+
+
+Question: What are the most common design pattern used in Spring?
+	-Singleton pattern
+	-Factory Method pattern
+	-Proxy pattern
+	-Template pattern
+
+Question: Whar are the design pattern used in Hiberante?
+	-Domain Model Pattern - An object model of the domain that incorporates both behavior and data,
+	-Data Access Object (DAO) Design Pattern,
+	-Abstract Factory,
+	-Data Mapper,
+	-Proxy for lazy loading,
+	-Object-Relational Mapping (ORM),
+	-Query Object for Criterion API,
+	-Facade
+
+
+Question: Which configuration will process first xml based configuration or Annotation based configuration in Springboot
+	Annotation injection is performed before XML injection. Thus, the latter configuration will override the former for properties wired through both approaches.
+
+Question: what is use of Spy in testing?
+	A spy in testing gives us a way of tracking calls made to a method so that we can verify that it works as expected. We use spies to check whether a method was called or not called, 
+	how many times it was called, with what arguments it was called, and also the value it returned when called
+
+Question: what does rgr mean in tdd testing?
+	RGR Cycle. Red-Green-Refactor cycle is repeated after every complete unit test or after a couple of the three laws cycles. They are: Write a failing unit test.
+
+Question: What are the basic rule of TDD?
+	Test-driven development is a software development process relying on software requirements being converted to test cases before software is fully developed, 
+	and tracking all software development by repeatedly testing the software against all test cases.
+
+Question: what is the order of execution of juint lifecycle callbacks?
+
+	@BeforeAll
+	@BeforeEach
+	@Test
+	@@AfterEach
+	@AfterAll
+
+Question:what is the traceid and spanid in microservices?
+	TraceId: It is a unique Id assigned to the request and is the same across all the microservices. 
+	SpanId: It is a unique Id assigned to each operation.
+      Exportable: It is a boolean value and represents whether the log should be exported to Zipkin or not.
+	Zipkin:  is a Java-based distributed tracing system to collect and look up data from distributed systems
+
+Question: What Is Service Discovery?
+
+Question: How to load properties files if its present at some custom location?
+	Spring will always look for recources under recources folder directly, in this case its unable to load the file as its in the custom folder and its not under classpath.
+	@PropertySource("classpath:config/common.properties")
+
+
+=======================================Springboot==============================================================================================================================
+	
+
+https://www.interviewbit.com/spring-boot-interview-questions/
+What is Spring boot?
+Sprint boot is a Java-based spring framework used for Rapid Application Development (to build stand-alone microservices).
+It has extra support of auto-configuration and embedded application server like tomcat, jetty, etc.
+
+Features of Spring Boot that make it different?
+
+Creates stand-alone spring application with minimal configuration needed.
+It has embedded tomcat, jetty which makes it just code and run the application.
+Provide production-ready features such as metrics, health checks, and externalized configuration.
+Absolutely no requirement for XML configuration.
+
+1. What are the advantages of using Spring Boot?
+  The advantages of Spring Boot are listed below:
+
+	->Easy to understand and develop spring applications.
+	->Spring Boot is nothing but an existing framework with the addition of an embedded HTTP server and annotation configuration
+	  which makes it easier to understand and faster the process of development.
+	->Increases productivity and reduces development time.
+	->Minimum configuration.
+	->We don’t need to write any XML configuration, only a few annotations are required to do the configuration.
+	
+2. What are the Spring Boot key components?
+Below are the four key components of spring-boot:
+
+	->Spring Boot auto-configuration.
+	->Spring Boot CLI.
+	->Spring Boot starter POMs.
+	->Spring Boot Actuators.
+	
+3. Why Spring Boot over Spring?
+Below are some key points which spring boot offers but spring doesn’t:
+
+	->Starter POM.
+	->Version Management.
+	->Auto Configuration.
+	->Component Scanning.
+	->Embedded server.
+	->InMemory DB.
+	->Actuators
+	
+4.What is the starter dependency of the Spring boot module?
+Spring boot provides numbers of starter dependency, here are the most commonly used -
+
+	->Data JPA starter.
+	->Test Starter.
+	->Security starter.
+	->Web starter.
+	->Mail starter.
+	->Thymeleaf starter.
+	
+8.How does a spring boot application get started?
+	Just like any other Java program, a Spring Boot application must have a main method. 
+	This method serves as an entry point, which invokes the SpringApplication#run method to bootstrap the application.
+	
+9.What are starter dependencies?
+	Spring boot starter is a maven template that contains a collection of all the relevant transitive dependencies 
+	that are needed to start a particular functionality.
+	Like we need to import spring-boot-starter-web dependency for creating a web application.
+	<dependency>
+	<groupId> org.springframework.boot</groupId>
+	<artifactId> spring-boot-starter-web </artifactId>
+	</dependency>
+	
+	
+10.What is Spring Initializer?
+	Spring Initializer is a web application that helps you to create an initial spring boot project structure and provides 
+	a maven or gradle file to build your code. It solves the problem of setting up a framework when you are starting a project from scratch.
+
+11.What is Spring Boot CLI and what are its benefits?
+	Spring Boot CLI is a command-line interface that allows you to create a spring-based java application using Groovy.
+	Example:
+		You don’t need to create getter and setter method or access modifier, return statement. If you use the JDBC template, it automatically loads for you.
+		
+12.What are the most common Spring Boot CLI commands?
+	-run, -test, -grap, -jar, -war, -install, -uninstall, --init, -shell, -help.
+	To check the description, run spring --help from the terminal.
+	
+13.What Are the Basic Annotations that Spring Boot Offers?
+The primary annotations that Spring Boot offers reside in its org.springframework.boot.autoconfigure and its sub-packages. Here are a couple of basic ones:
+	@EnableAutoConfiguration – to make Spring Boot look for auto-configuration beans on its classpath and automatically apply them.
+	@SpringBootApplication – used to denote the main class of a Boot Application. 
+	This annotation combines @Configuration, @EnableAutoConfiguration, and @ComponentScan annotations with their default attributes.
+	
+	@EnableTransactionManagement
+	@EnableAsync
+	@EnableScheduling
+	@EnableLogging
+	
+	On top of controller class use annotation-->@RestController
+	Method level annotations-->
+		@PostMapping("uri")
+		@GetMapping("uri")
+		@RequestHeader("header")
+		@RequestBody(..)
+		@RequestParam..
+
+	Exception Annotation--->
+	@ExceptionHandler
+	Service class Annotation--->
+	@Service
+	Configuration annotation-->
+	@EnableConfigurationProperties
+	@Bean
+
+
+14.What is Spring Boot dependency management?
+	Spring Boot dependency management is used to manage dependencies and configuration automatically 
+	without you specifying the version for any of that dependencies.
+	
+15.Can we create a non-web application in Spring Boot?
+	Yes, we can create a non-web application by removing the web dependencies from the classpath along with changing 
+	the way Spring Boot creates the application context.
+
+
+16.Is it possible to change the port of the embedded Tomcat server in Spring Boot?
+	Yes, it is possible. By using the server.port in the application.properties.
+
+17.What is the default port of tomcat in spring boot?
+	The default port of the tomcat server-id 8080. It can be changed by adding sever.port properties in the application.property file.
+
+18.Can we override or replace the Embedded tomcat server in Spring Boot?
+	Yes, we can replace the Embedded Tomcat server with any server by using the Starter dependency in the pom.xml file. Like you can use spring-boot-starter-jetty as a dependency for using a jetty server in your project.
+
+19.Can we disable the default web server in the Spring boot application?
+	Yes, we can use application.properties to configure the web application type i.e spring.main.web-application-type=none.
+
+
+20.How to disable a specific auto-configuration class?
+	You can use exclude attribute of @EnableAutoConfiguration if you want auto-configuration not to apply to any specific class.
+	//use of exclude
+	@EnableAutoConfiguration(exclude={className})
+	
+21.Explain @RestController annotation in Sprint boot?
+ It is a combination of @Controller and @ResponseBody, used for creating a restful controller. It converts the response to JSON or XML. 
+ It ensures that data returned by each method will be written straight into the response body instead of returning a template.
+
+22.What is the difference between @RestController and @Controller in Spring Boot?
+	@Controller Map of the model object to view or template and make it human readable but @RestController simply 
+	returns the object and object data is directly written in HTTP response as JSON or XML.
+
+23.Describe the flow of HTTPS requests through the Spring Boot application?
+	On a high-level spring boot application follow the MVC pattern which is depicted in the below flow diagram.
+	Spring Boot Flow Architecture
+
+24.What is the difference between RequestMapping and GetMapping?
+	RequestMapping can be used with GET, POST, PUT, and many other request methods using the method attribute on the annotation. 
+	Whereas getMapping is only an extension of RequestMapping which helps you to improve on clarity on request.
+
+25.What is the use of Profiles in spring boot?
+	While developing the application we deal with multiple environments such as dev, QA, Prod, and each environment 
+	requires a different configuration. For eg., we might be using an embedded H2 database for dev but for prod, 
+	we might have proprietary Oracle or DB2. Even if DBMS is the same across the environment, the URLs will be different.
+	To make this easy and clean, Spring has the provision of Profiles to keep the separate configuration of environments.
+
+26.What is Spring Actuator? What are its advantages?
+	An actuator is an additional feature of Spring that helps you to monitor and manage your application when 
+	you push it to production. These actuators include auditing, health, CPU usage, HTTP hits, and metric gathering, 
+	and many more that are automatically applied to your application.
+
+27.How to enable Actuator in Spring boot application?
+	To enable the spring actuator feature, we need to add the dependency of “spring-boot-starter-actuator” in pom.xml.
+		<dependency>
+		<groupId> org.springframework.boot</groupId>
+		<artifactId> spring-boot-starter-actuator </artifactId>
+		</dependency>
+
+
+28.What are the actuator-provided endpoints used for monitoring the Spring boot application?
+	Actuators provide below pre-defined endpoints to monitor our application -
+		Health
+		Info
+		Beans
+		Mappings
+		Configprops
+		Httptrace
+		Heapdump
+		Threaddump
+		Shutdown
+
+29.How to get the list of all the beans in your Spring boot application?
+	Spring Boot actuator “/Beans” is used to get the list of all the spring beans in your application.
+
+30.How to check the environment properties in your Spring boot application?
+	Spring Boot actuator “/env” returns the list of all the environment properties of running the spring boot application.
+
+31.How to enable debugging log in the spring boot application?
+	Debugging logs can be enabled in three ways -
+	We can start the application with --debug switch.
+	We can set the logging.level.root=debug property in application.property file.
+	We can set the logging level of the root logger to debug in the supplied logging configuration file.
+
+32.Where do we define properties in the Spring Boot application?
+	You can define both application and Spring boot-related properties into a file called application.properties.
+	You can create this file manually or use Spring Initializer to create this file. 
+	You don’t need to do any special configuration to instruct Spring Boot to load this file, 
+	If it exists in classpath then spring boot automatically loads it and configure itself and the application code accordingly.
+
+33.What is dependency Injection?
+	The process of injecting dependent bean objects into target bean objects is called dependency injection.
+
+	->Setter Injection: The IOC container will inject the dependent bean object into the target bean object by calling the setter method.
+	->Constructor Injection: The IOC container will inject the dependent bean object into the target bean object by calling the target bean constructor.
+	->Field Injection: The IOC container will inject the dependent bean object into the target bean object by Reflection API.
+	
+	
+34. What is an IOC container?
+	IoC Container is a framework for implementing automatic dependency injection. 
+	It manages object creation and its life-time and also injects dependencies into the class.
+
+	
+35.How to Deploy Spring Boot Web Applications as Jar and War Files?
+	Traditionally, we package a web application as a WAR file and then deploy it into an external server. 
+	Doing this allows us to arrange multiple applications on the same server. When CPU and memory were scarce, this was a great way to save resources.
+	But things have changed. Computer hardware is fairly cheap now, and the attention has turned to server configuration. 
+	A small mistake in configuring the server during deployment may lead to catastrophic consequences.
+	Spring tackles this problem by providing a plugin, namely spring-boot-maven-plugin, to package a web application as an executable JAR.
+	To include this plugin, just add a plugin element to pom.xml:
+
+	<plugin>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-maven-plugin</artifactId>
+	</plugin>
+	With this plugin in place, we'll get a fat JAR after executing the package phase. This JAR contains all the necessary dependencies, including an embedded server. So, we no longer need to worry about configuring an external server.
+	We can then run the application just like we would an ordinary executable JAR.
+	Notice that the packaging element in the pom.xml file must be set to jar to build a JAR file:
+	<packaging>jar</packaging>
+	If we don't include this element, it also defaults to jar.
+	
+	To build a WAR file, we change the packaging element to war:
+	<packaging>war</packaging>
+	and leave the container dependency off the packaged file:
+
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-tomcat</artifactId>
+		<scope>provided</scope>
+	</dependency>
+	After executing the Maven package phase, we'll have a deployable WAR file.
+
+
+36.What Does It Mean That Spring Boot Supports Relaxed Binding?
+	Relaxed binding in Spring Boot is applicable to the type-safe binding of configuration properties.
+	With relaxed binding, the key of a property doesn't need to be an exact match of a property name. 
+	Such an environment property can be written in camelCase, kebab-case, snake_case, or in uppercase with words separated by underscores.
+	For example, if a property in a bean class with the @ConfigurationProperties annotation is named myProp, 
+	it can be bound to any of these environment properties: myProp, my-prop, my_prop, or MY_PROP.
+	
+37.Which Is Better to Configure a Spring Boot Project — Properties or YAML?
+	YAML offers many advantages over properties files:
+		->More clarity and better readability
+		->Perfect for hierarchical configuration data, which is also represented in a better, more readable format
+		->Support for maps, lists and scalar types
+		->Can include several profiles in the same file (since Spring Boot 2.4.0, this is possible for properties files too)
+		However, writing it can be a little difficult and error-prone due to its indentation rules.
+
+	For details and working samples, please refer to our Spring YAML vs Properties tutorial.
+
+
+38.Explain what is thymeleaf and how to use thymeleaf?
+	Thymeleaf is a server-side Java template engine used for web applications. 
+	It aims to bring natural template for your web application and can integrate well with Spring Framework and HTML5 Java web applications. 
+	To use Thymeleaf, you need to add the following code in the pom.xml file:
+		<dependency>    
+		<groupId>org.springframework.boot</groupId>    
+		<artifactId>spring-boot-starter-thymeleaf</artifactId>    
+		</dependency>  
+
+
+
+Question-1:What is bean life cycle?
+
+Question-2:what is bean autowiring?
+
+Question-3:what is difference between setter injection and constructor injection?
+
+Question-4:what is IOC?
+
+Question-5:what is difference between IOC & DI?
+
+Question-6:how many type of injections are there in spring?
+
+Question-7:what is component scan? how to enable this?
+
+Question-8:what is bean scope?how many types of scope are there in spring?
+
+Question-9:what is difference between singleton & prototype,session & global session,request & prototype?
+
+Question-10:if a prototype bean define in singleton bean then how you will get mulltiple instances of prototype bean?(Ans-method injection)
+
+Question-11:Tell the architecture of MVC?
+
+Question-12:why MVC is introduced?
+
+Question-13:what are controllers in spring?
+
+Question-14:what is DispatcherServlet?
+
+Question-15:what is HandlerMapping?
+
+Question-16:what is ViewResolver?
+
+
+
+============================================================================================================================================================
+
+                                  Hibernate(https://www.interviewbit.com/hibernate-interview-questions/)
+       				    ================================
+
+1. What is ORM in Hibernate?
+Hibernate ORM stands for Object Relational Mapping. This is a mapping tool pattern mainly used for converting data stored in a relational database to an object used in object-oriented programming constructs. This tool also helps greatly in simplifying data retrieval, creation, and manipulation.
+
+
+
+
+Question-1:why hibernate introduced?
+
+Question-2:learn well HQL, Criteria,and Native SQL?
+
+Question-3:what is life cycle of object in hibernate?
+
+Question-4:what are the inheritance strategies?
+
+Question-5:what is diff between save() & persist()?
+
+Question-6:what is diff between update() & merge()?
+
+Question-7:what is diff between save() & flush()?
+
+Question-8:Tell the steps to write hibernate application?
+
+Question-9:write configuration file?
+
+Question-10:write mapping file?
+
+Question-11:what is caching in hibernate?how many types of it?
+
+Question-12:how to call a procedurein hibernate?
+
+Question-13:what is page nation?
+
+Question-14:what is composit key?how to create it in hibernate?
+
+Question-15:what is n+1 problem?
+
+Question-16:what are fetching strategies in hibernate?
+
+Question-17:what is inverse attribute?
+
+Question-18:Learn joins like inner join,outer join.left join & right join?
+
+
+Database--https://www.geeksforgeeks.org/sql-interview-questions/
+
+
+select * from(select ename, sal, dense_rank() over(order by sal desc)r from Employee) where r=&n;
+
+SELECT * FROM (SELECT e.*, ROW_NUMBER() OVER (ORDER BY sal DESC) rn FROM Emp e ) WHERE rn = n;
+
+Select MAX(SAL) from (Select * from (Select * from EMP order by SAL Desc) where rownum <= n)
+
+
+
+
+
+
+
+                                          WebServices
+
+    =========================================
+
+Question-1:what is webservice?
+
+Question-2:what is differnce between service and webservice?
+
+Question-3:what are the technologies are there to develop webservice?
+
+Question-4:what is jaxp, jaxb?
+
+Question-5:what is marshalling and unmarshalling?
+
+Question-6:which webservices you used i.e soap or rest?
+
+Question-7:what is WSDL?explain about its component.
+
+Question-8:what is soap?
+
+Question-9:what are massege exchanging formates?
+
+Question-10:which approach you used to develop a webservice i.e contract first(top-down) or contract last(bottom-up)?
+
+Queestion-11:which implementation you used i.e Apache CXF or Axis 2 etc?
+
+Question-12:which tool you used to convert wsdl to binding classes or java classes to wsdl(when we use Apache CXF 
+            implementation then we use wsdl2java tool to generate artifacts) like that study deep about all other 
+            implementations.
+
+Question-13:you are working on provider side or consumer side?
+
+Question-14:how you will write a webservice write the steps?
+
+Question-15:tell me the architecture of webservice?
+
+Question-16:what we put in soap header and what in saop body?
+
+Question-17:how many parts are there in soap ?
+
+Question-18:what is the difference between soap and rest?
+
+Question-19:Learn all the annotations of REST and its use well?
+
+Question-20:Tell a situation where only SOAP is suitable and also tell where only REST is suiatable?
+
+
+
+==============================================System Design questions=================================
+1- Design youtube(Oracle)
