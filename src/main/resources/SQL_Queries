@@ -1,2 +1,21 @@
-1- Display three highest scorer records
+Q1- Display three highest scorer records
 	select * from (select * from Employee order by score desc) where rownum<=3 order by score;
+	
+ Q2. Write a query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.
+ 		select UPPER(EmpFname) as FIRST_NAME from EmployeeInfo;
+ 		
+ Q3. Write a query to fetch the number of employees working in the department ‘HR’.
+		SELECT COUNT(*) FROM EmployeeInfo WHERE Department = 'HR';
+		
+Q4. Write a query to retrieve the first four characters of  EmpLname from the EmployeeInfo table.
+		SELECT SUBSTRING(EmpLname, 1, 4) FROM EmployeeInfo;
+		
+Q5. Write a query to create a new table which consists of data and structure copied from the other table.
+		CREATE TABLE NewTable AS SELECT * FROM EmployeeInfo;
+		
+Q6. Write q query to find all the employees whose salary is between 50000 to 100000.
+		SELECT * FROM EmployeePosition WHERE Salary BETWEEN '50000' AND '100000';
+		
+		
+Q7. Write a query to find the names of employees that begin with ‘S’
+		SELECT * FROM EmployeeInfo WHERE EmpFname LIKE 'S%';

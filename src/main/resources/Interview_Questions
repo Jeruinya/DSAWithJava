@@ -62,6 +62,7 @@ Question-12:what is inner class? tell purpose and differnt types of inner classe
 Question-13:what is syncronization? how many types of lock are there?what is syncronized block? what is diff btw syncronized method & syncronized block?
 
 Question-14:what is RadWriteLock?
+	A ReadWriteLock maintains a pair of associated locks , one for read-only operations and one for writing
 
 Question-15:what are differnt memories in java? what is class loader sub system?
 
@@ -118,7 +119,7 @@ Question: what is parallel stream?
 	Parallel streams divide the provided task into many and run them in different threads, utilizing multiple cores of the computer
 
 Question :	What are some Funtional interfaces?
-		Consumer,Producer,Funtion, Suppliers,Operator,Predicate,java.lang.Runnable,java.util.Comparator,java.util.concurrent.Callable,java.io.FileFilter
+		Consumer,Funtion, Suppliers,Operator,Predicate,java.lang.Runnable,java.util.Comparator,java.util.concurrent.Callable,java.io.FileFilter
 
 Question: What is Intermediate Operations and  termimal oprations in java 8?
 	-> A terminal operation in Java is a method applied to a stream as the final step.They return final result.forEach,count,toArray.They can be used to produce results.
@@ -133,6 +134,40 @@ Optional<String> longestString = words.stream().reduce((word1, word2)-> word1.le
 
  String[] array = { "Geeks", "for", "Geeks" };
  Optional<String> String_combine = Arrays.stream(array).reduce((str1, str2)-> str1 + "-" + str2);// this will combined all the string into one string
+
+
+Question: How to add employee object into set and avoid duplicacy on based of EmpName.
+
+Question : how to implement generics on class level and method level.
+
+Question: What is advantages and disadvantages of Multithreading?
+Advantages:
+	-Enhanced performance by decreased development time
+	-Simplified and streamlined program coding
+	-Improvised GUI responsiveness
+	-Simultaneous and parallelized occurrence of tasks
+	-Better use of cache storage by utilization of resources
+	-Decreased cost of maintenance
+	-Better use of CPU resource
+Disadvantages:
+	-Complex debugging and testing processes
+	-Overhead switching of context
+	-Increased potential for deadlock occurrence
+	-Increased difficulty level in writing a program
+	-Unpredictable results
+
+Question: How to avoid deadlock?
+	If threads are waiting for each other to finish, then the condition is known as Deadlock.
+	Deadlock condition is a complex condition which occurs only in case of multiple threads.
+	Deadlock condition can break our code at run time and can destroy business logic.
+We can avoud deadlock by following below rules:
+
+Avoid Nested Locks :This is the main reason for dead lock. Dead Lock mainly happens when we give locks to multiple threads. 
+			  Avoid giving lock to multiple threads if we already have given to one.
+Avoid Unnecessary Locks : We should have lock only those members which are required. Having lock on unnecessarily can lead to dead lock.
+
+Using thread join : Dead lock condition appears when one thread is waiting other to finish. If this condition occurs we can use Thread.
+			  join with maximum time you think the execution will take.
 	
 
 
@@ -472,7 +507,7 @@ class Innodata
 		for(int i=0;i<10;i++)
 		{
 			a[i]=i;
-		System.out.println(a[i]);
+		System.out.println(a[i]);//0 1 2 3 4 5 6 7 8 9
 		}
 	}
 }
@@ -489,7 +524,7 @@ class Innodata1
 		try
 		{
 			double d =15.0;
-			System.out.println(d/0);
+			System.out.println(d/0);//Infinity
 		}
 		catch (ArithmeticException ae)
 		{
@@ -517,13 +552,17 @@ class Infogain
 		al.add(10);
 		System.out.println(al.size());
 		System.out.println(al);
-		for(int i=0;i<al.length;i++)
+		for(int i=0;i<al.size();i++)
 		{
 			al.remove(i);
 		}
 		System.out.println(al);
 	}
 }
+
+Output:10
+	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+	[2, 4, 6, 8, 10]
 
 What will be the output.
 
@@ -922,7 +961,8 @@ Output: compilation fails, Can only iterate over an array or an instance of java
 8-Which is not valid JPM message type:1-TextMessager  2-ObjectMessage  3-FileMessage  4-mapMessage---Ans:ObjectMessage
 
 9-Authentication Vs Authorization.-->
-	Authentication is the process of verifying who someone is, whereas authorization is the process of verifying what specific applications, files, and data a user has access to.
+	Authentication is the process of verifying who someone is, whereas authorization is the process of verifying what specific applications, 
+	files, and data a user has access to.
 
 10-What are valid RetentionPolicy forannotation->RetentionPolicy.CLASS,RetentionPolicy.SOURCE,RetentionPolicy.RUNTIME
 11-What is the difference between PUT and POST?
@@ -938,7 +978,7 @@ PATCH is always for updating a resource.
 	
 	Example:
 	@PutMapping("/addresses/{id}")
-    Address replaceEmployee(@RequestBody Address newAddress, @PathVariable Long id) {
+    	Address replaceEmployee(@RequestBody Address newAddress, @PathVariable Long id) {
 
         return repository.findById(id)
             .map(address -> {
@@ -959,7 +999,7 @@ PATCH is always for updating a resource.
 	when uploading a file or when submitting a completed web form. 
 	
 	@PostMapping("/addresses")
-    Address createNewAddress(@RequestBody Address newAddress) {
+    	Address createNewAddress(@RequestBody Address newAddress) {
         return repository.save(newAddress);
     }
 	
@@ -1038,8 +1078,15 @@ PATCH is always for updating a resource.
 			}
 
 16-what is the difference between URL and URI?
-	Uniform Resource Identifier (URI) − a sequence of characters that allows the complete identification of any abstract or physical resource
-	Uniform Resource Locator (URL) − a subset of URI that, in addition to identifying where a resource is available, describes the primary mechanism to access it
+ Uniform Resource Identifier (URI) − a sequence of characters that allows the complete identification of any abstract or physical resource
+ 
+Uniform Resource Locator (URL) − a subset of URI that, in addition to identifying where a resource is available, describes the primary mechanism to access it.
+	URL consists of two required components: 1-The protocol  		2-The domain    Other optional componets --the path and the port
+	https://www.mynet.com:8080/product/catalog.html
+	https: Protocol
+	www.mynet.com: Domain name
+	8080: post
+	/product/catalog.html: path
 
 
 	Syntax:
@@ -1047,7 +1094,8 @@ PATCH is always for updating a resource.
 	scheme:[//authority][/path][?query][#fragment]
 
 	Where each part is described as follows:
-		scheme − for URLs, is the name of the protocol used to access the resource, for other URIs, is a name that refers to a specification for assigning identifiers within that scheme
+		scheme − for URLs, it is the name of the protocol used to access the resource, for other URIs, is a name that refers to a specification for 
+				assigning identifiers within that scheme
 		authority − an optional part comprised of user authentication information, a host and an optional port
 		path − it serves to identify a resource within the scope of its scheme and authority
 		query − additional data that, along with the path, serves to identify a resource. For URLs, this is the query string
@@ -1063,6 +1111,8 @@ PATCH is always for updating a resource.
 		urn:isbn:1234567890
 
 17-What is the difference between HTTP and HTTPS
+	HTTPS is HTTP with encryption. The only difference between the two protocols is that HTTPS uses TLS (SSL) to encrypt normal HTTP requests and responses. 
+	As a result, HTTPS is far more secure than HTTP. A website that uses HTTP has http:// in its URL, while a website that uses HTTPS has https://.
 
 
 
@@ -1081,18 +1131,20 @@ PATCH is always for updating a resource.
                       Spring 
 ==========================================Spring core===============================================================================
 Question : What is IOC?
-	Spring IoC Container is the core of Spring Framework. It creates the objects, configures and assembles their dependencies, manages their entire life cycle. 
+	Spring IoC Container is the core of Spring Framework. It creates the objects, configures and assembles their dependencies, 
+	manages their entire life cycle. 
 	The Container uses Dependency Injection(DI) to manage the components that make up the application
 	Since the Controlling of Java objects and their lifecycle is not done by the developers, hence the name Inversion Of Control. 
 	ApplicationContext and BeanFactory
 
 Question:What is dependency injection in spring?
-		Dependency Injection is the main functionality provided by Spring IOC(Inversion of Control). The Spring-Core module is responsible for injecting dependencies through either 
-		Constructor or Setter methods.
+		Dependency Injection is the main functionality provided by Spring IOC(Inversion of Control). The Spring-Core module is responsible 
+		for injecting dependencies through either Constructor or Setter methods or field.
 
 Question:What are types of Spring Dependency Injection?
 	1-Setter Dependency Injection (SDI)
 	2-Constructor Dependency Injection (CDI)
+	3-field injection
 		
 Question: What is cyclic dependency and how to resolve it?
 	Circular dependency in Spring happens when two or more beans require instance of each other through constructor dependency injections
@@ -1327,7 +1379,7 @@ Question: what is use of Spy in testing?
 	A spy in testing gives us a way of tracking calls made to a method so that we can verify that it works as expected. We use spies to check whether a method was called or not called, 
 	how many times it was called, with what arguments it was called, and also the value it returned when called
 
-Question: what does rgr mean in tdd testing?
+Question: what does RGR mean in tdd testing?
 	RGR Cycle. Red-Green-Refactor cycle is repeated after every complete unit test or after a couple of the three laws cycles. They are: Write a failing unit test.
 
 Question: What are the basic rule of TDD?
@@ -1353,6 +1405,8 @@ Question: What Is Service Discovery?
 Question: How to load properties files if its present at some custom location?
 	Spring will always look for recources under recources folder directly, in this case its unable to load the file as its in the custom folder and its not under classpath.
 	@PropertySource("classpath:config/common.properties")
+
+Question: How to handle thousands of GET HTTPS request and improve performance?
 
 
 =======================================Springboot==============================================================================================================================
@@ -1397,7 +1451,8 @@ Below are some key points which spring boot offers but spring doesn’t:
 	->Component Scanning.
 	->Embedded server.
 	->InMemory DB.
-	->Actuators
+	->Actuators--Spring Boot Actuator is a sub-project of the Spring Boot Framework. It uses HTTP endpoints to expose operational information about any running application. 
+			The main benefit of using this library is that	we get health and monitoring metrics from production-ready applications
 	
 4.What is the starter dependency of the Spring boot module?
 Spring boot provides numbers of starter dependency, here are the most commonly used -
@@ -1628,37 +1683,31 @@ The primary annotations that Spring Boot offers reside in its org.springframewor
 
 
 
-Question-1:What is bean life cycle?
 
-Question-2:what is bean autowiring?
+Question :what is difference between IOC & DI?
+	Inversion of Control (IoC) refers to a programming style where a framework or runtime, controls the program flow. Inversion of control means we are changing the control from normal way. 
+	It works on Dependency Inversion Principle. DI is a software design pattern that allow us to develop loosely coupled code
 
-Question-3:what is difference between setter injection and constructor injection?
+Question-:Tell the architecture of MVC?
+	Model, View, Controller. Model: Handles data logic. View: It displays the information from the model to the user. Controller: 
+	It controls the data flow into a model object and updates the view whenever data changes.
 
-Question-4:what is IOC?
+Question-:why MVC is introduced?
 
-Question-5:what is difference between IOC & DI?
 
-Question-6:how many type of injections are there in spring?
-
-Question-7:what is component scan? how to enable this?
-
-Question-8:what is bean scope?how many types of scope are there in spring?
-
-Question-9:what is difference between singleton & prototype,session & global session,request & prototype?
-
-Question-10:if a prototype bean define in singleton bean then how you will get mulltiple instances of prototype bean?(Ans-method injection)
-
-Question-11:Tell the architecture of MVC?
-
-Question-12:why MVC is introduced?
-
-Question-13:what are controllers in spring?
 
 Question-14:what is DispatcherServlet?
+	The DispatcherServlet is the front controller in Spring web applications. It's used to create web applications and REST services in Spring MVC. 
+	In a traditional Spring web application, this servlet is defined in the web.xml file
 
 Question-15:what is HandlerMapping?
+	HandlerMapping is an interface that defines a mapping between requests and handler objects. While Spring MVC framework provides 
+	some ready-made implementations, the interface can be implemented by developers to provide customized mapping strategy
 
 Question-16:what is ViewResolver?
+	Spring uses ViewResolver to translate the view names in @Controller to actual View. The Spring auto-configuration 
+	(in this case WebMvcAutoConfiguration) will add few default ViewResolvers in your context. One of such view resolver is InternalResourceViewResolver . 
+	This defines prefix and suffix to the view name
 
 
 
