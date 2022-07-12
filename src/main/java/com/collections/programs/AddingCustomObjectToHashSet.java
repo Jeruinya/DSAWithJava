@@ -1,6 +1,10 @@
 package com.collections.programs;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -62,7 +66,7 @@ class Student {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", address=" + address + "]";
+		return id + " " + name + " " + address;
 	}
 
 }
@@ -82,11 +86,32 @@ public class AddingCustomObjectToHashSet {
 		set.add(e3);
 		set.add(e4);
 		set.add(e5);
+		System.out.println(set);
+
+		List<Student> list = new ArrayList<>(set);
+		System.out.println(list);
+
+		Collections.sort(list, new Mycomarator());
+		System.out.println(list);
 
 		// for (Employee employee : set) {
 		// System.out.println(employee);
 		// }
 
-		set.stream().forEach(s -> System.out.println(s));
+		// set.stream().forEach(s -> System.out.println(s));
 	}
+}
+
+class Mycomarator implements Comparator<Student> {
+
+	@Override
+	public int compare(Student s1, Student s2) {
+		if (s1.getId() > s2.getId())
+			return 1;
+		else if (s1.getId() < s2.getId())
+			return -1;
+		else
+			return 0;
+	}
+
 }

@@ -2,7 +2,7 @@ package com.collections.programs;
 
 import java.util.Stack;
 
-//Deutche bankprogram
+//Deutche bank program
 public class GenericStack {
 	int val=10;
 

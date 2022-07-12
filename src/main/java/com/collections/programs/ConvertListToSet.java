@@ -52,12 +52,13 @@ public class ConvertListToSet {
 		Set<Object> newSet = l.stream().collect(Collectors.toSet());
 		System.out.println(newSet);
 		
-		//Deutche Bank what willbe output of below program?
+		//Deutche Bank what will be output of below program?
 		OptionalInt max=IntStream.range(1, 20).filter(v->v%4==0).filter(v->v<10).max();
 		System.out.println("---------"+max);//8
 		
 		
-		//Deutsche bank what will be the output of belowprogram
+		//Deutsche bank what will be the output of below program
+		//In HashMap key can not be null but value can be null
 		Map<Integer,Object> sampleMap=new TreeMap<Integer,Object>();
 		sampleMap.put(1, null);
 		sampleMap.put(5, null);
@@ -66,17 +67,17 @@ public class ConvertListToSet {
 		sampleMap.put(4, null);
 		System.out.println("SampleMap-------"+sampleMap);
 		
-		//Deutsche bank what will be the output of belowprogram
+		//Deutsche bank what will be the output of below program
 		List<String> streamGenerated=Stream.generate( ()-> "DBOI").limit(10).collect(Collectors.toList());
 		System.out.println("stream Generated:"+streamGenerated);
 		
-		//Deutsche bank what will be the output of belowprogram
+		//Deutsche bank what will be the output of below program
 		List<List<Integer>> listOfList=Arrays.asList(Arrays.asList(1,2),Arrays.asList(5,6));
 		List<Integer> listOut=listOfList.stream().flatMap(x->x.stream()).collect(Collectors.toList());
 		System.out.println("FlatMap:"+listOut);
 		
 		System.out.println("Hello");
-		//Deutsche bank what will be the output of belowprogram
+		//Deutsche bank what will be the output of below program
 		System.out.println("---------"+IntStream.range(1, 5).reduce(2,(a,b)->a+b));
 	}
 }
