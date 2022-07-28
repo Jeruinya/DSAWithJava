@@ -46,7 +46,7 @@ public class Sub_FindMaximumSumOfSubarray {
 				-66, 67, -396, -146, -158, -264, -13, -15, -425, 58, -25, -241, 85, -82, -49, -150, -37, -493, -284,
 				-107, 93, -183, -60, -261, -310, -380 };
 		int n = A.length;
-		int sum = Integer.MIN_VALUE;
+		int sum = Integer.MIN_VALUE;// if we assign sum =0 then it will not work as there could be -ve values as well
 		int last = 0;
 		for (int i = 0; i < n; i++) {
 			last += A[i];

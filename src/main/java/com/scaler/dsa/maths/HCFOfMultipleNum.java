@@ -1,6 +1,4 @@
-package com.scaler.dsa.beginner.basic;
-
-import java.util.Scanner;
+package com.scaler.dsa.maths;
 
 /**
  * Problem Description Write a program to input an integer T and then T lines
@@ -13,26 +11,26 @@ public class HCFOfMultipleNum {
 
 	public static void main(String[] args) {
 
-		Scanner s = new Scanner(System.in);
-		int n = s.nextInt();
-		for (int i = 0; i < n; i++) {
-			int a = s.nextInt();
-			int b = s.nextInt();
-			int result = Math.min(a, b);
-			while (result > 0) {
-				if (a % result == 0 && b % result == 0)
-					break;
-				result--;
-			}
-			System.out.println(result);
-		}
-
-		System.out.println(gcd(1, 0));
+		int A = 18;
+		int B = 16;
+		System.out.println(getGCDNaive(A, B));
+		System.out.println(getGCDEfficient(A, B));
+		System.out.println(gcdMoreEfficient(A, B));
 
 	}
 
+	private static int getGCDNaive(int A, int B) {
+		int result = Math.min(A, B);
+		while (result > 0) {
+			if (A % result == 0 && B % result == 0)
+				break;
+			result--;
+		}
+		return result;
+	}
+
 	// Efficient Solution
-	public static int gcd(int a, int b) {
+	public static int getGCDEfficient(int a, int b) {
 		if (a == 0 && b != 0)
 			return b;
 		else if (b == 0 && a != 0)

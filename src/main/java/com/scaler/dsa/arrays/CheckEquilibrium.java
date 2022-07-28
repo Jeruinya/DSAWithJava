@@ -1,4 +1,5 @@
 package com.scaler.dsa.arrays;
+
 /*
 Problem Description
 You are given an array A of integers of size N.
@@ -71,8 +72,18 @@ public class CheckEquilibrium {
 				-9704, -6031, 5041, -517, 9046, 4922, 7893, -7238, -4559, 5007, -9338, 8399, 2913, 4959, 6848, 9, 5549,
 				1538, -3061, -1296, 7782, -4849, -1830, 3451, -5244, 9401, -225, 8923, -7365, -8224, -8925, 2256, 4,
 				3592, -2186, -7553, 770, -2837, 455 };
+
+		int index = equilibiriumIndex(A);
+		System.out.println(index);
+
+		int index1 = equilibiriumIndexEfficient(A);
+		System.out.println(index1);
+	}
+
+	// TC-O(N) SC-O(N)
+	public static int equilibiriumIndex(int A[]) {
 		int n = A.length;
-		int i_sum = 0, r_sum = 0;
+		int l_sum = 0, r_sum = 0;
 		int ps[] = new int[n];
 		ps[0] = A[0];
 		int index = -1;
@@ -81,15 +92,34 @@ public class CheckEquilibrium {
 			ps[i] = ps[i - 1] + A[i];
 
 		for (int i = 0; i < n; i++) {
-			if(i!=0)
-				i_sum = ps[i - 1];
+			if (i != 0)
+				l_sum = ps[i - 1];
 			r_sum = ps[n - 1] - ps[i];
-			if (i_sum == r_sum) {
+			if (l_sum == r_sum) {
 				index = i;
 				break;
 			}
 		}
-		System.out.println(index);
+		return index;
 	}
 
+//TC-O(N)  SC-O(1)
+	public static int equilibiriumIndexEfficient(int[] A) {
+		long sum1 = 0;
+		for (int i = 0; i < A.length; i++)
+			sum1 += A[i];
+		long sum2 = 0;
+		int ans = Integer.MAX_VALUE;
+		for (int i = 0; i < A.length; i++) {
+			sum1 -= A[i];
+			if (sum1 == sum2) {
+				ans = i;
+				break;
+			}
+			sum2 += A[i];
+		}
+		if (ans == Integer.MAX_VALUE)
+			ans = -1;
+		return ans;
+	}
 }

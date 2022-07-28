@@ -1,18 +1,18 @@
 package com.scaler.dsa.arrays;
 
-/**
- * Q2. Count ways to make sum of odd and even indexed elements equal by removing an array element
- * 
- * Problem Description * 
- * Given an array, arr[] of size N, the task is to find the count of array
- * indices such that removing an element from these indices makes the sum of
- * even-indexed and odd-indexed array elements equal.
- * 
- * Output Format
- *Return the count of array indices such that removing an element from these indices makes the sum of even-indexed 
- *and odd-indexed array elements equal.
- *
- *Problem Constraints
+/*
+  Q2. Count ways to make sum of odd and even indexed elements equal by removing an array element
+  
+  Problem Description * 
+  Given an array, arr[] of size N, the task is to find the count of array
+  indices such that removing an element from these indices makes the sum of
+  even-indexed and odd-indexed array elements equal.
+  
+  Output Format
+ Return the count of array indices such that removing an element from these indices makes the sum of even-indexed 
+ and odd-indexed array elements equal.
+ 
+ Problem Constraints
 1 <= n <= 105
 -105 <= A[i] <= 105
 Input Format
@@ -34,7 +34,20 @@ Removing arr[0] from the given array modifies arr[] to { 1, 1 } such that arr[0]
 Removing arr[1] from the given array modifies arr[] to { 1, 1 } such that arr[0] = arr[1] 
 Removing arr[2] from the given array modifies arr[] to { 1, 1 } such that arr[0] = arr[1] 
 Therefore, the required output is 3.
- * 
+
+Observation 1:if i remove ith index, all the indexes <i remains same.
+Observation 2: if i remove ith index, all the indexes > i :
+	-even indexed element become odd index element
+	-odd indexed elements become even indexed elements.
+
+sum of even to the left of i  =pse[i-1]
+sum of even indexed elements to the right=sum of all the odd indexed elements to the right i.e pso[n-1]-pso[i]
+
+so sum of all the even indexed elements= pse[i-1]+pso[n-1]-pso[i]
+
+sum of odd indexed to the left = pso[i-1]
+sum of odd indexed to the right= pse[n-1]-pse[i]
+ 
  */
 
 public class CountNumberOfSpecialIndexesInArrayT {
