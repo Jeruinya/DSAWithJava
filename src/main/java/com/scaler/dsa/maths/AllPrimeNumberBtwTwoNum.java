@@ -1,4 +1,4 @@
-package com.scaler.dsa.beginner.basic;
+package com.scaler.dsa.maths;
 
 import java.util.Scanner;
 
@@ -21,10 +21,8 @@ public class AllPrimeNumberBtwTwoNum {
 	}
 
 	public static boolean isPrime(int a) {
-		if (a <= 1)
-			return false;
-		for (int i = 2; i <a; i++) {
-			if (a % i == 0)
+		for (int i = 2; i*i<=a; i++) {
+			if (a % i == 0) 
 				return false;
 		}
 		return true;

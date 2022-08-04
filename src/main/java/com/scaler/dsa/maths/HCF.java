@@ -7,7 +7,7 @@ package com.scaler.dsa.maths;
  * <= 1000000
  */
 
-public class HCFOfMultipleNum {
+public class HCF {
 
 	public static void main(String[] args) {
 
@@ -15,8 +15,17 @@ public class HCFOfMultipleNum {
 		int B = 16;
 		System.out.println(getGCDNaive(A, B));
 		System.out.println(getGCDEfficient(A, B));
-		System.out.println(gcdMoreEfficient(A, B));
+		System.out.println(gcdEuclides(A, B));
+		int gcd = getGCDRecursive(A, B);
+		System.out.println(gcd);
 
+	}
+
+	private static int getGCDRecursive(int a, int b) {
+		if (a == 0)
+			return b;
+
+		return getGCDRecursive(b % a, a);
 	}
 
 	private static int getGCDNaive(int A, int B) {
@@ -43,10 +52,10 @@ public class HCFOfMultipleNum {
 		}
 		return a;
 	}
-
-	public static int gcdMoreEfficient(int a, int b) {
+	//TC-O(logn)
+	public static int gcdEuclides(int a, int b) {
 		int a1, b1;
-		while (a > 0) {
+		while (a != 0) {
 			a1 = b % a;
 			b1 = a;
 			a = a1;
