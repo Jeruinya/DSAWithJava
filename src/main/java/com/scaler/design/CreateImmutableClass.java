@@ -14,9 +14,9 @@ import java.util.Map;
  */
 
 final class Employee {
-	private int empId;
-	private String empName;
-	private List<String> address;
+	private final int empId;
+	private final String empName;
+	private final List<String> address;
 
 	public Employee(int empId, String empName, List<String> address) {
 		super();

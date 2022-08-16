@@ -58,9 +58,9 @@ class Employee implements Comparable {
 		Employee e = (Employee) o;
 		int empId2 = e.getEmpId();
 		if (empId1 > empId2)
-			return -1;
-		else if (empId1 < empId2)
 			return 1;
+		else if (empId1 < empId2)
+			return -1;
 		else
 			return 0;
 	}
