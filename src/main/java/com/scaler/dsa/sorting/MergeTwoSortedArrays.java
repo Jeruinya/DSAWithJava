@@ -36,61 +36,81 @@ Explanation 2:
 public class MergeTwoSortedArrays {
 
 	public static void main(String[] args) {
-		int A[]= {-4,3};
-		int B[]= {-2,-2};
-		int [] res=combineAndSort(A,B);
+		int A[] = { -4, 3 };
+		int B[] = { -2, -2 };
+		int[] res = combineAndSort(A, B);
 		System.out.println(Arrays.toString(res));
 
-		int A1[]= {-4,3};
-		int B1[]= {-2,-2};
-		//int [] res1=combineAndSortEff(A1,B1);
-		//System.out.println(Arrays.toString(res1));
+		int A1[] = { -4, 3 };
+		int B1[] = { -2, -2 };
+		int n=A.length;
+		int m=B.length;
+		int result[]=new int[n+m];
+		mergeArrays(A1,B1,n,m,result);
+		System.out.println(Arrays.toString(result));
+
 
 	}
-	
-	 public static int[] combineAndSort(final int[] A, final int[] B) {
 
-	        int res[]=new int[A.length+B.length];
+	public static int[] combineAndSort(final int[] A, final int[] B) {
 
-	        for(int i=0;i<A.length;i++)
-	            res[i]=A[i];
-	        int k=0;
-	        for(int i=A.length;i<res.length;i++)
-	            res[i]=B[k++];
+		int res[] = new int[A.length + B.length];
 
-	        Arrays.sort(res);
+		for (int i = 0; i < A.length; i++)
+			res[i] = A[i];
+		int k = 0;
+		for (int i = A.length; i < res.length; i++)
+			res[i] = B[k++];
 
-	        return res;
-	    }
-	 
-	 public static ArrayList < Integer > combineAndSortEff(final List < Integer > A, final List < Integer > B) {
-	        int m = A.size(), n = B.size();
-	        ArrayList < Integer > res = new ArrayList < Integer > ();
-	        if (A == null && B == null)
-	            return null;
-	        if (A == null) {
-	            for (int i = 0; i < n; i++)
-	                res.add(B.get(i));
-	            return res;
-	        }
-	        if (B == null) {
-	            for (int i = 0; i < m; i++)
-	                res.add(A.get(i));
-	            return res;
-	        }
-	        int i, j;
-	        int k = 0;
-	        for (i = 0, j = 0; k < m + n; k++) {
-	            if (i >= m)
-	                res.add(B.get(j++));
-	            else if (j >= n)
-	                res.add(A.get(i++));
-	            else if (A.get(i) <= B.get(j))
-	                res.add(A.get(i++));
-	            else
-	                res.add(B.get(j++));
-	        }
-	        return res;
-	    }
+		Arrays.sort(res);
+
+		return res;
+	}
+
+	public static void mergeArrays(int[] arr1, int[] arr2, int n1, int n2, int[] arr3) {
+		int i = 0, j = 0, k = 0;
+
+		while (i < n1 && j < n2) {
+			if (arr1[i] < arr2[j])
+				arr3[k++] = arr1[i++];
+			else
+				arr3[k++] = arr2[j++];
+		}
+		while (i < n1)
+			arr3[k++] = arr1[i++];
+
+		while (j < n2)
+			arr3[k++] = arr2[j++];
+	}
+
+	public static ArrayList<Integer> combineAndSortEff(final List<Integer> A, final List<Integer> B) {
+		int m = A.size(), n = B.size();
+		ArrayList<Integer> res = new ArrayList<Integer>();
+		if (A == null && B == null)
+			return null;
+		if (A == null) {
+			for (int i = 0; i < n; i++)
+				res.add(B.get(i));
+			return res;
+		}
+		if (B == null) {
+			for (int i = 0; i < m; i++)
+				res.add(A.get(i));
+			return res;
+		}
+		int i, j;
+		int k = 0;
+		for (i = 0, j = 0; k < m + n; k++) {
+			if (i >= m)
+				res.add(B.get(j++));
+			else if (j >= n)
+				res.add(A.get(i++));
+			else if (A.get(i) <= B.get(j))
+				res.add(A.get(i++));
+			else
+				res.add(B.get(j++));
+		}
+		return res;
+	}
 
 }

@@ -14,6 +14,32 @@ A%M-B%M=0
 (A%M-B%M)%M=0
 (A-B)%M=0
 so M is (A-B)
+
+
+there could be three cases:
+1:A>B
+2:B>A 
+3:A=B
+
+1: A>B
+
+B=B
+B=A-(A-B)
+B%A(A-B)= A%(A-B)-(A-B)%(A-B)
+B%(A-B)=A%(A-B)
+
+So to make both equal the M value should be A-B
+
+1: B>A
+
+A=A
+A=B-(B-A)
+A%(B-A)= B%(B-A)-(B-A)%(B-A)
+A%(B-A)=B%(B-A)
+
+So to make both equal the M value should be B-A
+
+
  */
 public class AAndBAndModulo {
 
