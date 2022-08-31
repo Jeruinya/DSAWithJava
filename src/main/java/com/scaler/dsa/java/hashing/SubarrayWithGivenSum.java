@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 /*
+subarray with given sum
 Problem Description
 Given an array of positive integers A and an integer B, find and return first continuous subarray which adds to B.
 If the answer does not exist return an array with a single element "-1".

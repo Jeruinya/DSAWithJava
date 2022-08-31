@@ -4,7 +4,8 @@ package com.scaler.dsa.arrays;
 Problem Description
 There are A beggars sitting in a row outside a temple. Each beggar initially has an empty pot. 
 When the devotees come to the temple, they donate some amount of coins to these beggars. 
-Each devotee gives a fixed amount of coin(according to their faith and ability) to some K beggars sitting next to each other.
+Each devotee gives a fixed amount of coin(according to their faith and ability) to some K beggars 
+sitting next to each other.
 
 Given the amount P donated by each devotee to the beggars ranging from L to R index, 
 where 1 <= L <= R <= A, find out the final amount of money in each beggar's pot at the end of the day, 
@@ -62,8 +63,7 @@ public class BeggarsOutsideTemple {
 
 	public static int[] solveEfficient(int A, int[][] B) {
 		int[] coins = new int[A];
-		for (int i = 0; i < A; i++)
-			coins[i] = 0;
+		
 		for (int i = 0; i < B.length; i++) {
 			int leftIndex = B[i][0] - 1, rightIndex = B[i][1] - 1;
 			int donationByDevotee = B[i][2];

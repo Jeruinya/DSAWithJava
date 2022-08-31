@@ -63,4 +63,23 @@ public class FindAllTheCommonElementsInTwoArrays {
 		arr = l.stream().filter(t -> t != null).mapToInt(t -> t).toArray();
 		System.out.println(Arrays.toString(arr));
 	}
+
+	public static ArrayList<Integer> solve(ArrayList<Integer> A, ArrayList<Integer> B) {
+		ArrayList<Integer> l = new ArrayList<>();
+		HashMap<Integer, Integer> hm = new HashMap<>();
+		for (int i = 0; i < A.size(); i++) {
+			if (hm.containsKey(A.get(i)))
+				hm.put(A.get(i), hm.get(A.get(i)) + 1);
+			else
+				hm.put(A.get(i), 1);
+		}
+		for (int i = 0; i < B.size(); i++) {
+			if (hm.containsKey(B.get(i)) && hm.get(B.get(i)) > 0) {
+				l.add(B.get(i));
+				hm.put(B.get(i), hm.get(B.get(i)) - 1);
+			}
+		}
+
+		return l;
+	}
 }

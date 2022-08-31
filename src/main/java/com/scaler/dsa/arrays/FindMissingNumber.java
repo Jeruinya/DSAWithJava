@@ -6,7 +6,8 @@ import java.util.HashSet;
 import java.util.List;
 
 /*
-Given a list of numbers containing every number from 1 to N. except one number which is missing. find the missing number.
+Given a list of numbers containing every number from 1 to N. except one number which is missing. 
+find the missing number.
 Numbers are unordered and no duplicates there.
  */
 public class FindMissingNumber {

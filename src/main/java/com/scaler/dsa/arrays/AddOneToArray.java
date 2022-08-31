@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 /*
 Problem Description
-Given a non-negative number represented as an array of digits, add 1 to the number ( increment the number represented by the digits ).
+Given a non-negative number represented as an array of digits, add 1 to the number 
+( increment the number represented by the digits ).
 The digits are stored such that the most significant digit is at the head of the list.
 NOTE: Certain things are intentionally left unclear in this question which you should practice asking the interviewer. 
 For example: for this problem, the following are some good questions to ask :
@@ -27,6 +28,8 @@ Output 1:[1, 2, 4]
 Explanation 1:
 Given vector is [1, 2, 3].
 The returned vector should be [1, 2, 4] as 123 + 1 = 124.
+
+A={0, 3, 7, 6, 4, 0, 5, 5, 5}
  */
 public class AddOneToArray {
 

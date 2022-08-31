@@ -33,6 +33,7 @@ public class CheckANumIsPerfectSquare {
 		}
 	}
 
+	//TC-O(n)
 	public static boolean isPerfectSquareNaive(int a) {
 		for (int i = 1; i < a; i++) {
 			if (i * i == a)
@@ -41,6 +42,7 @@ public class CheckANumIsPerfectSquare {
 		return false;
 	}
 
+	//TC-O(root n)
 	public static boolean isPerfectSquareEfficient(int a) {
 		for (int i = 1; i * i <= a; i++) 
 			if (i* i == a)

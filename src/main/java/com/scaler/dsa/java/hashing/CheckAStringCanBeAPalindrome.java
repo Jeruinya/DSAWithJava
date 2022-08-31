@@ -44,6 +44,7 @@ public class CheckAStringCanBeAPalindrome {
 		String str = "inttnikjmjbemrberk";
 		int res = checkPalindrome(str);
 		System.out.println(res);
+		System.out.println(checkPalindromeEff(str));
 	}
 
 	private static int checkPalindrome(String A) {
@@ -54,9 +55,9 @@ public class CheckAStringCanBeAPalindrome {
 			else
 				hm.put(A.charAt(i), 1);
 		}
-		int c=0;
-		for(Map.Entry<Character, Integer> h:hm.entrySet()) {
-			if(h.getValue()%2!=0)
+		int c = 0;
+		for (Map.Entry<Character, Integer> h : hm.entrySet()) {
+			if (h.getValue() % 2 != 0)
 				c++;
 		}
 		int temp = 0;
@@ -69,4 +70,16 @@ public class CheckAStringCanBeAPalindrome {
 		return 1;
 	}
 
+	public static int checkPalindromeEff(String A) {
+		int[] freq = new int[26];
+		for (int i = 0; i < A.length(); i++)
+			freq[A.charAt(i) - 97]++;
+		int odd = 0;
+		for (int a : freq)
+			if (a % 2 == 1)
+				odd++;
+		if (odd > 1)
+			return 0;
+		return 1;
+	}
 }

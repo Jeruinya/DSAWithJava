@@ -2,11 +2,14 @@ package com.scaler.dsa.beginner.basic;
 
 import java.util.Scanner;
 
-/**
- * Enter month and year and telltell how many days are there in the month.
- * Months are denoted as follows: January : 1 February : 2 March : 3 April : 4
- * May : 5 June : 6 July : 7 August : 8 September : 9 October : 10 November : 11
- * December : 12
+/*
+  Enter month and year and telltell how many days are there in the month.
+  Months are denoted as follows: January : 1 February : 2 March : 3 April : 4
+  May : 5 June : 6 July : 7 August : 8 September : 9 October : 10 November : 11
+  December : 12
+  
+Leap year: if a year is divisible by 400 or its divisible by 4 but not divisible by 100 then that year is leap year/
+  			 A leap year has 29 days in the month of February and non leap year has 28 days in February.
  */
 
 public class NumberOfDaysInMonth {

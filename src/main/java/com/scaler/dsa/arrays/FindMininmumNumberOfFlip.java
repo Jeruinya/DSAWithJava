@@ -48,7 +48,7 @@ public class FindMininmumNumberOfFlip {
 	public static int countFlipsEfficient(int[] A, int n) {
 		int count = 0;
 		for (int i = 0; i < n; i++) {
-			if (A[i] == 0 && count % 2 == 0 || A[i] == 1 && count % 2 == 1)
+			if ((A[i] == 0 && count % 2 == 0) || (A[i] == 1 && count % 2 == 1))
 				count++;
 		}
 		return count;

@@ -12,24 +12,18 @@ package com.scaler.dsa.arrays;
  * 
  * If it is not possible to choose 3 such trees return -1.
  * 
- * Input 2:
- A = [1, 6, 4, 2, 6, 9]
- B = [2, 5, 7, 3, 2, 7]
- 
- output: 7
- 
- Criteria i- i<j<k   	ii: Ai<Aj<Ak 		iii-Bi+Bj+Bk should be minimum.
- 
- A[]=[1 2 4 6]
- 	  1 2 3 4
- B[]=[1 9 1 2]
-indexes--> {1,2,3}  		{1,3,4}			{1,2,4} 		{2,3,4}
-A values-->(1,2,4)  		(1,4,6)			(1,2,6)			(2,4,6)
- B value--> (1,9,1)--11	 	(1,1,2)	--4		(1,9,2)	--12	(9,1,2)-->12
- Here minimum value of Bi+Bj+Bk==>4
- 
- 
-Indexes can be non contiguous .
+ * Input 2: A = [1, 6, 4, 2, 6, 9] B = [2, 5, 7, 3, 2, 7]
+ * 
+ * output: 7
+ * 
+ * Criteria i- i<j<k ii: Ai<Aj<Ak iii-Bi+Bj+Bk should be minimum.
+ * 
+ * A[]=[1 2 4 6] 1 2 3 4 B[]=[1 9 1 2] indexes--> {1,2,3} {1,3,4} {1,2,4}
+ * {2,3,4} A values-->(1,2,4) (1,4,6) (1,2,6) (2,4,6) B value--> (1,9,1)--11
+ * (1,1,2) --4 (1,9,2) --12 (9,1,2)-->12 Here minimum value of Bi+Bj+Bk==>4
+ * 
+ * 
+ * Indexes can be non contiguous .
  */
 
 public class ChristmasTreeProblem {
@@ -38,6 +32,11 @@ public class ChristmasTreeProblem {
 
 		int A[] = { 1, 3, 5 };
 		int B[] = { 1, 2, 3 };
+		System.out.println(solve(A, B));
+		System.out.println(solve1(A, B));
+	}
+
+	public static int solve1(int[] A, int[] B) {
 		int n = A.length;
 		int final_ans = Integer.MAX_VALUE;
 		for (int j = 1; j < n - 1; j++) {
@@ -61,8 +60,31 @@ public class ChristmasTreeProblem {
 		}
 		if (final_ans == Integer.MAX_VALUE)
 			final_ans = -1;
+		return final_ans;
 
-		System.out.println(final_ans);
+	}
 
+	public static int solve(int[] A, int[] B) {
+		final int inf = (int) (1e9 + 10);
+		int n = A.length;
+		int ans = inf;
+		for (int i = 0; i < n; i++) {
+			int left_min = inf, right_min = inf;
+			for (int j = 0; j < i; j++) {
+				if (A[j] < A[i]) {
+					left_min = Math.min(left_min, B[j]);
+				}
+			}
+			for (int j = i + 1; j < n; j++) {
+				if (A[j] > A[i]) {
+					right_min = Math.min(right_min, B[j]);
+				}
+			}
+			int temp_ans = left_min + B[i] + right_min;
+			ans = Math.min(ans, temp_ans);
+		}
+		if (ans == inf)
+			ans = -1;
+		return ans;
 	}
 }

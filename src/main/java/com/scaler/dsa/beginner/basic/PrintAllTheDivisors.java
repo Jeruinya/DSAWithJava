@@ -19,6 +19,7 @@ public class PrintAllTheDivisors {
 		for (i = 1; i * i <n; i++) 
 			if (n % i == 0) 
 					System.out.print(i + " ");
+		i=i-1;
 		for(;i>=1;i--)
 			if(n%i==0)
 				System.out.print(n/i+" ");

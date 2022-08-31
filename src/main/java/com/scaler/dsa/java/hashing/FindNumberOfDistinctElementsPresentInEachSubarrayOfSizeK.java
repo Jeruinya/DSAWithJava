@@ -1,9 +1,9 @@
 package com.scaler.dsa.java.hashing;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 
 /*
@@ -23,60 +23,67 @@ public class FindNumberOfDistinctElementsPresentInEachSubarrayOfSizeK {
 
 	public static void main(String[] args) {
 		int A[] = { 2, 4, 3, 8, 3, 9, 4, 9, 4, 10 }, k = 4;
-		List<Integer> l = findNumberOfDistinctElementsInSubarrayNaive(A, k);
-		System.out.println(l);
+		int res[]=dNumsNaive(A,k);
+		System.out.println(Arrays.toString(res));
 
-		List<Integer> l1 = findNumberOfDistinctElementsInSubarrayEfficient(A, k);
-		System.out.println(l1);
+		ArrayList<Integer> list = new ArrayList<>();
+		list.add(1);
+		list.add(2);
+		list.add(1);
+		list.add(3);
+		list.add(4);
+		list.add(3);
+		int B = 3;
+		ArrayList<Integer> res1 = dNumsEff(list, B);
+		System.out.println(res1);
 
 	}
 
-	private static List<Integer> findNumberOfDistinctElementsInSubarrayEfficient(int[] A, int k) {
-
-		List<Integer> l = new ArrayList<>();
+	public static ArrayList<Integer> dNumsEff(ArrayList<Integer> A, int k) {
+		ArrayList<Integer> l = new ArrayList<>();
 		Map<Integer, Integer> hm = new HashMap<>();
 		int s = 0, e = k - 1;
 		for (int i = 0; i < k; i++) {
-			if (hm.containsKey(A[i]))
-				hm.put(A[i], hm.get(A[i]) + 1);
+			if (hm.containsKey(A.get(i)))
+				hm.put(A.get(i), hm.get(A.get(i)) + 1);
 			else
-				hm.put(A[i], 1);
+				hm.put(A.get(i), 1);
 		}
 		s = 1;
 		e = k;
 		l.add(hm.size());
 
-		while (e < A.length) {
-			hm.put(A[s - 1], hm.get(A[s - 1]) - 1);
+		while (e < A.size()) {
+			hm.put(A.get(s - 1), hm.get(A.get(s - 1)) - 1);
 
-			if ((hm.get(A[s - 1]) == 0))
-				hm.remove(A[s - 1]);
+			if (hm.get(A.get(s - 1)) == 0)
+				hm.remove(A.get(s - 1));
 
-			if (hm.containsKey(A[e]))
-				hm.put(A[e], hm.get(A[e]) + 1);
+			if (hm.containsKey(A.get(e)))
+				hm.put(A.get(e), hm.get(A.get(e)) + 1);
 			else
-				hm.put(A[e], 1);
+				hm.put(A.get(e), 1);
 			l.add(hm.size());
 			s++;
 			e++;
 		}
 		return l;
+
 	}
 
 	// O(N^2) and O(N)
-	private static List<Integer> findNumberOfDistinctElementsInSubarrayNaive(int[] A, int k) {
-		ArrayList<Integer> l = new ArrayList<>();
+	public static int[] dNumsNaive(int[] A, int B) {
 		int n = A.length;
-		int s = 0, e = k - 1;
-		while (e < n) {
+		int ans[] = new int[n - B + 1];
+
+		for (int i = 0; i < (n - B + 1); i++) {
 			HashSet<Integer> hs = new HashSet<>();
-			for (int i = s; i <= e; i++)
-				hs.add(A[i]);
-			l.add(hs.size());
-			s++;
-			e++;
+			for (int j = i; j < i + B; j++)
+				hs.add(A[j]);
+			ans[i] = hs.size();
+
 		}
-		return l;
+		return ans;
 	}
 
 }

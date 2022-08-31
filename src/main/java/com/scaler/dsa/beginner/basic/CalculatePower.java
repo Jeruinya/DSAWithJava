@@ -22,9 +22,8 @@ public class CalculatePower {
 	private static long powerEfficient(long a, int n) {
 		long res = 1;
 		while (n > 0) {
-			if (n % 2 != 0) {
+			if (n % 2 != 0) 
 				res = res * a;
-			}
 			a = a * a;
 			n = n / 2;
 		}

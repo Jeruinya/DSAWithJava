@@ -9,28 +9,46 @@ We will use the integers 0, 1, and 2 to represent red, white, and blue, respecti
 Note: Using the library sort function is not allowed.
  */
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.Arrays;
 
 class SortByColour {
 
 	public static void main(String[] args) {
-		int A[] = {0 ,1 ,2, 0, 1, 2};
-		List<Integer> temp = new ArrayList<>();
+		int A[] = { 0, 1, 2, 0, 1, 2 };
+		ArrayList<Integer> temp = new ArrayList<>();
 
 		for (int i : A)
 			temp.add(i);
 
-		Collections.sort(temp,new Mycomp1());;
-		System.out.println(temp);
-	}
-}
+		Arrays.sort(A);
+		System.out.println(Arrays.toString(A));//nlogn
+		System.out.println(sortColors(temp));
 
-class Mycomp1 implements Comparator<Integer> {
-	@Override
-	public int compare(Integer i, Integer j) {
-		return i.compareTo(j);
+	}
+
+	//TC-)--O(n)
+	public static ArrayList<Integer> sortColors(ArrayList<Integer> A) {
+
+		int zero = 0;
+		int two = A.size() - 1;
+
+		for (int i = 0; i <= two;) {
+			if (A.get(i) == 0) {
+				int temp = A.get(zero);
+				A.set(zero, 0);
+				A.set(i, temp);
+				zero++;
+				i++;
+			} else if (A.get(i) == 2) {
+				int temp = A.get(two);
+				A.set(two, 2);
+				A.set(i, temp);
+				two--;
+			} else {
+				i++;
+			}
+		}
+		return A;
 	}
 
 }
