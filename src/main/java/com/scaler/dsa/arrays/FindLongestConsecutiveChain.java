@@ -22,15 +22,14 @@ public class FindLongestConsecutiveChain {
 		int A[] = { 21, 3, 5, 7, 4, 1, 2, 6, 9, 10, 12, 11, 13, 20 };
 
 		List<Integer> list = Arrays.stream(A).boxed().collect(Collectors.toList());
-		int longestChain = findLongestConsecutiveChain(list);
-		System.out.println(longestChain);
 
-		int longestChain1 = findLongestConsecutiveChainEfficient(A);
-		System.out.println(longestChain1);
+		System.out.println(findLongestConsecutiveChain(list));
+
+		System.out.println(findLongestConsecutiveChainEfficient(A));
 
 	}
-	
-	//TC-O(N) SC-O(N)
+
+	// TC-O(N) SC-O(N)
 	private static int findLongestConsecutiveChainEfficient(int[] A) {
 
 		Set<Integer> hs = new HashSet<>();
