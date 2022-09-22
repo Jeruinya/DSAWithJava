@@ -18,7 +18,11 @@ public class StreamUtilities {
 		
 		int min=1;
 		int max=26;
-		System.out.println(random.nextInt(max - min) + min);
+		int num=random.nextInt((max - min) + min);
+		System.out.println(num);
+		
+		
+		random.ints(1, 100).limit(3).forEach(System.out::println);
 
 	}
 

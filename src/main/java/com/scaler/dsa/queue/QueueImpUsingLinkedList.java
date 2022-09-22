@@ -14,6 +14,7 @@ class QNode {
 public class QueueImpUsingLinkedList {
 
 	QNode front, rear;
+	int size=0;
 
 	public QueueImpUsingLinkedList() {
 		this.front = null;
@@ -30,15 +31,31 @@ public class QueueImpUsingLinkedList {
 			rear.next = nn;
 			rear = nn;
 		}
+		size++;
 	}
 
 	public void dequeue() {
-		// QNode temp = front;
 		if (front == null)
 			return;
 		front = front.next;
 		if (front == null)
 			rear = null;
+		size--;
+	}
+	public int getSize() {
+		return size;
+	}
+	
+	public boolean isEmpty() {
+		return size==0;
+	}
+	
+	public int getFront() {
+		return front.key;
+	}
+	
+	public int getRear() {
+		return rear.key;
 	}
 
 	public static void main(String[] args) {

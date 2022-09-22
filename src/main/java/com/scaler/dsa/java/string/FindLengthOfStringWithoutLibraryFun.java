@@ -3,7 +3,7 @@ package com.scaler.dsa.java.string;
 public class FindLengthOfStringWithoutLibraryFun {
 
 	public static void main(String[] args) {
-		String str = "Welcome to Allstate";
+		String str = "Welcome";
 		System.out.println(lengthOfString(str));
 		System.out.println(lengthOfString1(str));
 

@@ -72,6 +72,8 @@ public class AddingCustomObjectAsKeyToHashMap {
 		map.put(one, one.getname());
 		map.put(two, two.getname());
 		map.put(three, two.getname());
+		
+		System.out.println(map);
 
 		one.setname("Not Geeks1");
 		two.setname("Not Geeks2");

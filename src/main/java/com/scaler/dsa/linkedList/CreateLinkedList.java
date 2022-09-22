@@ -52,8 +52,7 @@ public class CreateLinkedList {
 
 	public static void insert_node(int position, int value) {
 		if (position >= 1 && position <= size_of_ll + 1) {
-			Node temp = new Node();
-			temp.data = value;
+			Node temp = new Node(value);
 			if (position == 1) {
 				temp.next = root;
 				root = temp;
