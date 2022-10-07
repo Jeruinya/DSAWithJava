@@ -21,7 +21,7 @@ class Student1 {
 		return this.name;
 	}
 
-	public int getmarks() {
+	public int getsetRollno() {
 		return this.rollno;
 	}
 
@@ -29,7 +29,7 @@ class Student1 {
 		this.name = name;
 	}
 
-	public void setmarks(int rollno) {
+	public void setRollno(int rollno) {
 		this.rollno = rollno;
 	}
 
@@ -77,6 +77,8 @@ public class AddingCustomObjectAsKeyToHashMap {
 
 		one.setname("Not Geeks1");
 		two.setname("Not Geeks2");
+		
+		System.out.println(map.get(one));
 
 		System.out.println(map.get(one));
 

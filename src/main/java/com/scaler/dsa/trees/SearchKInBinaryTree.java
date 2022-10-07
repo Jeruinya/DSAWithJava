@@ -1,34 +1,46 @@
 package com.scaler.dsa.trees;
 
+/*
+We can search an node in tree using four ways:
+1- Inorder -Left Root Right
+2- Preorder- Root Left Right
+3- post order- Left Right Root.
+4-Level orde traversal-Level wise
+ */
 public class SearchKInBinaryTree {
-	TreeNode root;
+	static TreeNode root;
 
 	public static void main(String[] args) {
-		SearchKInBinaryTree tree = new SearchKInBinaryTree();
-		tree.root = new TreeNode(1);
-		tree.root.left = new TreeNode(2);
-		tree.root.right = new TreeNode(3);
-		tree.root.left.left = new TreeNode(4);
-		tree.root.left.right = new TreeNode(5);
+		root = new TreeNode(1);
+		root.left = new TreeNode(2);
+		root.right = new TreeNode(3);
+		root.left.left = new TreeNode(4);
+		root.left.right = new TreeNode(5);
 
-		tree.isKpresent();
+		System.out.println(preorder(root,5));
+		System.out.println(search(root,5));
 	}
 
-	private void isKpresent() {
-		int k = 5;
-		boolean flag = inorder(root, k);
-		System.out.println(flag);
+
+	private static boolean search(TreeNode root, int T) {
+		if(root==null)
+			return false;
+		if(root.val==T || search(root.left, T)|| search(root.right, T))
+			return true;
+		
+		return false;
 	}
 
-	private boolean inorder(TreeNode root, int k) {
+
+	private static boolean preorder(TreeNode root, int k) {
 		if (root == null)
 			return false;
-		if (root.key == k)
+		if (root.val == k)
 			return true;
-		boolean f1 = inorder(root.left, k);
+		boolean f1 = preorder(root.left, k);
 		if (f1 == true)
 			return true;
-		boolean f2 = inorder(root.right, k);
+		boolean f2 = preorder(root.right, k);
 
 		if (f2 == true)
 			return true;

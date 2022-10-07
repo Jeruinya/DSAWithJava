@@ -49,7 +49,7 @@ public class ConvertListToSet {
 
 		// Converting to set using stream
 		List<Integer> l = Arrays.asList(1, 2, 3, 4, 5, 4, 4, 5, 6, 1, 2, 3);
-		Set<Object> newSet = l.stream().collect(Collectors.toSet());
+		Set<Integer> newSet = l.stream().collect(Collectors.toSet());
 		System.out.println(newSet);
 		
 		//Deutche Bank what will be output of below program?

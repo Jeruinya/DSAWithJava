@@ -86,8 +86,12 @@ public class AddingCustomObjectToHashSet {
 		set.add(e3);
 		set.add(e4);
 		set.add(e5);
+		
 		System.out.println(set);
-
+		
+		e1.setId(100001);
+		System.out.println(set);
+		
 		List<Student> list = new ArrayList<>(set);
 		System.out.println(list);
 

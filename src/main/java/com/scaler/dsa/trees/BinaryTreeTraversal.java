@@ -13,7 +13,7 @@ class BinaryTreeTraversal {
 
 		printPostorder(node.left);
 		printPostorder(node.right);
-		System.out.print(node.key + " ");
+		System.out.print(node.val + " ");
 	}
 
 	void printInorder(TreeNode node) {
@@ -21,7 +21,7 @@ class BinaryTreeTraversal {
 			return;
 
 		printInorder(node.left);
-		System.out.print(node.key + " ");
+		System.out.print(node.val + " ");
 		printInorder(node.right);
 	}
 
@@ -29,7 +29,7 @@ class BinaryTreeTraversal {
 		if (node == null)
 			return;
 
-		System.out.print(node.key + " ");
+		System.out.print(node.val + " ");
 		printPreorder(node.left);
 		printPreorder(node.right);
 	}
@@ -56,7 +56,7 @@ class BinaryTreeTraversal {
 		if (root == null)
 			return 0;
 
-		return root.key + sumOfNodes(root.left) + sumOfNodes(root.right);
+		return root.val + sumOfNodes(root.left) + sumOfNodes(root.right);
 	}
 
 	// Driver method

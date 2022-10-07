@@ -79,7 +79,6 @@ public class MaximumRectangleIn2DArray {
 		for (i = 0; i < m; i++) {
 			res = Math.max(res, maxRect(count[i]));
 		}
-
 		return res;
 
 	}

@@ -42,8 +42,37 @@ Explanation 2:
 public class CountAllSetBitsFrom1ToA {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		System.out.println(countSetBits(3));
+		System.out.println(countAllTheSetbits(3));
 
 	}
 
+	public static int countSetBits(int A) {
+		int count = 0;
+		for (int i = 1; i <= A; i++)
+			count = count + countNumberOfSetBitsEfficient(i);
+
+		return count;
+	}
+
+	private static int countNumberOfSetBitsEfficient(int n) {
+		int c = 0;
+		while (n > 0) {
+			if ((n & 1) == 1)
+				c++;
+			n = n / 2;
+		}
+		return c;
+	}
+	
+	public  static int countAllTheSetbits(int A) {
+        long N = A + 1, mod = 1000*1000*1000 + 7;
+        long ans = 0, pow2 = 1;
+        for(int i = 0; i < 32; i++) {
+            ans += ((N / (pow2 << 1)) * pow2)%mod + Math.max(0, N % (pow2 << 1) - pow2);
+            ans %= mod;
+            pow2 <<= 1;
+        }
+        return (int)ans;
+    }
 }

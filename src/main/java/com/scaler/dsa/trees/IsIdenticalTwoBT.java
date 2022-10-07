@@ -46,7 +46,7 @@ public class IsIdenticalTwoBT {
 			return 0;
 		if (A != null && B == null)
 			return 0;
-		if (A.key == B.key && isSameTree(A.left, B.left) == 1 && isSameTree(A.right, B.right) == 1)
+		if (A.val == B.val && isSameTree(A.left, B.left) == 1 && isSameTree(A.right, B.right) == 1)
 			return 1;
 
 		return 0;

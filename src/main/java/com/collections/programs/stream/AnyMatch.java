@@ -9,8 +9,9 @@ public class AnyMatch {
 			    Stream.of("d2", "a2", "b1", "b3", "c")
 			        .filter(s -> s.startsWith("a"));
 
-			stream.anyMatch(s -> true);    // ok
-			stream.forEach(System.out::printf);
+			boolean b=stream.anyMatch(s -> true);    
+			System.out.println(b);
+			//stream.forEach(System.out::printf);
 			//stream.noneMatch(s -> true);   // exception
 	}
 

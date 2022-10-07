@@ -64,7 +64,7 @@ public class CheckIfBTIsSymmetric {
 		if (root1 == null || root2 == null)
 			return false;
 
-		if (root1.key != root2.key)
+		if (root1.val != root2.val)
 			return false;
 		return fn(root1.right, root2.left) && fn(root1.left, root2.right);
 	}

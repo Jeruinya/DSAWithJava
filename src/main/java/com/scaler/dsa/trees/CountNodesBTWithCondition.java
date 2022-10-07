@@ -44,8 +44,8 @@ public class CountNodesBTWithCondition {
 	public int countNodes(TreeNode root, int max) {
 		if (root == null)
 			return 0;
-		if (root.key > max) {
-			max = root.key;
+		if (root.val > max) {
+			max = root.val;
 			count++;
 		}
 		countNodes(root.left, max);

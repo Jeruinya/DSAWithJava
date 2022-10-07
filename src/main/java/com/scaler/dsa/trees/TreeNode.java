@@ -1,12 +1,12 @@
 package com.scaler.dsa.trees;
 
 class TreeNode {
-	int key;
+	int val;
 	TreeNode left;
 	TreeNode right;
 
 	TreeNode(int x) {
-		key = x;
+		val = x;
 		left = null;
 		right = null;
 	}
