@@ -40,25 +40,18 @@ Observations:
  */
 public class CheckIfBTIsSymmetric {
 
-	TreeNode root;
+	static TreeNode root;
 
-	CheckIfBTIsSymmetric() {
-		root = null;
-	}
-
-	private void checkSymmetic() {
-		int res = isSymmetric(root);
-		System.out.println(res);
-
-	}
-
-	public int isSymmetric(TreeNode A) {
+	public static void isSymmetric(TreeNode A) {
 		boolean b = fn(A.left, A.right);
-		return b == true ? 1 : 0;
+		if (b == true)
+			System.out.println(1);
+		else
+			System.out.println(0);
 
 	}
 
-	public boolean fn(TreeNode root1, TreeNode root2) {
+	public static boolean fn(TreeNode root1, TreeNode root2) {
 		if (root1 == null && root2 == null)
 			return true;
 		if (root1 == null || root2 == null)
@@ -70,12 +63,11 @@ public class CheckIfBTIsSymmetric {
 	}
 
 	public static void main(String[] args) {
-		CheckIfBTIsSymmetric tree = new CheckIfBTIsSymmetric();
-		tree.root = new TreeNode(1);
-		tree.root.left = new TreeNode(2);
-		tree.root.right = new TreeNode(3);
-		tree.root.left.left = new TreeNode(4);
-		tree.root.left.right = new TreeNode(5);
-		tree.checkSymmetic();
+		root = new TreeNode(1);
+		root.left = new TreeNode(2);
+		root.right = new TreeNode(3);
+		root.left.left = new TreeNode(4);
+		root.left.right = new TreeNode(5);
+		isSymmetric(root);
 	}
 }

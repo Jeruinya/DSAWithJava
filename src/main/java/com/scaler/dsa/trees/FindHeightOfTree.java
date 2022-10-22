@@ -63,6 +63,6 @@ public class FindHeightOfTree {
 		if (root == null)
 			return 0;
 
-		return 1 + Math.max(findHeight(root.left), findHeight(root.right));
+		return  Math.max(findHeight(root.left), findHeight(root.right))+1;
 	}
 }
