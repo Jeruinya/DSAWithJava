@@ -1,6 +1,7 @@
 package com.scaler.dsa.trie;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 /*
 Problem Description
@@ -54,16 +55,119 @@ PrefixXor[]=[5,6,4,2]
 
  */
 public class MaximumXORSubarray {
+	static private class TrieNode {
+		TrieNode left = null; // left points to 0
+		TrieNode right = null; // right points to 1
+	}
+
+	static TrieNode root;
 
 	public static void main(String[] args) {
+		root = new TrieNode();
 		int A[] = { 1, 4, 3 };
-		int res[] = maximumXorSubarray(A);
+		int res[] = maximumXorSubarrayNaive(A);
 		System.out.println(Arrays.toString(res));
 		System.out.println(maximumXorSumSubarray(A));
 
+		int res1[] = maximumXorSubarrayEff(A);
+		System.out.println(Arrays.toString(res1));
+
 	}
 
-	public static int[] maximumXorSubarray(int[] A) {
+	 public static int[] maximumXorSubarrayEff(int[] A) {
+	        root = new TrieNode();
+
+	       int n = A.length;
+			int prefixXor[] = new int[n];
+			prefixXor[0] = A[0];
+
+			for (int i = 1; i <n; i++)
+				prefixXor[i] = prefixXor[i - 1] ^ A[i];
+
+	        insert(0);
+			for (int x : prefixXor)
+				insert(x);
+
+			int curr_max = 0;
+			int ans = 0;
+			for (int x : prefixXor) {
+				curr_max = findCurrentMaxXor(x);
+				ans = Math.max(curr_max, ans);
+			}
+		
+			HashMap<Integer, Integer> map = new HashMap<>();
+			int minLen = Integer.MAX_VALUE;
+			int minStart = Integer.MAX_VALUE;
+			int minEnd = Integer.MAX_VALUE;
+	    
+	    map.put(0,-1); // corrected 1 
+	    
+			for (int i = 0; i < prefixXor.length; i++) {
+				int val = ans ^ prefixXor[i];
+				if (map.containsKey(val)) {
+					int start = map.get(val) + 1;
+					int end = i;
+					int len = end - start + 1;
+					if (len < minLen) {
+						minLen = len;
+						minStart = start;
+						minEnd = end;
+					} else if (len == minLen && start < minStart) {
+						minLen = len;
+						minStart = start;
+						minEnd = end;
+					}
+				}
+				map.put(prefixXor[i], i);
+			}
+			return new int[] { minStart + 1, minEnd + 1};  // corrected 2 
+		}
+
+		private static void insert(int x) {
+			TrieNode temp = root;
+			for (int j = 31; j >= 0; j--) {
+				int bit = (x >>> j) & 1;
+				if (bit == 0) {
+					if (temp.left == null) {
+						temp.left = new TrieNode();
+					}
+					temp = temp.left;
+				} else {
+					if (temp.right == null) {
+						temp.right = new TrieNode();
+					}
+					temp = temp.right;
+				}
+			}
+
+		}
+
+		private static int findCurrentMaxXor(int x) {
+			TrieNode temp = root;
+			int currSum = 0;
+			for (int i = 31; i >= 0; i--) {
+				int bit = (x >>> i) & 1;
+				if (bit == 0) {
+					if (temp.right != null) {
+						currSum += (int) (Math.pow(2, i));
+						// currSum += (1 >> i); this one not giving result as expected
+						temp = temp.right;
+					} else {
+						temp = temp.left;
+					}
+				} else {
+					if (temp.left != null) {
+						currSum += (int) (Math.pow(2, i));
+						temp = temp.left;
+					} else {
+						temp = temp.right;
+					}
+				}
+			}
+			return currSum;
+		}
+
+	public static int[] maximumXorSubarrayNaive(int[] A) {
 		int ans = Integer.MIN_VALUE;
 		int n = A.length;
 		int s = 0;
