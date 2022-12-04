@@ -13,7 +13,7 @@ import java.util.Map;
 5: Deep Copy of objects should be performed in the getter methods to return a copy rather than returning the actual object reference)
  */
 
-final class Employee {
+/*final class Employee {
 	private final int empId;
 	private final String empName;
 	private final List<String> address;
@@ -43,7 +43,7 @@ final class Employee {
 		return listAddr;
 	}
 
-}
+}*/
 
 public final class CreateImmutableClass {
 
