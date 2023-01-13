@@ -1,6 +1,5 @@
 package com.scaler.dsa.arrays;
 
-import java.util.List;
 
 /*
 Problem Description
@@ -27,7 +26,8 @@ Explanation 2:
 No water is trapped.
 
 Observation:
-	if we can store h units of water above the height of x then there must be a wall of height at least x+h on its left as well as on its right.
+	If we can store h units of water above the height of x then there must be a wall of height at least x+h 
+	on its left as well as on its right.
  */
 public class RainWaterTrappedProblem {
 

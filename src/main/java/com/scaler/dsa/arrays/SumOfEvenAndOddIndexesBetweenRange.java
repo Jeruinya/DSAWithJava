@@ -1,7 +1,8 @@
 package com.scaler.dsa.arrays;
 
 /**
- * Given an array and q queries find- S E O sum of all odd indexed elements in[s:e]and SEE sum of all even indexed elements in [E:s]
+ * Given an array and q queries find- S E O sum of all odd indexed elements in[s:e]and SEE sum of all 
+ * even indexed elements in [E:s]
  */
 
 //Asked in DirectI and Flipkart

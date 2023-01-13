@@ -31,9 +31,7 @@ public class FindLongestOddEvenSubsequence {
 
 	public static void main(String[] args) {
 		int[] A = { 1, 2, 2, 5, 6 };
-		int res = solve(A);
-		System.out.println(res);
-
+		System.out.println(solve(A));
 	}
 
 	public static int solve(int[] A) {

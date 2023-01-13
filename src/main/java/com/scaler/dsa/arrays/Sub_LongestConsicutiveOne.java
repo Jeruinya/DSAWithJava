@@ -1,22 +1,36 @@
 package com.scaler.dsa.arrays;
 
-/**
- * Given a binary string A. It is allowed to do at most one swap between any 0
- * and 1. Find and return the length of the longest consecutive 1’s that can be
- * achieved.
- * 
- * Input 2:
+/*
+  Given a binary string A. It is allowed to do at most one swap between any 0 and 1. 
+  Find and return the length of the longest consecutive 1’s that can be achieved.
+
+Input Format
+The only argument given is string A.
+Output Format
+
+Return the length of the longest consecutive 1’s that can be achieved.
+Constraints
+
+1 <= length of string <= 1000000
+A contains only characters 0 and 1.
+Input 1:
+ A = "111000"
+Output 1:  3
+
+Input 2:
     A = "111011101"
-Output 2:
-    7
+Output 2:   7
  */
 
 public class Sub_LongestConsicutiveOne {
 
 	public static void main(String[] args) {
-		String A = "01";
+		String A = "111011101";
+		System.out.println(longestConsecutiveOne(A));
+	}
 
-		int ans = 0,totalOnes=0;;
+	private static int longestConsecutiveOne(String A) {
+		int ans = 0, count = 0;
 		int n = A.length();
 		for (int i = 0; i < n; i++) {
 
@@ -39,17 +53,16 @@ public class Sub_LongestConsicutiveOne {
 
 				ans = Math.max(ans, l + r + 1);
 			}
-			
+
 			else
-				totalOnes++;
+				count++;
 
 		}
-		
-		if(totalOnes==n)
-			System.out.println(totalOnes);
+
+		if (count == n)
+			return count;
 		else
-			System.out.println(Math.min(totalOnes, ans));
+			return Math.min(count, ans);
 
 	}
-
 }

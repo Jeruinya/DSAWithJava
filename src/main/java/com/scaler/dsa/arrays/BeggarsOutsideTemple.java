@@ -34,6 +34,29 @@ Explanation 1:-
 First devotee donated 10 coins to beggars ranging from 1 to 2. Final amount in each beggars pot after first devotee: [10, 10, 0, 0, 0]
 Second devotee donated 20 coins to beggars ranging from 2 to 3. Final amount in each beggars pot after second devotee: [10, 30, 20, 0, 0]
 Third devotee donated 25 coins to beggars ranging from 2 to 5. Final amount in each beggars pot after third devotee: [10, 55, 45, 25, 25]
+
+Approach:
+Brute force-Iterate over given array B and find left index and right index and add p value from left index to right index in array.
+
+Time complexity: length of B * length of longest index.
+
+Efficient Approach:
+calculate left index and right index and assign value to left index and subtract value to right index+1
+
+A=5
+B=1	2	10
+  2 3	20
+  2	5	25
+  
+		1	2	 3		4	5	
+		0	0	 0		0	0
+		10	0   -10  	0	0
+		10	20  -10   -20   0
+		10	45	-10   -20   0	
+		
+Now calculate the pre-sum
+
+10	55	45	25	25
  */
 import java.util.Arrays;
 
@@ -63,13 +86,13 @@ public class BeggarsOutsideTemple {
 
 	public static int[] solveEfficient(int A, int[][] B) {
 		int[] coins = new int[A];
-		
+
 		for (int i = 0; i < B.length; i++) {
 			int leftIndex = B[i][0] - 1, rightIndex = B[i][1] - 1;
-			int donationByDevotee = B[i][2];
-			coins[leftIndex] += donationByDevotee;
+			int p = B[i][2];
+			coins[leftIndex] += p;
 			if ((rightIndex + 1) < A)
-				coins[rightIndex + 1] -= donationByDevotee;
+				coins[rightIndex + 1] -= p;
 		}
 		for (int i = 1; i < A; i++)
 			coins[i] = coins[i] + coins[i - 1];

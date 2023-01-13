@@ -1,5 +1,7 @@
 package com.scaler.dsa.java.sequence;
 
+import java.util.ArrayList;
+
 /*
 Problem Description
 You are given an array of integers A of size N.
@@ -43,15 +45,55 @@ Explanation 2:
 public class SUBARRAYOR {
 
 	public static void main(String[] args) {
-		int A[] = { 1, 2, 3, 4, 5 };
-		int res = solveNaive(A);
-		System.out.println(res);
+		int A[] = { 4,6,8 };
+		System.out.println(solveNaive(A));
 
-		int A1[] = { 1, 2, 3, 4, 5 };
-		int res1 = solveEfficient(A1);
-		System.out.println(res1);
+		System.out.println(solveEfficient(A));
+		System.out.println(orSum(A));
 
 	}
+	
+	 public static int orSum(int[] A) {
+         long sum = 0;
+        
+         int mod=1000000007;
+         for(int i=0;i<30;i++){
+             ArrayList<Integer> list= new ArrayList<>();
+             
+             for(int j=0;j<A.length;j++){
+                 if(((A[j]>>i)&1)==1)
+                     list.add(1);
+                 else
+                     list.add(0);
+             }
+             long count=countOR1(list);
+             sum=(sum%mod +(count*(long)(Math.pow(2,i)))%mod)%mod;
+
+         }
+  
+         return (int) (sum % mod); 
+     }
+
+    public static long countOR1(ArrayList<Integer> list) {
+         int c = 0;
+         int n = list.size();
+         long ans = 0;
+
+         for (int i = 0; i < n; i++) {
+             if (list.get(i) == 0)
+                 c++;
+             else {
+                 ans = ans + ((1L*c*(1L*c+1)))/2;
+                 c = 0;
+             }
+         }
+         
+         ans = ans + ((1L*c*(1L*c+1)))/2;
+         
+         long totalSubarrays=(1L*n*(1L*n+1))/2;
+         return totalSubarrays-ans;
+
+     }
 
 	private static int solveEfficient(int[] A) {
 		int n = A.length;

@@ -16,6 +16,13 @@ Floor value of a floating point is the closest integer less than or equal to tha
 
 public class ElectricBills {
 
+	public static void main(String args[]) {
+		Scanner s = new Scanner(System.in);
+		int a = s.nextInt();
+		int result = solve(a);
+		System.out.println(result);
+	}
+	
 	public static int solve(int a) {
 		double billAmt = 0;
 		if (a > 0 && a <= 50) {
@@ -28,12 +35,5 @@ public class ElectricBills {
 			billAmt = (50 * 0.5) + (100 * 0.75) + (100 * 1.2) + (100 * 1.5) + (a - 350) * 1.5;
 		}
 		return (int) (billAmt + billAmt * 0.2);
-	}
-
-	public static void main(String args[]) {
-		Scanner s = new Scanner(System.in);
-		int a = s.nextInt();
-		int result = solve(a);
-		System.out.println(result);
 	}
 }

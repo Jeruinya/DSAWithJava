@@ -1,6 +1,6 @@
 package com.scaler.dsa.beginner.basic;
 
-public class DiffOfMaxAndMindInArray {
+public class DiffOfMaxEvenAndMinOddInArray {
 
 	public static void main(String[] args) {
 		int A[]= {-15,-45,43,23,-63,69,35,19,37,-52};

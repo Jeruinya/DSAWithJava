@@ -8,7 +8,7 @@ import java.util.Scanner;
  * 1000 0 <= N <= 100000000
  */
 
-public class FistAndLastDigits {
+public class FirstAndLastDigits {
 
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);

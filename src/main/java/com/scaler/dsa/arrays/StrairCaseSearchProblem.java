@@ -14,13 +14,9 @@ public class StrairCaseSearchProblem {
 		int A[][] = { { 1, 2, 4, 8 }, { 5, 7, 10, 12 }, { 11, 15, 20, 32 }, { 18, 25, 30, 40 } };
 
 		int x = 20;
+		System.out.println(isElementPresentNaive(A, x));
 
-		boolean res = isElementPresentNaive(A, x);
-		System.out.println(res);
-
-		boolean res1 = isElementPresentEfficient(A, x);
-		System.out.println(res1);
-
+		System.out.println(isElementPresentEfficient(A, x));
 	}
 
 	//TC-O(N+M)

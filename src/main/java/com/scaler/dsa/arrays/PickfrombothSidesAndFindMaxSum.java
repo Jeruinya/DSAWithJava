@@ -1,6 +1,5 @@
 package com.scaler.dsa.arrays;
 
-
 /*
 Problem Description
 You are given an integer array A of size N.
@@ -55,11 +54,9 @@ public class PickfrombothSidesAndFindMaxSum {
 		int A[] = { 5, -2, 3, 1, 2 }, B = 3;
 		int n = A.length;
 
-		int max = findTheLargestSum(A, B, n);
-		System.out.println(max);
-		
-		int max1 = solve(A, B);
-		System.out.println(max1);
+		System.out.println(findTheLargestSum(A, B, n));
+
+		System.out.println(solve(A, B));
 
 	}
 
@@ -82,24 +79,23 @@ public class PickfrombothSidesAndFindMaxSum {
 
 		return ans;
 	}
-	
-	
+
 	public static int solve(int[] A, int B) {
-        int n = A.length;
-        int []suff = new int[n + 1];
-        suff[n] = 0;
-        suff[n - 1] = A[n - 1];
-        for(int i = n - 2; i >= 0; i--){
-            suff[i] = A[i] + suff[i + 1];
-        }
-        int pref_sum = 0;
-        int ans = suff[n - B];
-        for(int i = 0; i < B; i++){
-            pref_sum = pref_sum + A[i];
-            int suff_sum = suff[n - B + (i + 1)];
-            ans = Math.max(ans, pref_sum + suff_sum);
-        }
-        return ans;
-    }
+		int n = A.length;
+		int[] suff = new int[n + 1];
+		suff[n] = 0;
+		suff[n - 1] = A[n - 1];
+		for (int i = n - 2; i >= 0; i--) {
+			suff[i] = A[i] + suff[i + 1];
+		}
+		int pref_sum = 0;
+		int ans = suff[n - B];
+		for (int i = 0; i < B; i++) {
+			pref_sum = pref_sum + A[i];
+			int suff_sum = suff[n - B + (i + 1)];
+			ans = Math.max(ans, pref_sum + suff_sum);
+		}
+		return ans;
+	}
 
 }

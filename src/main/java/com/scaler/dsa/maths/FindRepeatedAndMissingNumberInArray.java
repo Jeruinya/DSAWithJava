@@ -1,7 +1,7 @@
 package com.scaler.dsa.maths;
 
 import java.util.Arrays;
-import java.util.HashMap;
+import java.util.HashSet;
 
 /*
 There are certain problems which are asked in the interview to also check how you take care of overflows in your problem.
@@ -47,18 +47,15 @@ public class FindRepeatedAndMissingNumberInArray {
 	public static void main(String[] args) {
 		int A[] = { 3, 1, 2, 5, 3 };
 
-		int arr1[] = findMisAndRepeatingNum(A);
-		System.out.println(Arrays.toString(arr1));
+		System.out.println(Arrays.toString(findMisAndRepeatingNum(A)));
 
-		int arr2[] = findMisAndRepeatingNumMap(A);
-		System.out.println(Arrays.toString(arr2));
+		System.out.println(Arrays.toString(findMisAndRepeatingNumMap(A)));
 
-		int arr3[] = findMisAndRepeatingNumEfficient(A);
-		System.out.println(Arrays.toString(arr3));
+		System.out.println(Arrays.toString(findMisAndRepeatingNumEfficient(A)));
 
 	}
 
-	// TC-O(N) SC-O(N)
+	// TC-O(N) SC-O(1)
 	private static int[] findMisAndRepeatingNumEfficient(int[] A) {
 		long alpha = 0;
 		long beta = 0;
@@ -84,21 +81,17 @@ public class FindRepeatedAndMissingNumberInArray {
 
 	// TC-O(N) SC-O(N)
 	private static int[] findMisAndRepeatingNumMap(int[] A) {
-		HashMap<Integer, Integer> hm = new HashMap<>();
+		HashSet<Integer> hs = new HashSet<>();
 		int rep = 0, mis = 0;
 		for (int i = 0; i < A.length; i++) {
-			if (hm.containsKey(A[i]))
-				hm.put(A[i], hm.get(A[i]) + 1);
-			else
-				hm.put(A[i], 1);
-		}
-		for (int i = 0; i < A.length; i++) {
-			if (hm.get(A[i]) == 2)
+			if (hs.contains(A[i]))
 				rep = A[i];
+			else
+				hs.add(A[i]);
 		}
 
 		for (int i = 1; i <= A.length; i++) {
-			if (!hm.containsKey(i))
+			if (!hs.contains(i))
 				mis = i;
 		}
 		int res[] = new int[2];

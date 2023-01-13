@@ -3,21 +3,16 @@ package com.scaler.dsa.arrays;
 public class SumOfArrayBetweenTwoIndexes {
 
 	public static void main(String[] args) {
-		int arr[] = { 1, 2, 3, 4, 3, 4, 6, 8, 11 };
+		int A[] = { 1, 2, 3, 4, 3, 4, 6, 8, 11 };
 		int s = 1, e = 5;
-		int sum = sumOfSubArrayNaive(arr, s, e);
-		System.out.println(sum);
+		System.out.println(sumOfSubArray(A, s, e));
 
 	}
 
-	private static int sumOfSubArrayNaive(int[] arr, int s, int e) {
+	private static int sumOfSubArray(int[] A, int s, int e) {
 		int sum = 0;
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = s; j <= e; j++) {
-				sum = sum + arr[j];
-			}
-			break;
-		}
+		for (int i = s; i <= e; i++)
+			sum = sum + A[i];
 		return sum;
 
 	}

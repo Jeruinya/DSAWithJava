@@ -1,7 +1,5 @@
 package com.scaler.dsa.pattern;
 
-import java.util.Scanner;
-
 /*
 1
 01
@@ -16,10 +14,7 @@ import java.util.Scanner;
 public class ZeroOneToggle {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-
-		// Try It yourself!
+		int n = 5;
 
 		for (int i = 1; i <= n; i++) {
 			// print i no in every row
@@ -29,6 +24,7 @@ public class ZeroOneToggle {
 				val = 1 - val;
 			}
 			// newline
+			
 			System.out.println();
 		}
 

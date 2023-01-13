@@ -17,13 +17,9 @@ public class FindApairIsDivisible {
 
 		for (int i = 0; i < A.length; i++) {
 			for (int j = 0; j < A.length; j++) {
-				if (i == j)
-					continue;
-				else {
-					boolean flag = isDivisible(A[i] + A[j], B);
-					if (flag == true)
+				if (i != j)
+					if (isDivisible(A[i] + A[j], B))
 						count++;
-				}
 			}
 		}
 		System.out.println(count);
@@ -31,7 +27,7 @@ public class FindApairIsDivisible {
 	}
 
 	private static boolean isDivisible(String str, int B) {
-		int temp =0;
+		int temp = 0;
 		for (int i = 0; i < str.length(); i++) {
 			temp = temp * 10 + str.charAt(i) - '0';
 			temp = temp % B;

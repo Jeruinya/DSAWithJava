@@ -1,47 +1,61 @@
 package com.scaler.dsa.arrays;
 
+/*
+Given an array, return the length of the smallest subarray which contains both the maximum and minimum element.
+A[] = { 2, 2, 6, 4, 5, 1, 5, 2, 6, 4, 1 } 
+max=6
+min=1
+
+and the length of the smallest sub array is 3 i.e {6,4,1}
+
+Observation:
+1:In the answer subarray the max and min element have to be on the corner element.
+2:In the answer subarray there have to be only one max and only one min element.
+
+Approach: for every min, find the closest max in right side. And for every max find the closest min on the right side.
+
+ */
+
 public class Sub_FindSmallestSubArrayWithMaxAndMinElements {
 
 	public static void main(String[] args) {
 		int A[] = { 2, 2, 6, 4, 5, 1, 5, 2, 6, 4, 1 };
 
-		int ans = smallestSubarrayWithMinAndMaxElemNaive(A);
-		System.out.println(ans);
+		System.out.println(smallestSubarrayWithMinAndMaxElemNaive(A));
 
-		int ans1 = smallestSubarrayWithMinAndMaxElemEfficient(A);
-		System.out.println(ans1);
+		System.out.println(smallestSubarrayWithMinAndMaxElemEfficient(A));
 
 	}
 
-	//O(n) and O(1)
-	private static int smallestSubarrayWithMinAndMaxElemEfficient(int[] a) {
+	// O(n) and O(1)
+	private static int smallestSubarrayWithMinAndMaxElemEfficient(int[] A) {
 		int ans = Integer.MAX_VALUE;
 		int max = Integer.MIN_VALUE;
 		int min = Integer.MAX_VALUE;
-		int lat_max = Integer.MIN_VALUE;
-		int lat_min = Integer.MIN_VALUE;
-		int n = a.length;
+		int latest_max_idx = Integer.MIN_VALUE;
+		int latest_min_idx = Integer.MIN_VALUE;
+		int n = A.length;
 
 		for (int i = 0; i < n; i++)
-			if (a[i] > max)
-				max = a[i];
+			if (A[i] > max)
+				max = A[i];
 		for (int i = 0; i < n; i++)
-			if (a[i] < min)
-				min = a[i];
+			if (A[i] < min)
+				min = A[i];
 
 		if (max == min)
 			return 1;
 
 		for (int i = 0; i < n; i++) {
-			if (a[i] == max) {
-				lat_max = i;
-				if (lat_min >= 0)
-					ans = Math.min(ans, i - lat_min + 1);
+			if (A[i] == max) {
+				latest_max_idx = i;
+				if (latest_min_idx >= 0)
+					ans = Math.min(ans, i - latest_min_idx + 1);
 
-			} else if (a[i] == min) {
-				lat_min = i;
-				if (lat_max >= 0)
-					ans = Math.min(ans, i - lat_max + 1);
+			} else if (A[i] == min) {
+				latest_min_idx = i;
+				if (latest_max_idx >= 0)
+					ans = Math.min(ans, i - latest_max_idx + 1);
 			}
 		}
 
@@ -49,44 +63,44 @@ public class Sub_FindSmallestSubArrayWithMaxAndMinElements {
 	}
 
 	// Tc=O(N2) , SC--O(1)
-	private static int smallestSubarrayWithMinAndMaxElemNaive(int[] a) {
+	private static int smallestSubarrayWithMinAndMaxElemNaive(int[] A) {
 		int ans = Integer.MAX_VALUE;
-		int n = a.length;
+		int n = A.length;
 		int max = Integer.MIN_VALUE;
 		int min = Integer.MAX_VALUE;
-		int start=-1,end=-1;
+		int start = -1, end = -1;
 
 		for (int i = 0; i < n; i++)
-			if (a[i] > max)
-				max = a[i];
+			if (A[i] > max)
+				max = A[i];
 		for (int i = 0; i < n; i++)
-			if (a[i] < min)
-				min = a[i];
+			if (A[i] < min)
+				min = A[i];
 
 		for (int i = 0; i < n; i++) {
-			if (a[i] == max) {
+			if (A[i] == max) {
 				for (int j = i; j < n; j++) {
-					if (a[j] == min) {
+					if (A[j] == min) {
 						ans = Math.min(ans, j - i + 1);
-						start=i;
-						end=j;
+						start = i;
+						end = j;
 						break;
 					}
 				}
-			} else if (a[i] == min) {
+			} else if (A[i] == min) {
 				for (int j = i; j < n; j++) {
-					if (a[j] == max) {
+					if (A[j] == max) {
 						ans = Math.min(ans, j - i + 1);
-						start=i;
-						end=j;
+						start = i;
+						end = j;
 						break;
 					}
 				}
 			}
 		}
-		
-		for(int i=start;i<=end;i++)
-			System.out.println(a[i]);
+
+		for (int i = start; i <= end; i++)
+			System.out.println(A[i]);
 
 		return ans;
 	}

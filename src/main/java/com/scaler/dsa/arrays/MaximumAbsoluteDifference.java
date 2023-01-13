@@ -3,7 +3,8 @@ package com.scaler.dsa.arrays;
 /*
 Problem Description
 You are given an array of N integers, A1, A2, .... AN.
-Return the maximum value of f(i, j) for all 1 ≤ i, j ≤ N. f(i, j) is defined as |A[i] - A[j]| + |i - j|, where |x| denotes absolute value of x.
+Return the maximum value of f(i, j) for all 1 ≤ i, j ≤ N. f(i, j) is defined as |A[i] - A[j]| + |i - j|,
+where |x| denotes absolute value of x.
 
 Problem Constraints
 1 <= N <= 100000
@@ -29,9 +30,7 @@ So, we return 5.
 Explanation 2:
 
 Only possibility is i = 1 and j = 1. That gives answer = 0.
- */
 
-/*
 |a[i]-a[j]| + |i-j|
 
 case 1: when a[i]>a[j] && i>j
@@ -67,11 +66,9 @@ public class MaximumAbsoluteDifference {
 	public static void main(String[] args) {
 
 		int[] A = { 1, 3, -1 };
-		int res = maxAbsoluteDifferenceNaive(A);
-		System.out.println(res);
+		System.out.println(maxAbsoluteDifferenceNaive(A));
 
-		int res1 = maxAbsoluteDifferenceEfficient(A);
-		System.out.println(res1);
+		System.out.println(maxAbsoluteDifferenceEfficient(A));
 
 	}
 

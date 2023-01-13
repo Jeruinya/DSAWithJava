@@ -16,10 +16,9 @@ Problem Constraints
 public class CalculateModuloOfPower {
 
 	public static void main(String[] args) {
-		//int a = (int) Math.pow(10, 5), n = (int) Math.pow(10, 6), m = (int) Math.pow(10, 9);
-		int a= 2, n=3, m=3;
-		int res = pow(a, n, m);
-		System.out.println(res);
+		int a = 2, n = 3, m = 3;
+		System.out.println(pow(a, n, m));
+		System.out.println(pow1(a, n, m));
 	}
 
 	public static int pow(int A, int B, int C) {
@@ -42,21 +41,21 @@ public class CalculateModuloOfPower {
 		else
 			return ((p * p) % m * a % m) % m;
 	}
-	
-	//Iterative and easy way
-	public int pow1(int x, int n, int d) {
-	    long a = x;
-	    long res = 1L;
-	    while (n > 0) {
-	        if (n % 2 == 1) {
-	            res *= a;
-	            res %= d;
-	        }
-	        a *= a;
-	        a %= d;
-	        n = n >> 1;
-	    }
-	    res = (res + d) % d;
-	    return (int) res;
+
+	// Iterative and easy way
+	public static int pow1(int x, int n, int d) {
+		long a = x;
+		long res = 1L;
+		while (n > 0) {
+			if (n % 2 == 1) {
+				res *= a;
+				res %= d;
+			}
+			a *= a;
+			a %= d;
+			n = n >> 1;
+		}
+		res = (res + d) % d;
+		return (int) res;
 	}
 }

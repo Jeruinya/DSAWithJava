@@ -1,29 +1,41 @@
 package com.scaler.dsa.arrays;
 
-/**
- * Problem Description You are given an array A consisting of heights of
- * Christmas trees and an array B of the same size consisting of the cost of
- * each of the trees (Bi is the cost of tree Ai, where 1 ≤ i ≤ size(A)), and you
- * are supposed to choose 3 trees (let's say, indices p, q, and r), such that Ap
- * < Aq < Ar, where p < q < r. The cost of these trees is Bp + Bq + Br.
- * 
- * You are to choose 3 trees such that their total cost is minimum. Return that
- * cost.
- * 
- * If it is not possible to choose 3 such trees return -1.
- * 
- * Input 2: A = [1, 6, 4, 2, 6, 9] B = [2, 5, 7, 3, 2, 7]
- * 
- * output: 7
- * 
- * Criteria i- i<j<k ii: Ai<Aj<Ak iii-Bi+Bj+Bk should be minimum.
- * 
- * A[]=[1 2 4 6] 1 2 3 4 B[]=[1 9 1 2] indexes--> {1,2,3} {1,3,4} {1,2,4}
- * {2,3,4} A values-->(1,2,4) (1,4,6) (1,2,6) (2,4,6) B value--> (1,9,1)--11
- * (1,1,2) --4 (1,9,2) --12 (9,1,2)-->12 Here minimum value of Bi+Bj+Bk==>4
- * 
- * 
- * Indexes can be non contiguous .
+/*
+  Problem Description You are given an array A consisting of heights of
+  Christmas trees and an array B of the same size consisting of the cost of
+  each of the trees (Bi is the cost of tree Ai, where 1 ≤ i ≤ size(A)), and you
+  are supposed to choose 3 trees (let's say, indices p, q, and r), such that Ap
+  < Aq < Ar, where p < q < r. The cost of these trees is Bp + Bq + Br.
+  
+  You are to choose 3 trees such that their total cost is minimum. Return that
+  cost.
+  
+  If it is not possible to choose 3 such trees return -1.
+  
+  Input 2: A = [1, 6, 4, 2, 6, 9] B = [2, 5, 7, 3, 2, 7]
+  
+  output: 7
+  
+  Criteria 
+  i: i<j<k 
+  ii: Ai<Aj<Ak 
+  iii-Bi+Bj+Bk should be minimum.
+  
+  A[]=[1 2 4 6] 
+  	   0 1 2 3
+  B[]=[1 9 1 2] 
+  
+  indexes--> {0,1,2} {0,2,3} {0,1,3} {1,2,3}
+  values--> (1,2,4) (1,4,6) (1,2,6) (2,4,6) 
+  
+  B value--> (1,9,1)--11
+  			 (1,1,2) --4 
+  			 (1,9,2) --12 
+  			 (9,1,2)-->12 
+  			 
+  	Here minimum value of Bi+Bj+Bk==>4
+  
+  Indexes can be non contiguous .
  */
 
 public class ChristmasTreeProblem {

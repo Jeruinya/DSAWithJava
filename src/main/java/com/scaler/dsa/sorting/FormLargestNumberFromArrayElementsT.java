@@ -1,9 +1,9 @@
 package com.scaler.dsa.sorting;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /*
 Problem Description
@@ -29,26 +29,22 @@ public class FormLargestNumberFromArrayElementsT {
 
 	public static void main(String[] args) {
 		int A[] = { 3, 30, 34, 5, 9 };
-		int n = A.length;
 
+		System.out.println(formLargestNum(A));
+	}
+
+	private static String formLargestNum(int[] A) {
 		String ans = "";
 		List<String> temp = new ArrayList<>();
 
 		for (int i : A)
 			temp.add(String.valueOf(i));
 
-		Collections.sort(temp, new Mycomp());
+		temp = temp.stream().sorted((e1, e2) -> (e2 + e1).compareTo(e1 + e2)).collect(Collectors.toList());
 
 		for (String t : temp)
 			ans = ans + t;
 
-		System.out.println(ans.charAt(0) == '0' ? "0" : ans.toString());
-
-	}
-}
-
-class Mycomp implements Comparator<String> {
-	public int compare(String a, String b) {
-		return (b + a).compareTo(a + b);
+		return ans;
 	}
 }

@@ -33,21 +33,55 @@ Output 2: [100]
 Explanation 2:
     The three sub-arrays are [10], [2, 3], [100].
     The answer is [100] as its sum is larger than the other two.
+    
+This problem requires a simple adhoc approach :
+
+Just need to simulate whats stated in the problem.
+Can you traverse through the array maintaining the current subset ? Note that the subset becomes invalid as soon as 
+you encounter a negative number.
+
+Also, note that you do not need to start again on encountering the negative number. 
+You can start from the number next to the negative number.
+
+
+Loop i = 1 to Array.length :
+        IF current element is positive :
+                update current sum
+                compare max sum with current sum
+                update max sum
+                update max ranges
+        ELSE :
+            current sum := 0
+            update current ranges.
+EndLoop;
+
+return elements of max ranges
  */
 import java.util.ArrayList;
-import java.util.List;
 
 public class Sub_MaxNonNegativeSubarray {
-	
-	public static ArrayList<Integer> maxset(ArrayList<Integer> a) {
+
+	public static void main(String args[]) {
+		ArrayList<Integer> list = new ArrayList<>();
+		list.add(10);
+		list.add(-1);
+		list.add(2);
+		list.add(3);
+		list.add(-4);
+		list.add(100);
+
+		System.out.println(maxset(list));
+	}
+
+	public static ArrayList<Integer> maxset(ArrayList<Integer> A) {
 		long maxSum = 0;
 		long newSum = 0;
 		ArrayList<Integer> maxArray = new ArrayList<Integer>();
 		ArrayList<Integer> newArray = new ArrayList<Integer>();
-		for (Integer i : a) {
-			if (i >= 0) {
-				newSum += i;
-				newArray.add(i);
+		for (Integer num : A) {
+			if (num >= 0) {
+				newSum += num;
+				newArray.add(num);
 			} else {
 				newSum = 0;
 				newArray = new ArrayList<Integer>();
@@ -58,18 +92,5 @@ public class Sub_MaxNonNegativeSubarray {
 			}
 		}
 		return maxArray;
-	}
-	
-	public static void main(String args[]) {
-		ArrayList<Integer> list= new ArrayList<>();
-		list.add(10);
-		list.add(-1);
-		list.add(2);
-		list.add(3);
-		list.add(-4);
-		list.add(100);
-		
-		List<Integer> res= maxset(list);
-		System.out.println(res);
 	}
 }

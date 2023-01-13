@@ -23,9 +23,6 @@ public class Sub_FindMaximumLengthPositiveSubarray {
 
 	public static void main(String[] args) {
 
-		// int A[] = {-4549634, -3196682, 8455838, -1432628, -263819, -3928366,
-		// -5556259, -2114783, 3923939, -4183708};
-
 		int A[] = { -5173778, -8176176, 1694510, 7089884, -1394259, 1146372, -2502339, 1544618, 6602022, 4330572 };
 		int n = A.length;
 

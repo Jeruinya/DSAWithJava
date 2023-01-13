@@ -28,9 +28,7 @@ Explanation 2:
 public class LittlePonnyAnd2Subsequence {
 
 	public static void main(String[] args) {
-		String A = "scsecugqsb";
-		String res = solve(A);
-		System.out.println(res);
+		System.out.println(solve("scsecugqsb"));
 
 	}
 

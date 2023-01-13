@@ -8,9 +8,8 @@ package com.scaler.dsa.arrays;
  * press to turn on all the bulbs. You can press the same switch multiple times.
  * Note: 0 represents the bulb is off and 1 represents the bulb is on.
  * 
-Observation:
-A[i]=0------------> odd flips will be 1 and even flips will be same .
-A[i]=1------------> odd flips will be 0 and even flips will be same .
+ * Observation: A[i]=0------------> odd flips will be 1 and even flips will be
+ * same . A[i]=1------------> odd flips will be 0 and even flips will be same .
  */
 
 public class FindMininmumNumberOfFlip {
@@ -54,16 +53,14 @@ public class FindMininmumNumberOfFlip {
 		return count;
 	}
 
-	public static int countFlips(int a[], int n) {
-		int state = 0;
+	public static int countFlips(int A[], int n) {
 		int count = 0;
+		int state = 0;
+
 		for (int i = 0; i < n; i++) {
-			if (state == a[i]) {
-				if (state == 0)
-					state = 1;
-				else
-					state = 0;
+			if (A[i] == state) {
 				count++;
+				state = 1 - state;
 			}
 		}
 		return count;

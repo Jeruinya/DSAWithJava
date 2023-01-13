@@ -1,5 +1,6 @@
 package com.scaler.dsa.arrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /*
@@ -46,44 +47,42 @@ public class PrintAllLeadersInArray {
 	}
 
 	private static int[] findLeadersEfficient(int[] A, int n) {
-		int cur_leader = A[n - 1];
-		int count = 1;
-		for (int i = n - 1; i >= 0; i--) {
-			if (cur_leader < A[i]) {
-				cur_leader = A[i];
-				count++;
-			}
-		}
-		int leaders[] = new int[count];
-		leaders[0] = A[n - 1];
-		int cur_leader1 = A[n - 1];
-		int k = 1;
-		for (int i = n - 2; i >= 0; i--) {
-			if (cur_leader1 < A[i]) {
-				cur_leader1 = A[i];
-				leaders[k++] = A[i];
-			}
-		}
-		return leaders;
 
+		ArrayList<Integer> l = new ArrayList<>();
+		l.add(A[n - 1]);
+		int curr_leader = A[n - 1];
+		for (int i = n - 2; i >= 0; i--) {
+			if (curr_leader < A[i]) {
+				curr_leader = A[i];
+				l.add(curr_leader);
+			}
+		}
+		int k=0;
+		int leaders[] = new int[l.size()];
+		for (int i = leaders.length-1; i>=0 ; i--)
+			leaders[k++] = l.get(i);
+		return leaders;
 	}
 
-	private static int[] findLeadersNaive(int[] arr, int n) {
-		int leaders[] = new int[n];
-		int k = 0;
+	private static int[] findLeadersNaive(int[] A, int n) {
+		ArrayList<Integer> l = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
 			boolean flag = true;
 			for (int j = i + 1; j < n; j++) {
-				if (arr[i] <= arr[j]) {
+				if (A[i] <= A[j]) {
 					flag = false;
 					break;
 				}
 			}
 			if (flag == true) {
-				leaders[k++] = arr[i];
+				l.add(A[i]);
 			}
 		}
+		int leaders[] = new int[l.size()];
+		for (int i = 0; i < leaders.length; i++)
+			leaders[i] = l.get(i);
 		return leaders;
+
 	}
 
 }

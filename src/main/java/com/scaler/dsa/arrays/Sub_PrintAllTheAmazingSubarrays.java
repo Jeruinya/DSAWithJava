@@ -26,26 +26,26 @@ import java.util.ArrayList;
 public class Sub_PrintAllTheAmazingSubarrays {
 
 	public static void main(String[] args) {
-		String str = "AzZGBauYuTknYjjWEEbLvqMQwnoSgXKBdHKEVpeoxYNNtBfrxQrPauttMzjKFayKwMeuChjzCocgAHfAmPCatOqarzLuabyTnxoheeocVshfERNssVPfRyPmwvOVGbzNAuvryYNWwIeyZLMlLbkcFFJRHjEIgIwOThRJJFpLbunVrbhAYsMtdsKslLAGElwrZjvZweIytMpPEYVmktQeNleNROcTjrNxXeHvOMMTMfqZHTUjetojHFzZwOekfAILYISANxeJFRNgeZDKoOTddXqxduPIjGXsRSSkgIqKMeSqlQwAKtdrkvHLgmKleNAPEztGMPmZzUuCImLAhzUnXmsVzFvJUTeIKleuRnMPNAPWJYAZLXgzTBPmkXVShbBSlIAJSeFgvRFvcoqfVFgHUefxUxuYFCfUxbxlOslUhYRFXKmMmqDIQhhfXyGqUwGMSYeLLpEsKAhvFUzavDCOUgtmmNMnsvfmCdPWuWIjuUfZCBTrWnaDopbqXcjzSqRMpQWIBNnMcOQZjDkjPkxsuwENYQyjgSHFJrgSLnwbEInBfdeIfBbVuZZbBrblJgKHOmLZACLQkSRxxQJeUMPIQutraxFtrRcSeqAejOTSqaFGglQOoWPkcNOnLIgfclWNtjGQRVMlqCPUnUlOLbHfkzUyNAmTsswWtZjIGUBrLmRmstHgVcRUgWdQTCEPRzjPVTMJRJocYHftwoRzOSyQexjmceRHdqFdgNuGmGTUdXQaNwKmvOUzZPzGCBVcbVLgMoQrESbpVGteVVntOwEWxXsZnSAoIfBSsWVhDFBuDTkcrnsPdmmSHymouxHlcgtjgKUAPznxsIRUjDFsrjadJjEtPaWTVBHpatqYeSgrpWJDOGfgIGQPcTIXVsCVyCfKMpcXWGkvwuRuTmvCbNMLeUkZrEpYZdlKAgFELfwCCbZCYBcXhfUrsIHfdwhYyxHKAMYMERwlyRtxObDoxBhjXmynYkmkYZrkzlCuvrhW";
+		String str = "ABEC";
 		int count = printSubstringNaive(str);
 		System.out.println(count);
 
 		int count1 = printSubstringEfficient(str);
 		System.out.println(count1);
-		
+
 		int count2 = printSubstringEfficient1(str);
 		System.out.println(count2);
 	}
 
 	private static int printSubstringEfficient1(String str) {
-		int n=str.length();
-		int res=0;
-		String vowel="aeiouAEIOU";
-		for(int i=0;i<n;i++) {
-			if(vowel.contains(String.valueOf(str.charAt(i))))
-				res=res+n-i;
+		int n = str.length();
+		int res = 0;
+		String vowel = "aeiouAEIOU";
+		for (int i = 0; i < n; i++) {
+			if (vowel.contains(String.valueOf(str.charAt(i))))
+				res = res + n - i;
 		}
-		return res%10003;
+		return res % 10003;
 	}
 
 	private static int printSubstringEfficient(String A) {
@@ -63,11 +63,10 @@ public class Sub_PrintAllTheAmazingSubarrays {
 
 		int n = A.length();
 		long ans = 0;
-		for (int i = 0; i < n; i++) {
-			if (se.contains(A.charAt(i))) {
+		for (int i = 0; i < n; i++)
+			if (se.contains(A.charAt(i)))
 				ans += (n - i);
-			}
-		}
+		
 		return (int) (ans % 10003);
 	}
 

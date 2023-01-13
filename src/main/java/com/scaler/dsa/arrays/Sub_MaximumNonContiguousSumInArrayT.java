@@ -24,25 +24,23 @@ public class Sub_MaximumNonContiguousSumInArrayT {
 
 		int A[] = { 5, -2, 3, 1, 2 };
 		int B = 3;
-		int n = A.length;
-		int ans = maxSumFromEnds(A, B);
-		System.out.println(ans);
+		System.out.println(maxSumFromEnds(A, B));
 	}
 
-	public static int maxSumFromEnds(int a[], int b) {
-		int n = a.length;
+	public static int maxSumFromEnds(int A[], int b) {
+		int n = A.length;
 		int i = 0, j = n - 1;
 		int sum = 0;
 		int b2 = b;
 		while (b > 0) {
-			sum = sum + a[i++];
+			sum = sum + A[i++];
 			b--;
 		}
 
 		int ans = sum;
 		while (b2 > 0) {
-			sum = sum - a[--i];
-			sum = sum + a[j--];
+			sum = sum - A[--i];
+			sum = sum + A[j--];
 			ans = Math.max(ans, sum);
 			b2--;
 		}

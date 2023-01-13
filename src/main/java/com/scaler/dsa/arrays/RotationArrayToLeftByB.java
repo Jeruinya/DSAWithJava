@@ -23,23 +23,23 @@ public class RotationArrayToLeftByB {
 		for (int i = 0; i < res.length; i++)
 			System.out.println(Arrays.toString(res[i]));
 		
-		int arr[]= {1,2,3,4,5,6,7};
-		int l=1;
-		reverse(arr,0,l-1);
-		reverse(arr,l,arr.length-1);
-		reverse(arr,0,arr.length-1);
+		int A1[]= {1,2,3,4,5};
+		int l=3;
+		reverse(A,0,l-1);
+		reverse(A1,l,A1.length-1);
+		reverse(A1,0,A1.length-1);
 		
-	System.out.println(Arrays.toString(arr));
+	System.out.println(Arrays.toString(A1));
 		
 
 	}
 
-	private static void reverse(int[] arr, int s, int e) {
+	private static void reverse(int[] A, int s, int e) {
 		
 		while(s<e) {
-			int temp=arr[s];
-			arr[s]=arr[e];
-			arr[e]=temp;
+			int temp=A[s];
+			A[s]=A[e];
+			A[e]=temp;
 			s++;
 			e--;
 		}
@@ -64,13 +64,13 @@ public class RotationArrayToLeftByB {
 
 	}
 
-	public ArrayList<ArrayList<Integer>> solve(ArrayList<Integer> a, ArrayList<Integer> b) {
+	public ArrayList<ArrayList<Integer>> solve(ArrayList<Integer> A, ArrayList<Integer> B) {
 		ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
-		int n = a.size();
-		for (int x : b) {
+		int n = A.size();
+		for (int x : B) {
 			ArrayList<Integer> temp = new ArrayList<>();
 			for (int i = 0; i < n; i++)
-				temp.add(a.get((i + x) % n));
+				temp.add(A.get((i + x) % n));
 			ans.add(temp);
 		}
 		return ans;

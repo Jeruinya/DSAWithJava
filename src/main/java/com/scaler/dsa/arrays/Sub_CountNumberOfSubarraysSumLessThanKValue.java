@@ -5,8 +5,7 @@ public class Sub_CountNumberOfSubarraysSumLessThanKValue {
 	public static void main(String[] args) {
 		int A[] = { 1, 11, 2, 3, 15 };
 		int B = 10;
-		int count = numberOfSubarraysLessThanB(A, B);
-		System.out.println(count);
+		System.out.println(numberOfSubarraysLessThanB(A, B));
 	}
 
 	public static int numberOfSubarraysLessThanB(int[] A, int B) {

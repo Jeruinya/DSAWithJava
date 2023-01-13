@@ -16,7 +16,7 @@ Problem Constraints
 1 <= N <= 105
 -105 <= A[i] <= 105
 Input Format
-First arugment is an array A .
+First argument is an array A .
 Output Format
 Return the equilibrium index of the given array. If no such index is found then return -1.
 Example Input

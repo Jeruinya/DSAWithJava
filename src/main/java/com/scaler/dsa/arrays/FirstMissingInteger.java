@@ -2,6 +2,7 @@ package com.scaler.dsa.arrays;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 
 /*
 Problem Description
@@ -26,6 +27,15 @@ Output 3:1
 
 Explanation 1:A = [1, 2, 0]
 First positive integer missing from the array is 3.
+
+Observation 1 : Natural Numbers = {1,2,3,4,5,6,7,8,.....} if length of an Array is N then the answer always 
+				be 1 <= N+1.
+				{1,2,3,4,5} First missing Natural number is 6 here, which is also N+1.
+
+Observation 2 : Finding Range for a missing number will be 1 to N otherwise return N+1 as answer.
+       
+Special Cases : Negative Natural Number and Duplicate Numbers.
+
  */
 public class FirstMissingInteger {
 
@@ -35,9 +45,26 @@ public class FirstMissingInteger {
 		list.add(2);
 		list.add(0);
 
+		int A[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,20};
+		System.out.println(firstMissingPositive(A));
+
 		int res = firstMissingPositive(list);
 		System.out.println(res);
 
+	}
+
+	public static int firstMissingPositive(int[] A) {
+		HashSet<Integer> hs = new HashSet<>();
+		for (int i = 0; i < A.length; i++) {
+			hs.add(A[i]);
+		}
+
+		for (int i = 1; i <= A.length + 1; i++) {
+			if (!hs.contains(i)) {
+				return i;
+			}
+		}
+		return 0;
 	}
 
 	public static int firstMissingPositive(ArrayList<Integer> A) {

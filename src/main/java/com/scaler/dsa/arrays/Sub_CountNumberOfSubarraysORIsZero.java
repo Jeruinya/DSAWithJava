@@ -15,8 +15,7 @@ public class Sub_CountNumberOfSubarraysORIsZero {
 
 	public static void main(String[] args) {
 		int A[] = { 1, 0, 1, 0, 0 };
-		int count = countNumberOfSubarraysWithORZero(A);
-		System.out.println(count);
+		System.out.println(countNumberOfSubarraysWithORZero(A));
 	}
 
 	private static int countNumberOfSubarraysWithORZero(int[] A) {
