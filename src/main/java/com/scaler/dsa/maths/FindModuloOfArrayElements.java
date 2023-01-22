@@ -32,11 +32,9 @@ public class FindModuloOfArrayElements {
 		int n = A.length;
 		int p = 5;
 
-		long mod1 = findModOfArrayElementsNaive(A, n, p);
-		System.out.println(mod1);
+		System.out.println(findModOfArrayElementsNaive(A, n, p));
 
-		long mod2 = findModOfArrayElementsEfficient(A, n, p);
-		System.out.println(mod2);
+		System.out.println(findModOfArrayElementsEfficient(A, n, p));
 
 	}
 

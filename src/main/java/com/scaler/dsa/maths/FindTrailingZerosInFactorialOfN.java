@@ -27,8 +27,7 @@ public class FindTrailingZerosInFactorialOfN {
 		int n=10;
 		System.out.println(findTrailingZeros(n));
 		
-		int n1=20;
-		System.out.println(findTrailingZerosEff(n1));
+		System.out.println(findTrailingZerosEff(n));
 
 	}
 
@@ -44,13 +43,10 @@ public class FindTrailingZerosInFactorialOfN {
 	private static int findTrailingZeros(int n) {		
 		int fact=factorial(n);
 		int count=0;
-		while(fact>0) {
-			if(fact%10!=0)
-				break;
+		while(fact%10==0) {
 			count++;
 			fact=fact/10;
 		}
-			
 		return count;
 	}
 

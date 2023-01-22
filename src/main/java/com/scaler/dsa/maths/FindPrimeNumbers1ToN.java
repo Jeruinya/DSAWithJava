@@ -11,8 +11,7 @@ import java.util.Scanner;
 
 public class FindPrimeNumbers1ToN {
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		int n = s.nextInt();
+		int n = 100;
 		printPrime(n);
 		System.out.println();
 		sieveOfEratosthenes(n);
@@ -39,12 +38,11 @@ public class FindPrimeNumbers1ToN {
 		return true;
 	}
 
-	//TC-O(N log log n)
+	// TC-O(N log log n)
 	public static void sieveOfEratosthenes(int n) {
 		boolean prime[] = new boolean[n + 1];
-		for(int i = 0; i <= n; i++) {
+		for (int i = 0; i <= n; i++)
 			prime[i] = true;
-		}
 
 		for (int i = 2; i * i <= n; i++) {
 			// If prime[i] is not changed, then it is a prime
@@ -54,10 +52,10 @@ public class FindPrimeNumbers1ToN {
 					prime[j] = false;
 			}
 		}
-		
-		for(int i=2;i<=n;i++) {
-			if(prime[i]==true)
-				System.out.print(i+" ");
+
+		for (int i = 2; i <= n; i++) {
+			if (prime[i] == true)
+				System.out.print(i + " ");
 		}
 
 	}

@@ -6,8 +6,12 @@ public class FindFirstNonRepeatingElementInArray {
 
 	public static void main(String[] args) {
 		int A[] = { 1, 2, 3, 1, 2, 5 };
-		HashMap<Integer, Integer> hm = new HashMap<>();
+		System.out.println(firstNonRepeatingElement(A));
+	}
 
+	private static int firstNonRepeatingElement(int[] A) {
+		HashMap<Integer, Integer> hm = new HashMap<>();
+		int res = -1;
 		for (int i = 0; i < A.length; i++) {
 			if (hm.containsKey(A[i]))
 				hm.put(A[i], hm.get(A[i]) + 1);
@@ -17,11 +21,11 @@ public class FindFirstNonRepeatingElementInArray {
 
 		for (int i = 0; i < A.length; i++) {
 			if (hm.get(A[i]) == 1) {
-				System.out.println(A[i]);
+				res = A[i];
 				break;
 			}
 		}
-		//System.out.println("There is no non repeating element present in the array");
+		return res;
 
 	}
 

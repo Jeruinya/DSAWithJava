@@ -4,11 +4,9 @@ public class CountNumberOfSetBits {
 
 	public static void main(String[] args) {
 		int n=25;
-		int c1=countNumberOfSetBitsNaive(n);
-		System.out.println(c1);
+		System.out.println(countNumberOfSetBitsNaive(n));
 		
-		int c2=countNumberOfSetBitsEfficient(n);
-		System.out.println(c2);
+		System.out.println(countNumberOfSetBitsEfficient(n));
 
 	}
 

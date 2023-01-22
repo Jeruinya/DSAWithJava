@@ -1,6 +1,5 @@
 package com.scaler.dsa.java.hashing;
 
-import java.security.KeyStore.Entry;
 import java.util.HashMap;
 
 /*
@@ -17,6 +16,7 @@ public class CountDuplicatePairs {
 	}
 
 	private static int countDuplicatePairsEff(int[] A) {
+		
 		HashMap<Integer,Integer> hm= new HashMap<>();
 		int ans=0;
 		for(int i=0;i<A.length;i++) {

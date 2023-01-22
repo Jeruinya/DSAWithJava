@@ -1,5 +1,7 @@
 package com.scaler.dsa.maths;
 
+import java.util.Arrays;
+
 /*
 Given an array A having N positive numbers. You have to find the number of Prime subsequences of A.
 A Prime subsequence is one that has only prime numbers, for example [2, 3], [5] are the Prime subsequences 
@@ -47,34 +49,57 @@ so every time we find a prime number we add the count to itself.
 public class PrimeSubsequences {
 
 	public static void main(String[] args) {
-		int A[] = {1, 2, 3};
-		int res=solve(A);
-		System.out.println(res);
+		int A[] = { 1, 2, 3 };
+		System.out.println(solve(A));
+		System.out.println(solveEff(A));
 
 	}
-	
-	 public static int solve(int[] A) {
-	        int count = 0;
-	        int mod = 1000000007;
-	        int num = 1;
-	        for(int i=0;i<A.length;i++){
-	            if(isPrime(A[i])){
-	                count = count%mod + num%mod;
-	                count = count%mod;
-	                num = num%mod + num%mod;
-	                num = num%mod;
-	            }
-	        }
-	        return count;
 
-	    }
+	public static int solve(int[] A) {
+		int count = 0;
+		int mod = 1000000007;
+		for (int i = 0; i < A.length; i++) {
+			if (isPrime(A[i])) {
+				count++;
+			}
+		}
+		return ((int) Math.pow(2, count) - 1) % mod;
 
-	 public static boolean isPrime(int N){
-	        if(N<2) return false;
-	        for(int j = 2;j*j<=N;j++){
-	            if(N % j == 0) return false;
-	        }
-	        return true;
-	    }
+	}
 
+	public static boolean isPrime(int N) {
+		if (N < 2)
+			return false;
+		for (int j = 2; j * j <= N; j++) {
+			if (N % j == 0)
+				return false;
+		}
+		return true;
+	}
+
+	public static int solveEff(int[] A) {
+		int N = A.length;
+		long c = 0;
+		int mod = 1000000007;
+		int M = 1000005;
+		int res = 0;
+		boolean p[] = new boolean[M];
+		Arrays.fill(p, true);
+		p[1] = false;
+
+		for (int i = 2; i * i < M; i++) {
+			if (p[i] == true) {
+				for (int j = i * i; j < M; j += i) {
+					p[j] = false;
+				}
+			}
+		}
+		for (int i = 0; i < N; i++) {
+			if (p[A[i]] == true) {
+				c++;
+			}
+		}
+		res = (int) ((int) (Math.pow(2, c) % mod));
+		return res - 1;
+	}
 }

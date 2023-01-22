@@ -6,7 +6,7 @@ Given  x and y ,Create a number with x set bits and y unset bits
 x=3, y=2
 Number will be  1 1 1 0 0-->28
 
-rer= (x+y) ones - y ones
+res= (x+y) ones - y ones
 
 	1 1 1 1 1 
 	0 0 0 1 1 

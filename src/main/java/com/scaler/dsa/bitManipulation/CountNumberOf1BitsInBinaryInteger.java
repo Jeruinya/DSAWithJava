@@ -17,11 +17,9 @@ public class CountNumberOf1BitsInBinaryInteger {
 
 	public static void main(String[] args) {
 		int A = 29;
-		int res = countSetBits(A);
-		System.out.println(res);
+		System.out.println(countSetBits(A));
 
-		int res1 = numSetBits(A);
-		System.out.println(res1);
+		System.out.println(numSetBits(A));
 
 	}
 

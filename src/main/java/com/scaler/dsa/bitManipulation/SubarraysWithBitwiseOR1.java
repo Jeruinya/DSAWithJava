@@ -30,18 +30,16 @@ public class SubarraysWithBitwiseOR1 {
 	public static void main(String[] args) {
 		int B[] = { 1, 0, 1 };
 		int A = 3;
-		int count = numberOfSubarraysWithOR1Naive(B, A);
-		System.out.println(count);
+		System.out.println(numberOfSubarraysWithOR1Naive(B, A));
 
-		long count1 = numberOfSubarraysWithOR1Efficient(B, A);
-		System.out.println(count1);
+		System.out.println(numberOfSubarraysWithOR1Efficient(B, A));
 	}
 
 	private static long numberOfSubarraysWithOR1Efficient(int[] B, int A) {
 		long count = 0;
 		long last = 0;
 		for (int i = 0; i < A; i++) {
-			if (B[i] == 1) 
+			if (B[i] == 1)
 				last = i + 1;
 			count = count + last;
 		}

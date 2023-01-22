@@ -1,6 +1,5 @@
 package com.scaler.dsa.java.hashing;
 
-import java.util.ArrayList;
 /*
 Problem Description
 Given an integer array A of size N, find the first repeating element in it.
@@ -33,11 +32,8 @@ public class FindFirstRepeatingElementInArray {
 
 	public static void main(String[] args) {
 		int A[] = { 10, 5, 3, 4, 3, 5, 6 };
-		int rep1 = findFistRepeatedElem(A);
-		System.out.println(rep1);
+		System.out.println(findFistRepeatedElem(A));
 
-		int rep2 = findFistRepeatedElem(A);
-		System.out.println(rep2);
 	}
 
 	private static int findFistRepeatedElem(int[] A) {
@@ -56,18 +52,5 @@ public class FindFirstRepeatingElementInArray {
 			}
 		}
 		return res;
-	}
-
-	public static int solve(ArrayList<Integer> A) {
-		HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
-		int ans = -1;
-		for (int i = A.size() - 1; i >= 0; --i) {
-			if (hm.containsKey(A.get(i))) {
-				ans = A.get(i);
-			} else {
-				hm.put(A.get(i), 1);
-			}
-		}
-		return ans;
 	}
 }

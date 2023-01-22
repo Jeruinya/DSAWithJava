@@ -23,33 +23,34 @@ public class FindModOfStringNumber {
 	public static void main(String[] args) {
 		String A = "123456678667788975554";
 		int B = 18;
-		//long strNum = Long.parseLong(A);
-		//System.out.println(strNum % B);
-		
-		int rem=findMod(A,B);
+		// long strNum = Long.parseLong(A);
+		// System.out.println(strNum % B);
+
+		int rem = findMod(A, B);
 		System.out.println(rem);
-		
-		int rem1=findModulo(A,B);
+
+		int rem1 = findModulo(A, B);
 		System.out.println(rem1);
 	}
 
 	private static int findModulo(String A, int B) {
-		long ans=0,r=1;
-		int n=A.length();
-		for(int i=n-1;i>=0;i--) {
-			ans=ans%B+((A.charAt(i)-'0')%B *r%B)%B;
-			r=(r*10)%B;
+		long ans = 0, r = 1;
+		int n = A.length();
+		for (int i = n - 1; i >= 0; i--) {
+			  ans=(ans+((A.charAt(i)-'0')*r))%B;
+	            r=(r*10)%B;
 		}
-		return (int)ans%B;
+
+		return (int) ans % B;
 	}
 
 	private static int findMod(String A, int B) {
-		long num = 0,rem = 0;
-		for(int i=0;i<A.length();i++){
-		num = rem*10 + (A.charAt(i)-'0');
-		rem = num%B;
+		long num = 0, rem = 0;
+		for (int i = 0; i < A.length(); i++) {
+			num = rem * 10 + (A.charAt(i) - '0');
+			rem = num % B;
 		}
-		int remainder = (int)rem;
+		int remainder = (int) rem;
 		return remainder;
 	}
 }

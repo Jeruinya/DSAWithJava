@@ -17,12 +17,12 @@ This will be helpful to find the multiplicative inverse
 public class FindTheSumOfAllTheElementsOfArrayAndCalulateMod {
 
 	public static void main(String[] args) {
-		int arr[] = { 1, 2, 3, 5, 6, 87, 98, 1000, 2000000000, 499 };
+		int A[]= {1,2,10,40,22,3};
 
-		int mod = 31;
-		int res = 1;
-		for (int i = 0; i < arr.length; i++) {
-			res = (res + arr[i]) % mod;
+		int mod = 5;
+		int res = 0;
+		for (int i = 0; i < A.length; i++) {
+			res = (res + A[i]) % mod;
 		}
 		System.out.println(res%mod);
 	}

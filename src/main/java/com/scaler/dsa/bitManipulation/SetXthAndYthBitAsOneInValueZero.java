@@ -8,13 +8,25 @@ public class SetXthAndYthBitAsOneInValueZero {
 
 	public static void main(String[] args) {
 		int x = 3, y = 1;
-		if (x == y)
-			System.out.println(1 << x);
-		else
-			System.out.println((1 << x) + (1 << y));
-		
-		//now dont use if-else/ternary operator and switch case and tell the answer
-			System.out.println((1<<x)|(1<<y));
+		System.out.println(solve(x, y));
+
+		// now dont use if-else/ternary operator and switch case and tell the answer
+		System.out.println(solve1(x, y));
 	}
 
+	private static int solve1(int x, int y) {
+		int res = 0;
+		res = (1 << x) | (1 << y);
+		return res;
+	}
+
+	private static int solve(int x, int y) {
+		int res = 0;
+		if (x == y)
+			res = 1 << x;
+		else
+			res = (1 << x) + (1 << y);
+
+		return res;
+	}
 }

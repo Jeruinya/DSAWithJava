@@ -21,24 +21,32 @@ Explanation 1:
  To eat a total of 5 units of food, Boomer behaved normally on Day 1 and on the Day 3.
 Explanation 2:
  To eat a total of 8 units of food, Boomer behaved normally only on day 4.
+ 
+Approach: 
+Since for each day, the food doubles up as the previous day with 1 unit on the first day, starting from i = 0,
+the number of food units Boomer was supposed to get on ith day is 2i.
+
+Only on the days he was well behaved did he get food. So adding the power of 2 on each day, he was well behaved,
+gives the total number of food units, i.e., A.
+
+Hence, the number of 1’s in the binary representation of A is the number of days he was well behaved.
  */
 
 public class FindingGoodDays {
 
 	public static void main(String[] args) {
-		int res=solve(89);
-		System.out.println(res);
+		System.out.println(solve(89));
 
 	}
-	
+
 	public static int solve(int A) {
-        int count =0;
-        while(A>0){
-            if((A&1)==1)
-                count++;
-            A=A>>1;
-        }
-        return count;
-    }
+		int count = 0;
+		while (A > 0) {
+			if ((A & 1) == 1)
+				count++;
+			A = A >> 1;
+		}
+		return count;
+	}
 
 }

@@ -16,30 +16,15 @@ public class ConcatenationOfThreeNumber {
 		int A = 10, B = 20, C = 30;
 
 		String res = "";
-		int min = 0;
-		int max = 0;
+		int min = Math.min(A, Math.min(B, C));
+		int max = Math.max(A, Math.max(B, C));
 		int mid = 0;
-
-		if (A >= B && A >= C)
-			max = A;
-		else if (B >= A && B >= C)
-			max = B;
-		else if (C >= A && C >= B)
-			max = C;
-
-		if (A <= B && A <= C)
-			min = A;
-		else if (B <= A && B <= C)
-			min = B;
-		else if (C <= A && C <= B)
-			min = C;
 
 		if ((A >= B && A <= C) || (A >= C && A <= B))
 			mid = A;
-
 		else if ((B >= A && B <= C) || (B >= C && B <= A))
 			mid = B;
-		else if ((C >= A && C <= B) || (C >= B && C <= A))
+		else
 			mid = C;
 
 		res = res + min + mid + max;

@@ -24,17 +24,13 @@ public class CheckaPairExistsOfiAndJ {
 		int A[] = { 8, 9, 1, -2, 4, 5, 11, -6, 7, 5 };
 		int k = 22;
 
-		boolean flag = checkPairExitsNaive(A, k);
-		boolean flag1 = checkPairExitsEfficient(A, k);
-		boolean flag2 = checkPairExitsEfficientButNotWork(A, k);
-		System.out.println(flag);
-		System.out.println(flag1);
-		System.out.println(flag2);
+		System.out.println( checkPairExitsNaive(A, k));
+		System.out.println(checkPairExitsEfficient(A, k));
+		System.out.println(checkPairExitsEfficientButNotWork(A, k));
 		
 		int A1[] = {1, 5, 4, 1, 2 };
 		int k1 = 0;
-		boolean flag3=checkPairExitsEfficientAMinusB(A1,k1);
-		System.out.println(flag3);
+		System.out.println(checkPairExitsEfficientAMinusB(A1,k1));
 
 	}
 
@@ -91,7 +87,7 @@ public class CheckaPairExistsOfiAndJ {
 			return false;
 		}
 
-	//Here this method call is giving result as true which is not corerect as i!=j which s given in the condition.
+	//Here this method call is giving result as true which is not correct as i!=j which is given in the condition.
 	private static boolean checkPairExitsEfficientButNotWork(int[] A, int k) {
 		HashSet<Integer> hs = new HashSet<>();
 		for (int i = 0; i < A.length; i++)

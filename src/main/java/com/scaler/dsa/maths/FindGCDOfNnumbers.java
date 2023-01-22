@@ -4,8 +4,7 @@ public class FindGCDOfNnumbers {
 
 	public static void main(String[] args) {
 		int A[]= {10,20,30,42,64};
-		int res=getGcdOfNNumbers(A);
-		System.out.println(res);
+		System.out.println(getGcdOfNNumbers(A));
 
 	}
 

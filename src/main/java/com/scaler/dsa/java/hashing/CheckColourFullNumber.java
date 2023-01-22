@@ -50,8 +50,7 @@ public class CheckColourFullNumber {
 
 	public static void main(String[] args) {
 		int n = 3245;
-		int res = colorFul(n);
-		System.out.println(res);
+		System.out.println(colorFul(n));
 
 	}
 

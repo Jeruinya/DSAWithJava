@@ -35,6 +35,20 @@ Explanation 2:
  5 is the gcd between 5 and 15.
  15 is the gcds pair with itself.
  Therefore, [5, 15] is the original array.
+ 
+	2		8		10
+
+2	2		2		2
+
+8   2		8		2
+
+10 2		2		10
+
+Formed matrix and generated all the possible pair GCD
+	
+	
+	
+
  */
 public class AllGCDPair {
 
@@ -80,7 +94,6 @@ public class AllGCDPair {
 
 	public static ArrayList<Integer> getOriginalArray1(ArrayList<Integer> A) {
 		ArrayList<Integer> ans = new ArrayList<Integer>();
-		int size = (int) Math.pow(A.size(), 0.5);
 		Collections.sort(A, Collections.reverseOrder());
 		HashMap<Integer, Integer> mp = new HashMap<Integer, Integer>();
 		for (int i = 0; i < A.size(); i++) {

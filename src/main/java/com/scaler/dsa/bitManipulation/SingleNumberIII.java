@@ -36,7 +36,7 @@ Approach:
 
 2->Bistmasking:
 
-Take xor of complete array and the will give the xor of a^b  where a and b are the unique elements.
+Take xor of complete array and that will give the xor of a^b  where a and b are the unique elements.
 Now the main concern here is how to extract a and b from a^b.
 
 suppose xor=100100
@@ -104,7 +104,8 @@ public class SingleNumberIII {
 			else
 				intB = intB ^ item;
 		}
-		int x = Math.min(intA, intB), y = Math.max(intA, intB);
+		int x = Math.min(intA, intB);
+		int y = Math.max(intA, intB);
 		int[] ans = new int[2];
 		ans[0] = x;
 		ans[1] = y;

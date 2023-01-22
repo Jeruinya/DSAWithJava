@@ -42,8 +42,7 @@ public class PubgProblem {
 
 	public static void main(String[] args) {
 		int A[] = {4,6};
-		int res=getLowestStrength(A);
-		System.out.println(res);
+		System.out.println(getLowestStrength(A));
 
 	}
 

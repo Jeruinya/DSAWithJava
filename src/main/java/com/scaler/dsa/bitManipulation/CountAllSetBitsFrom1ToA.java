@@ -67,11 +67,11 @@ public class CountAllSetBitsFrom1ToA {
 	
 	public  static int countAllTheSetbits(int A) {
         long N = A + 1, mod = 1000*1000*1000 + 7;
-        long ans = 0, pow2 = 1;
+        long ans = 0, pow = 1;
         for(int i = 0; i < 32; i++) {
-            ans += ((N / (pow2 << 1)) * pow2)%mod + Math.max(0, N % (pow2 << 1) - pow2);
+            ans += ((N / (pow << 1)) * pow)%mod + Math.max(0, N % (pow << 1) - pow);
             ans %= mod;
-            pow2 <<= 1;
+            pow <<= 1;
         }
         return (int)ans;
     }

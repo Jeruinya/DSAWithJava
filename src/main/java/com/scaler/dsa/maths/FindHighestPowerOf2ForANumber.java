@@ -11,11 +11,8 @@ public class FindHighestPowerOf2ForANumber {
 	public static void main(String[] args) {
 
 		int n = 65;
-		int num = findHighestPowerOf2(n);
-		System.out.println(num);
-
-		int num1 = findHighestPowerOf2EfficientSol(n);
-		System.out.println(num1);
+		System.out.println(findHighestPowerOf2(n));
+		System.out.println(findHighestPowerOf2EfficientSol(n));
 
 	}
 
@@ -23,7 +20,7 @@ public class FindHighestPowerOf2ForANumber {
 		int res = 1;
 		if (n < 1)
 			return 0;
-		for (int i = 0; i <=n; i++) {
+		for (int i = 0; i <= n; i++) {
 			int curr = 1 << i;
 			if (curr > n)
 				break;

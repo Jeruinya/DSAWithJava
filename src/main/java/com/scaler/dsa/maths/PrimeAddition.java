@@ -12,7 +12,7 @@ Return an integer which is the minimum number of prime numbers needed to represe
 Input :26
 Output:2
 
-Testcase 1-
+Test case 1-
 You can represent 26 as: 13+13
 So we require minimum of 2 prime numbers to represent the number 26.
 

@@ -15,13 +15,13 @@ public class CountFreqOfArrayElements {
 		countFreq(arr, n);
 	}
 
-	static void countFreq(int arr[], int n) {
+	static void countFreq(int A[], int n) {
 		Map<Integer, Integer> hm = new HashMap<Integer, Integer>();
 		for (int i = 0; i < n; i++) {
-			if (hm.containsKey(arr[i]))
-				hm.put(arr[i], hm.get(arr[i]) + 1);
+			if (hm.containsKey(A[i]))
+				hm.put(A[i], hm.get(A[i]) + 1);
 			else
-				hm.put(arr[i], 1);
+				hm.put(A[i], 1);
 		}
 
 		for (Map.Entry<Integer, Integer> itr : hm.entrySet())

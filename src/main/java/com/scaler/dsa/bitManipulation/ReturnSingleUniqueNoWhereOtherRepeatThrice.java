@@ -77,12 +77,10 @@ public class ReturnSingleUniqueNoWhereOtherRepeatThrice {
 	}
 	
 	public static int findNonRepeatedMoreEff(){
-        int[] arr = {6,5,8,7,7,8,8,5,2,5,6,6,7};
-        //int n = arr.length;
-
+        int[] A = {6,5,8,7,7,8,8,5,2,5,6,6,7};
         int[] freq = new int[32];
 
-        for(int x : arr){
+        for(int x : A){
             //extract every bit of given number and add it to the sum at correct indx (j)
             int j = 0;
             while(x>0){
@@ -102,11 +100,6 @@ public class ReturnSingleUniqueNoWhereOtherRepeatThrice {
             ans = ans + (x%3)*p;
             p = p<<1;
         }
-       // System.out.println(ans);
-
-
-        // Freq Array
-       // System.out.println(Arrays.toString(freq));
         return ans;
     }
 	

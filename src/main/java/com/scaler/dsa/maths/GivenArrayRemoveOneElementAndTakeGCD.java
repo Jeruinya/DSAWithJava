@@ -34,7 +34,10 @@ Find the max gcd we can generate by removing 1 element from the array. Duplicate
 
 A[]={24,16,18,30,15}
 
-efficient approach:
+The naive approach will be deleting elements one by one, finding the gcd of the remaining array, 
+and maintaining the maximum answer.But the time complexity for this will be O(N^2logN).
+
+Efficient approach:
 Build Prefix GCD and suffix GCD.
 
 prefixGcd[i]= gcd of all the elements from [0-i]
@@ -44,11 +47,9 @@ public class GivenArrayRemoveOneElementAndTakeGCD {
 
 	public static void main(String[] args) {
 		int A[] = { 24, 16, 18, 30, 15 };
-		int maxGcd = getMaxGcd(A);
-		System.out.println(maxGcd);
+		System.out.println(getMaxGcd(A));
 
-		int maxGcdEfficient = getMaxGcdEfficient(A);
-		System.out.println(maxGcdEfficient);
+		System.out.println(getMaxGcdEfficient(A));
 
 	}
 

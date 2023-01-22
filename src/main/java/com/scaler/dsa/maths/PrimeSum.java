@@ -31,9 +31,9 @@ Example Explanation
 public class PrimeSum {
 
 	public static void main(String[] args) {
-		int A = 4;
-		int res[] = primesum(A);
-		System.out.println(Arrays.toString(res));
+		int A = 10;
+		System.out.println(Arrays.toString(primesum(A)));
+		System.out.println(Arrays.toString(primesumEff(A)));
 
 	}
 
@@ -58,6 +58,39 @@ public class PrimeSum {
 				return false;
 		}
 		return true;
+	}
+
+	public static int[] sieve(int N) {
+		// Generate isPrime List less equal than N
+		int[] sieve = new int[N + 1];
+		sieve[0] = 0;
+		sieve[1] = 0;
+		for (int i = 2; i <= N; i++) {
+			sieve[i] = 1;
+		}
+		// Sieve of Erastothenes
+		for (int i = 2; i <= N; i++) {
+			if (sieve[i] == 0)
+				continue;
+			if (i > N / i)
+				break;
+			for (int j = i * i; j <= N; j += i)
+				sieve[j] = 0;
+		}
+		return sieve;
+	}
+
+	public static int[] primesumEff(int A) {
+		int[] sieve = sieve(A);
+		int[] ans = new int[2];
+		for (int i = 2; i <= A; ++i) {
+			if (sieve[i] == 1 && sieve[A - i] == 1) {
+				ans[0] = i;
+				ans[1] = A - i;
+				return ans;
+			}
+		}
+		return ans;
 	}
 
 }

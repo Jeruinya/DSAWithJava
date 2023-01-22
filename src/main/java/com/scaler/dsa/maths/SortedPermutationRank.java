@@ -41,7 +41,7 @@ Hint:
 Enumerating all permutations and matching them with the current one is going to be exponential.
 Let’s start by looking at the first character.
 If the first character is X, all permutations which had the first character less than X would come
- before this permutation when sorted lexicographically.
+before this permutation when sorted lexicographically.
 
 The number of permutation with a character C as the first character = 
 number of permutations possible with remaining N-1 character = (N-1)!
@@ -53,7 +53,6 @@ first character removed
 
 
 Example:
-Example
 Let’s say our string is “VIEW”.
 
 Character 1: 'V'

@@ -1,12 +1,11 @@
 package com.scaler.dsa.java.hashing;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 /*
 Problem Description
-Given a string A consisting of lowercase characters.
+Given a string A consisting of lower case characters.
 Check if characters of the given string can be rearranged to form a palindrome.
 Return 1 if it is possible to rearrange the characters of the string A such that it becomes a palindrome else return 0.
 
@@ -41,9 +40,8 @@ If length is odd only 1 character’s frequency should be odd.
 public class CheckAStringCanBeAPalindrome {
 
 	public static void main(String[] args) {
-		String str = "inttnikjmjbemrberk";
-		int res = checkPalindrome(str);
-		System.out.println(res);
+		String str = "ababc";
+		System.out.println(checkPalindrome(str));
 		System.out.println(checkPalindromeEff(str));
 	}
 
@@ -54,11 +52,6 @@ public class CheckAStringCanBeAPalindrome {
 				hm.put(A.charAt(i), hm.get(A.charAt(i)) + 1);
 			else
 				hm.put(A.charAt(i), 1);
-		}
-		int c = 0;
-		for (Map.Entry<Character, Integer> h : hm.entrySet()) {
-			if (h.getValue() % 2 != 0)
-				c++;
 		}
 		int temp = 0;
 		for (Integer i : hm.values()) {
@@ -72,8 +65,8 @@ public class CheckAStringCanBeAPalindrome {
 
 	public static int checkPalindromeEff(String A) {
 		int[] freq = new int[26];
-		for (int i = 0; i < A.length(); i++)
-			freq[A.charAt(i) - 97]++;
+		for (int i = 0; i < A.length(); i++) {
+			freq[A.charAt(i) - 97]++;}
 		int odd = 0;
 		for (int a : freq)
 			if (a % 2 == 1)

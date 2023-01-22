@@ -55,7 +55,15 @@ Suppose we have three points plain then these points can only form Right angled 
 
 Example: (1,5)	(1,3)	(3,3)	(6,3)	(1,-8)	(1,-10)  there will be 6 right angled triangle will be formed.
 
-if any issue refer Advance hashing 3 notes 
+if any issue refer Advance hashing 3 notes
+
+Approach:
+Try fixing each point as the intersection of perpendicular and base and finding other points.
+
+Once it is fixed, for the other two points, one point will share the same x-coordinate, 
+and the other point will share the same y-coordinate with the selected point.
+
+We can use a map to store the points for points sharing the same x or y coordinate.
 
  */
 public class CountNumberOfRightAngleTriangles {

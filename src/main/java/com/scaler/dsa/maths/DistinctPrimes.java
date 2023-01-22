@@ -1,6 +1,5 @@
 package com.scaler.dsa.maths;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 
 /*
@@ -29,11 +28,9 @@ public class DistinctPrimes {
 
 	public static void main(String[] args) {
 		int A[] = { 1, 2, 3, 4 };
-		int res = findDistinctPrimeFactorsEff(A);
-		System.out.println(res);
-		
-		int res1 = findDistinctPrimeFactorsNaive(A);
-		System.out.println(res1);
+		System.out.println(findDistinctPrimeFactorsEff(A));
+
+		System.out.println(findDistinctPrimeFactorsNaive(A));
 	}
 
 	public static int findDistinctPrimeFactorsEff(int A[]) {
@@ -45,14 +42,14 @@ public class DistinctPrimes {
 				max = i;
 		}
 		// Create Sieve array
-		int arr[] = new int[max + 1];
-		int n = arr.length;
-		arr[0] = 1;
-		arr[1] = 1;
+		int prime[] = new int[max + 1];
+		int n = prime.length;
+		prime[0] = 1;
+		prime[1] = 1;
 		for (int i = 2; i * i <= n; i++) {
-			if (arr[i] == 0) {
+			if (prime[i] == 0) {
 				for (int j = i * i; j < n; j = j + i) {
-					arr[j] = 1;
+					prime[j] = 1;
 				}
 			}
 		}
@@ -60,9 +57,9 @@ public class DistinctPrimes {
 		for (int num : A) {
 			for (int i = 1; i <= n / i; i++) {
 				if (num % i == 0) {
-					if (arr[i] == 0)
+					if (prime[i] == 0)
 						set.add(i);
-					if (arr[num / i] == 0)
+					if (prime[num / i] == 0)
 						set.add(num / i);
 				}
 			}
@@ -71,7 +68,7 @@ public class DistinctPrimes {
 	}
 
 	// TLE
-	//TC-O(N^2)
+	// TC-O(N^2)
 	public static int findDistinctPrimeFactorsNaive(int[] A) {
 		HashSet<Integer> set = new HashSet<>();
 
