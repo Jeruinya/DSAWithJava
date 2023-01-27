@@ -1,12 +1,27 @@
 package com.scaler.dsa.java.hashing;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
 /*
+Determine if a Sudoku is valid, according to: http://sudoku.com.au/TheRules.aspx
+
+The Sudoku board could be partially filled, where empty cells are filled with the character '.'.
 
 
-In a valid sudoko, there should be no repeating numbers in a row, column and a 33 box.
+
+The input corresponding to the above configuration :
+
+["53..7....", "6..195...", ".98....6.", "8...6...3", "4..8.3..1", "7...2...6", ".6....28.", "...419..5", "....8..79"]
+A partially filled sudoku which is valid.
+
+Note:
+
+A valid Sudoku board (partially filled) is not necessarily solvable. Only the filled cells need to be validated.
+Return 0 / 1 ( 0 for false, 1 for true ) for this problem
+
+In a valid sudoko, there should be no repeating numbers in a row, column and a 3*3 box.
 We can use set or map for finding if there are any repeating elements/numbers.
 Approach :: 
 1. Check if there are any repeating numbers in a row. 
@@ -18,6 +33,26 @@ If all the above didn’t have any repeating numbers then it is a valid sudoko.
 public class IsValidSudoku {
 
 	public static void main(String[] args) {
+		String s1 = "53..7....";
+		String s2 = "6..195...";
+		String s3 = ".98....6.";
+		String s4 = "8...6...3";
+		String s5 = "4..8.3..1";
+		String s6 = "7...2...6";
+		String s7 = ".6....28.";
+		String s8 = "...419..5";
+		String s9 = "....8..79";
+		List<String> A = new ArrayList<>();
+		A.add(s1);
+		A.add(s2);
+		A.add(s3);
+		A.add(s4);
+		A.add(s5);
+		A.add(s6);
+		A.add(s7);
+		A.add(s8);
+		A.add(s9);
+		System.out.println(isValidSudoku(A));
 
 	}
 

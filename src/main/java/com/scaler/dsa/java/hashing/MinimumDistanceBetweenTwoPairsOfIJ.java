@@ -18,16 +18,14 @@ Input 2:A = [1, 1]
 Output 1: 3
 Output 2: 1
 
-
-Example Explanation
 Explanation 1:
 
 Here we have 2 options:
 1. A[1] and A[4] are both 1 so (1,4) is a special pair and |1-4|=3.
 2. A[0] and A[5] are both 7 so (0,5) is a special pair and |0-5|=5.
 Therefore the minimum possible distance is 3. 
-Explanation 2:
 
+Explanation 2:
 Only possibility is choosing A[1] and A[2].
  */
 public class MinimumDistanceBetweenTwoPairsOfIJ {

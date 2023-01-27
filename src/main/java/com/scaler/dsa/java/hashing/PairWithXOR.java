@@ -23,17 +23,22 @@ Output 1: 1
 Output 2: 2
 Explanation 1: (10 ^ 15) = 5
 Explanation 2: (3 ^ 6) = 5 and (10 ^ 15) = 5 
+
+Naive Approach:
+A Simple solution is to traverse each element and check if there’s another number whose XOR with it is equal to x. 
+This solution takes O(n2) time.  
+
+Efficient Approach:
+An efficient solution to this problem takes O(n) time. The idea is based on the fact that A[i] ^ A[j] is equal to x 
+if and only if A[i] ^ x is equal to A[j].  
  */
 public class PairWithXOR {
 
 	public static void main(String[] args) {
 		int A[] = { 5, 4, 10, 15, 7, 6 };
 		int B = 5;
-		int count = findNumberOfPairsExistNaive(A, B);
-		System.out.println(count);
-
-		int count1 = findNumberOfPairsExistEfficient(A, B);
-		System.out.println(count1);
+		System.out.println(findNumberOfPairsExistNaive(A, B));
+		System.out.println(findNumberOfPairsExistEfficient(A, B));
 	}
 
 	// Observation:XOR Triangle:if A ^ B = C, then A ^ C = B and B ^ C = A

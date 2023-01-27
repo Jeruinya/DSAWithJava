@@ -35,20 +35,15 @@ Observations for Hashing--->
 1-check whether curr_sum-sum=0, if it is zero means the subarray is starting from zero  so stop.
 2-if hashMap already has the value means we already have the subarray with the sum so stop. 
  */
-public class SubarrayWithGivenSum {
+public class FirstSubarrayWithGivenSum {
 
 	public static void main(String[] args) {
 		int A[] = { 1, 2, 3, 4, 5 };
 		int B = 5;
 
-		int arr[] = subarraySumNaive(A, B);
-		System.out.println(Arrays.toString(arr));
-
-		int arr1[] = subarraySumEfficient(A, B);
-		System.out.println(Arrays.toString(arr1));
-
-		int arr2[] = subarraySumEfficientHashing(A, B);
-		System.out.println(Arrays.toString(arr2));
+		System.out.println(Arrays.toString(subarraySumNaive(A, B)));
+		System.out.println(Arrays.toString(subarraySumEfficient(A, B)));
+		System.out.println(Arrays.toString(subarraySumEfficientHashing(A, B)));
 	}
 
 	public static int[] subarraySumEfficientHashing(int[] A, int B) {
@@ -63,13 +58,12 @@ public class SubarrayWithGivenSum {
 				s = 0;
 				e = i;
 				break;
-			}
-			if (hm.containsKey(curr_sum - B)) {
+			} else if (hm.containsKey(curr_sum - B)) {
 				s = hm.get(curr_sum - B) + 1;
 				e = i;
 				break;
-			}
-			hm.put(curr_sum, i);
+			} else
+				hm.put(curr_sum, i);
 		}
 		if (e == -1) {
 			temp = new int[1];

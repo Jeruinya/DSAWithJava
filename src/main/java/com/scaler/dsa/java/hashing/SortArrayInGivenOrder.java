@@ -93,9 +93,7 @@ public class SortArrayInGivenOrder {
 				if ((hm.get(A.get(i)) == 0))
 					hm.remove(A.get(i));
 			}
-
 		}
-
 		return ans;
 	}
 }

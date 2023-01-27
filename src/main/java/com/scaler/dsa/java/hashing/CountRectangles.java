@@ -51,6 +51,8 @@ for every points of p1 and p2 look if there exist points p3 and p4. if yes then 
 
 if(x1,y2 and  x2,y1) both contains in the hashSet then it can form rectangle and will do count++.
 
+If issue to understand , refer advance hashing 3 video
+
 
  */
 public class CountRectangles {

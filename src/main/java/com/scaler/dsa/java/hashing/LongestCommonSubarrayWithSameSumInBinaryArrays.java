@@ -1,48 +1,41 @@
 package com.scaler.dsa.java.hashing;
-
+/*
+Given two arrays of equal length, find largest common subarray with equal number of 0s and 1s
+ */
 import java.util.HashMap;
 
 public class LongestCommonSubarrayWithSameSumInBinaryArrays {
 
+	public static void main(String args[]) {
+		int[] A1 = { 1, 1, 1, 1 };
+		int[] A2 = { 1, 1, 0, 1 };
+		int n = A1.length;
+		System.out.println(longestCommonSum(A1, A2, n));
+	}
+
 	// Returns largest common subarray with equal
 	// number of 0s and 1s
-	static int longestCommonSum(int[] arr1, int[] arr2, int n) {
-		// Find difference between the two
+	static int longestCommonSum(int[] A1, int A2[], int n) {
 		int[] arr = new int[n];
 		for (int i = 0; i < n; i++)
-			arr[i] = arr1[i] - arr2[i];
+			arr[i] = A1[i] - A2[i];
 
-		// Creates an empty hashMap hM
-		HashMap<Integer, Integer> hM = new HashMap<Integer, Integer>();
+		HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
 
-		int sum = 0; // Initialize sum of elements
-		int max_len = 0; // Initialize result
+		int sum = 0;
+		int max_len = 0;
 
-		// Traverse through the given array
 		for (int i = 0; i < n; i++) {
-			// Add current element to sum
 			sum += arr[i];
-
-			// To handle sum=0 at last index
 			if (sum == 0)
 				max_len = i + 1;
 
-			// If this sum is seen before,
-			// then update max_len if required
-			if (hM.containsKey(sum))
-				max_len = Math.max(max_len, i - hM.get(sum));
+			if (hm.containsKey(sum))
+				max_len = Math.max(max_len, i - hm.get(sum));
 
-			else // Else put this sum in hash table
-				hM.put(sum, i);
+			else
+				hm.put(sum, i);
 		}
 		return max_len;
-	}
-
-	// Driver code
-	public static void main(String args[]) {
-		int[] arr1 = { 0, 1, 0, 1, 1, 1, 1 };
-		int[] arr2 = { 1, 1, 1, 1, 1, 0, 1 };
-		int n = arr1.length;
-		System.out.println(longestCommonSum(arr1, arr2, n));
 	}
 }

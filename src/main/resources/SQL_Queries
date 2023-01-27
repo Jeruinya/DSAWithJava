@@ -22,3 +22,5 @@ Q7. Write a query to find the names of employees that begin with ‘S’
 		
 Question : we have two tables condidates and Results. find the number of votes won by the female candidates whose age is less than 50 years.
 		select sum(rs.votes) from candidates cd join results rs on cd.id=rs.candidate_id and cd.age<50 and cd.gender='F'
+		
+

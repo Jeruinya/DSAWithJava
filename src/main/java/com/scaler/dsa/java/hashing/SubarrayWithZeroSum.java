@@ -26,16 +26,15 @@ import java.util.HashSet;
 public class SubarrayWithZeroSum {
 
 	public static void main(String[] args) {
-		int arr[] = new int[] { 5, 3, 9, -4, -6, 7, -1 };
-		int n = arr.length;
+		int A[] = new int[] { 5, 3, 9, -4, -6, 7, -1 };
 
-		System.out.println(ZeroSumSubarray(arr, n));
-
-		System.out.println(ZeroSumSubarrayPrefixSum(arr, n));
+		System.out.println(ZeroSumSubarray(A));
+		System.out.println(ZeroSumSubarrayPrefixSum(A));
 	}
 
 	// O(N) and O(n) solution
-	private static boolean ZeroSumSubarrayPrefixSum(int[] A, int n) {
+	private static boolean ZeroSumSubarrayPrefixSum(int[] A) {
+		int n = A.length;
 		int ps[] = new int[n];
 		ps[0] = A[0];
 		for (int i = 1; i < n; i++)
@@ -55,10 +54,9 @@ public class SubarrayWithZeroSum {
 	}
 
 	// O(N) and O(1) solution
-	static int ZeroSumSubarray(int A[], int n) {
+	static int ZeroSumSubarray(int A[]) {
 		HashSet<Long> hs = new HashSet<>();
 		long sum = 0;
-		//hs.add(0l);
 		for (int i = 0; i < A.length; i++) {
 			sum = sum + A[i];
 			if (hs.contains(sum))
@@ -66,7 +64,7 @@ public class SubarrayWithZeroSum {
 			else
 				hs.add(sum);
 		}
-		if(hs.contains(0l))
+		if (hs.contains(0l))
 			return 1;
 
 		return 0;
