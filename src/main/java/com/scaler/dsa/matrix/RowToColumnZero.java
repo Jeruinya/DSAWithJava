@@ -3,14 +3,35 @@ package com.scaler.dsa.matrix;
 import java.util.Arrays;
 import java.util.HashSet;
 
-/**
- * Problem Description You are given a 2D integer matrix A, make all the
- * elements in a row or column zero if the A[i][j] = 0. Specifically, make
- * entire ith row and jth column zero.
- * 
- * Input 1: [1,2,3,4] [5,6,7,0] [9,2,0,4]
- * 
- * Output 1: [1,2,0,0] [0,0,0,0] [0,0,0,0]
+/*
+Problem Description
+You are given a 2D integer matrix A, make all the elements in a row or column zero if the A[i][j] = 0. 
+Specifically, make entire ith row and jth column zero.
+
+
+Problem Constraints
+1 <= A.size() <= 103
+1 <= A[i].size() <= 103
+0 <= A[i][j] <= 103
+
+Input Format
+First argument is a vector of vector of integers.(2D matrix).
+
+Output Format
+Return a vector of vector after doing required operations.
+
+Input 1:
+[1,2,3,4]
+[5,6,7,0]
+[9,2,0,4]
+
+Output 1:
+[1,2,0,0]
+[0,0,0,0]
+[0,0,0,0]
+
+Explanation 1:
+A[2][4] = A[3][3] = 0, so make 2nd row, 3rd row, 3rd column and 4th column zero.
  */
 
 public class RowToColumnZero {
@@ -27,8 +48,6 @@ public class RowToColumnZero {
 
 		comvertRowColumnZeroEfficient(A1);
 
-		
-		System.out.println();
 		System.out.println();
 		for (int i = 0; i < A1.length; i++)
 			System.out.println(Arrays.toString(A1[i]));
@@ -92,6 +111,47 @@ public class RowToColumnZero {
 			}
 		}
 
+	}
+
+	public static int[][] solve(int[][] A) {
+
+		int m = A.length;
+		int n = A[0].length;
+
+		for (int i = 0; i < m; i++) {
+			int flag = 0;
+			for (int j = 0; j < n; j++) {
+				if (A[i][j] == 0) {
+					flag = 1;
+				}
+			}
+			if (flag == 1) {
+				for (int j = 0; j < n; j++) {
+					if (A[i][j] != 0)
+						A[i][j] = -1;
+				}
+			}
+		}
+		for (int j = 0; j < n; j++) {
+			int flag = 0;
+			for (int i = 0; i < m; i++) {
+				if (A[i][j] == 0)
+					flag = 1;
+			}
+
+			if (flag == 1) {
+				for (int i = 0; i < m; i++)
+					if (A[i][j] != 0)
+						A[i][j] = -1;
+			}
+		}
+
+		for (int i = 0; i < m; i++)
+			for (int j = 0; j < n; j++)
+				if (A[i][j] == -1)
+					A[i][j] = 0;
+
+		return A;
 	}
 
 }

@@ -1,6 +1,6 @@
 package com.scaler.dsa.matrix;
 
-public class PrintAllSubmatrices {
+public class R_PrintAllSubmatrices {
 
 	public static void printMatrix(int columnStart, int rowStart, int columnSize, int rowSize, int[][] matrix) {
 		if (columnStart + columnSize > matrix[0].length)

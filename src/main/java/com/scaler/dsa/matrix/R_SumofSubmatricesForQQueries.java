@@ -3,9 +3,8 @@ package com.scaler.dsa.matrix;
 import java.util.Scanner;
 
 /*
-Given a matrix of size N*M and we have Q queries, find the sum of a given submatrix. each query will have 4 integers x1,y1,x2,y2 denoting 
-the sub matrix.
-
+Given a matrix of size N*M and we have Q queries, find the sum of a given submatrix. each query will have 4 
+integers x1,y1,x2,y2 denoting the sub matrix.
 	1 2 3 4
 	4 5 6 7
 	8 9 10 11
@@ -18,7 +17,7 @@ To build a PS we first needs to
 	-fill  first row and first column just like 1 D array.
 	-Then fill other points of (i,j) like ps[i,j]=ps[i-1][j]+ps[i][j-1]-ps[i-1][j-1]+A[i][j]
  */
-public class FindSumofSubmatricesForQQueries {
+public class R_SumofSubmatricesForQQueries {
 
 	public static void main(String[] args) {
 		int A[][] = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } };
