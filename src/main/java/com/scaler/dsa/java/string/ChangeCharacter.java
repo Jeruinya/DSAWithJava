@@ -1,6 +1,8 @@
 package com.scaler.dsa.java.string;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 /*
 Problem Description
 You are given a string A of size N consisting of lowercase alphabets.
@@ -25,17 +27,17 @@ So the minimum number of distinct character will be 2.
 public class ChangeCharacter {
 
 	public static void main(String[] args) {
-		String A = "abcabbccd";
+		String A = "aaaabbbb";
 		int B = 3;
-
-		int res = countNumberOfCharactersNeedsTochange(A, B);
-		System.out.println(res);
+		System.out.println(countNumberOfCharactersNeedsTochange(A, B));
+		System.out.println(solve(A, B));
 	}
 
 	private static int countNumberOfCharactersNeedsTochange(String A, int B) {
 		int c[] = new int[26];
-		for (int i = 0; i < A.length(); i++)
+		for (int i = 0; i < A.length(); i++) {
 			c[A.charAt(i) - 'a']++;
+		}
 		Arrays.sort(c);
 		for (int i = 0; i < 26; i++) {
 			if (c[i] != 0) {
@@ -48,4 +50,25 @@ public class ChangeCharacter {
 		return 0;
 
 	}
+	
+	 public static int solve(String A, int B) {
+	        int cnt[] = new int[26];
+	        for(int i = 0; i < A.length(); ++i){
+	            ++cnt[A.charAt(i)-'a'];
+	        }
+	        ArrayList<Integer> C = new ArrayList<Integer>();
+	        for(int i = 0; i < 26; ++i){
+	            if(cnt[i] > 0){
+	                C.add(cnt[i]);
+	            }
+	        }
+	        Collections.sort(C);
+	        for(int i = 0; i < C.size(); ++i){
+	            B -= C.get(i);
+	            if(B < 0){
+	                return C.size() - i;
+	            }
+	        }
+	        return 1;
+	    }
 }

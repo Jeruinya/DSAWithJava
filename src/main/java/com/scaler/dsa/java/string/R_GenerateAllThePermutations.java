@@ -11,7 +11,7 @@ Output: cd dc
 Input: str = “abb” 
 Output: abb abb bab bba bab bba 
  */
-public class GenerateAllThePermutations {
+public class R_GenerateAllThePermutations {
 
 	public static void main(String[] args) {
 		String s = "abb";

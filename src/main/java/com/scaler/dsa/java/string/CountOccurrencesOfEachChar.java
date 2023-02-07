@@ -10,6 +10,7 @@ class CountOccurrencesOfEachChar {
 		}
 		for (int i = 0; i < 26; i++) {
 			if (count[i] > 0) {
+				System.out.println((char) (i + 'a')) ;
 				System.out.println((char) (i + 'a') + " " + count[i]);
 			}
 		}

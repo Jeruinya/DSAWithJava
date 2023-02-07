@@ -3,10 +3,31 @@ package com.scaler.dsa.java.string;
 import java.util.HashSet;
 
 /*
-Given a string, find the largest unique substring.
-example:
-String s= "abcabcdde";
-Ans: abcd  len =4
+Problem Description
+Given a string A, find the length of the longest substring without repeating characters.
+Note: Users are expected to solve in O(N) time complexity.
+
+Problem Constraints
+1 <= size(A) <= 106
+String consists of lowerCase,upperCase characters and digits are also present in the string A.
+
+Input Format
+Single Argument representing string A.
+
+Output Format
+Return an integer denoting the maximum possible length of substring without repeating characters.
+
+Input 1: A = "abcabcbb"
+Input 2: A = "AaaA"
+
+Output 1: 3
+Output 2: 2
+
+Explanation 1:
+ Substring "abc" is the longest substring without repeating characters in string A.
+
+Explanation 2:
+ Substring "Aa" or "aA" is the longest substring without repeating characters in string A.
  */
 public class FindLargestUniqueSubstring {
 
@@ -17,18 +38,18 @@ public class FindLargestUniqueSubstring {
 
 	}
 
-	private static int longestUniqueSubstringEff(String s) {
+	private static int longestUniqueSubstringEff(String A) {
 		int i = 0, j = 0, len = 0;
-		int n = s.length() - 1;
+		int n = A.length() - 1;
 
 		HashSet<Character> hs = new HashSet<>();
 		while (j <= n) {
-			if (!hs.contains(s.charAt(j))) {
-				hs.add(s.charAt(j));
+			if (!hs.contains(A.charAt(j))) {
+				hs.add(A.charAt(j));
 				j++;
 				len = Math.max(len, hs.size());
 			} else {
-				hs.remove(s.charAt(i));
+				hs.remove(A.charAt(i));
 				i++;
 			}
 		}
@@ -36,25 +57,28 @@ public class FindLargestUniqueSubstring {
 	}
 
 	// Time complexity O(n^3) Space -O(n)
-	private static int longestUniqueSubstring(String str) {
+	private static int longestUniqueSubstring(String A) {
 		int len = 0;
-		int n = str.length();
+		int n = A.length();
 		for (int i = 0; i < n; i++)
 			for (int j = i; j < n; j++)
-				if (areDisting(str, i, j))
-					len = Math.max(len, j - i + 1);
+				if (areDisting(A.substring(i, j)))
+					len = Math.max(len, j - i);
 
 		return len;
 	}
 
-	private static boolean areDisting(String str, int i, int j) {
+	private static boolean areDisting(String A) {
 
-		boolean[] visited = new boolean[26];
-		for (int k = i; k <= j; k++) {
-			if (visited[str.charAt(k) - 'a'] == true)
+		int[] c = new int[26];
+		for (int i = 0; i < A.length(); i++)
+			c[A.charAt(i) - 'a']++;
+
+		for (int i = 0; i < 26; i++) {
+			if (c[i] > 1)
 				return false;
-			visited[str.charAt(k) - 'a'] = true;
 		}
+
 		return true;
 	}
 }

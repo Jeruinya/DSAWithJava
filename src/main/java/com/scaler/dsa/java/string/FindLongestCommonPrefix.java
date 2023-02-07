@@ -1,5 +1,7 @@
 package com.scaler.dsa.java.string;
 
+import java.util.ArrayList;
+
 /*
 Problem Description
 Given the array of strings A, you need to find the longest string S, which is the prefix of ALL the strings in the array.
@@ -29,11 +31,34 @@ int d=s.indexOf(s1);  indexOf() method will check whther two strings are equal o
 public class FindLongestCommonPrefix {
 
 	public static void main(String[] args) {
-		String str[] = { "aabcdefgh", "aaefghijk", "aabcefgh" };
+		String A[] = { "aabcdefgh", "aaefghijk", "aabcefgh" };
 
-		String longestPref = findLongestPrefix(str);
-		System.out.println(longestPref);
+		System.out.println(findLongestPrefix(A));
+		System.out.println(longestCommonPrefix(A));
 
+	}
+
+	public static String longestCommonPrefix(String A[]) {
+		if (A.length == 0)
+			return "";
+		
+		String res = "";
+		int min = Integer.MAX_VALUE;
+		
+		for (int i = 0; i < A.length; i++) {
+			min = Math.min(min, A[i].length());
+		}
+		for (int i = 0; i < min; i++) {
+			char c = A[0].charAt(i);
+			// check if c character is same in every string or not
+			for (int j = 1; j < A.length; j++) {
+
+				if (c != A[j].charAt(i))
+					return res;
+			}
+			res += c;
+		}
+		return res;
 	}
 
 	private static String findLongestPrefix(String[] A) {

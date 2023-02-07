@@ -4,15 +4,14 @@ public class CharacterIndex {
 
 	public static void main(String[] args) {
 		String str = "scaler";
-		String res = solve(str);
-		System.out.println(res);
+		System.out.println(solve(str));
 
 	}
 
 	public static String solve(String A) {
 		String res = "";
 		for (int i = 0; i < A.length(); i++) {
-			res = res + A.charAt(i) + (A.charAt(i) - 'a' + 1);
+			res = res + A.charAt(i) + (A.charAt(i) - 'a') + 1;
 		}
 		return res;
 	}

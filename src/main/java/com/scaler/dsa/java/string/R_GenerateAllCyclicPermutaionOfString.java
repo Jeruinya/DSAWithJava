@@ -3,7 +3,7 @@ package com.scaler.dsa.java.string;
 /*
 Generate all cyclic permutations of a number
  */
-public class GenerateAllCyclicPermutaionOfString {
+public class R_GenerateAllCyclicPermutaionOfString {
 
 	public static void main(String[] args) {
 		int n = 5436;

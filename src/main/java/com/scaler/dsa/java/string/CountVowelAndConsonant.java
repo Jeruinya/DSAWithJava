@@ -1,49 +1,28 @@
 package com.scaler.dsa.java.string;
 
+import java.util.Arrays;
+
 public class CountVowelAndConsonant {
-
-		// Method 1
-		// To prints number of vowels and consonants
-		public static void count(String str)
-		{
-			// Initially initializing elements with zero
-			// as till now we have not traversed
-			int vow = 0, con = 0;
-		
-			// Declaring a reference String
-			// which contains all the vowels
-			String ref = "aeiouAEIOU";
-		
-			for (int i = 0; i < str.length(); i++) {
-				
-				// Check for any special characters present
-				// in the given string
-				if ((str.charAt(i) >= 65
-					&& str.charAt(i) <= 90)
-					|| (str.charAt(i) >= 97
-						&& str.charAt(i) <= 122)) {
-					if (ref.indexOf(str.charAt(i)) != -1)
-						vow++;
-					else
-						con++;
-				}
-			}
-		
-			// Print and display number of vowels and consonants
-			// on console
-			System.out.println("Number of Vowels = " + vow
-							+ "\nNumber of Consonants = "
-							+ con);
-		}
-
-		// Method 2
-		// Main driver method
-		public static void main(String[] args)
-		{
-			// Custom string as input
-			String str = "#GeeksforGeeks";
-		
-			// Callin gthe method 1
-			count(str);
-		}
+	public static void main(String[] args) {
+		String str = "#GeeksforGeeks";
+		System.out.println(Arrays.toString(count(str)));
+		;
 	}
+
+	public static int[] count(String A) {
+		int count[] = new int[2];
+		int vow = 0, con = 0;
+		String vowel = "aeiouAEIOU";
+		for (int i = 0; i < A.length(); i++) {
+			if ((A.charAt(i) >= 65 && A.charAt(i) <= 90) || (A.charAt(i) >= 97 && A.charAt(i) <= 122)) {
+				if (vowel.contains(String.valueOf(A.charAt(i))))
+					vow++;
+				else
+					con++;
+			}
+		}
+		count[0] = vow;
+		count[1] = con;
+		return count;
+	}
+}

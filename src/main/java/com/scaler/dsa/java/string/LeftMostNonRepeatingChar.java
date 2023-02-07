@@ -1,16 +1,28 @@
 package com.scaler.dsa.java.string;
 
 import java.util.Arrays;
-
+/*
+Input: takeUforward
+Output: t
+Explanation: Character ‘t’ is the left-most non-repeating character or the first non-repeating character.
+ */
 public class LeftMostNonRepeatingChar {
 
 	static final int CHAR = 256;
+	public static void main(String args[]) {
+		String A = "geeksforgeeks";
+		System.out.println("Index of leftmost non-repeating element:");
+		int idx=nonRepNaive(A);
+		System.out.println(A.charAt(idx));
+		System.out.println(nonRepBetter(A));
+		System.out.println(nonRepEfficient(A));
+	}
 
-	static int nonRepNaive(String str) {
-		for (int i = 0; i < str.length(); i++) {
+	static int nonRepNaive(String A) {
+		for (int i = 0; i < A.length(); i++) {
 			boolean flag = false;
-			for (int j = 0; j < str.length(); j++) {
-				if (i != j && str.charAt(i) == str.charAt(j)) {
+			for (int j = 0; j < A.length(); j++) {
+				if (i != j && A.charAt(i) == A.charAt(j)) {
 					flag = true;
 					break;
 				}
@@ -49,13 +61,5 @@ public class LeftMostNonRepeatingChar {
 				res = Math.min(res, fI[i]);
 		}
 		return (res == Integer.MAX_VALUE) ? -1 : res;
-	}
-
-	public static void main(String args[]) {
-		String str = "geeksforgeeks";
-		System.out.println("Index of leftmost non-repeating element:");
-		System.out.println(nonRepNaive(str));
-		System.out.println(nonRepBetter(str));
-		System.out.println(nonRepEfficient(str));
 	}
 }

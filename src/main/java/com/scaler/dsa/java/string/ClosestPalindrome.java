@@ -5,8 +5,10 @@ Problem Description
 Groot has a profound love for palindrome which is why he keeps fooling around with strings.
 A palindrome string is one that reads the same backward as well as forward.
 
-Given a string A of size N consisting of lowercase alphabets, he wants to know if it is possible to make 
+Given a string A of size N consisting of lower case alphabets, he wants to know if it is possible to make 
 the given string a palindrome by changing exactly one of its character.
+
+So here we just need to check if we can make the given string as palindrome by changing just one character or not.
 
 Problem Constraints
 1 <= N <= 105
@@ -45,7 +47,7 @@ So if the length of the string is even and count is zero then we have to make tw
 public class ClosestPalindrome {
 
 	public static void main(String[] args) {
-		String A = "abbba";
+		String A = "xyzzyx";
 		System.out.println(solve(A));
 
 	}

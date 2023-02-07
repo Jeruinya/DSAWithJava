@@ -23,7 +23,6 @@ public class FindLengthOfStringWithoutLibraryFun {
 	}
 
 	private static int lengthOfString(String A) {
-		//char[] c = A.toCharArray();
 		int count = 0;
 		for (char i : A.toCharArray())
 			count++;

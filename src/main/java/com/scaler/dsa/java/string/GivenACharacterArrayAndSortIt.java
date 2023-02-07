@@ -16,14 +16,13 @@ public class GivenACharacterArrayAndSortIt {
 	}
 	//TC-O(n)
 	private static void sortChar(char[] c) {
-		int arr[] = new int[26];
-		for (int i = 0; i < c.length; i++) {
-			int index = c[i] - 97;
-			arr[index]++;
-		}
+		int A[] = new int[26];
+		for (int i = 0; i < c.length; i++) 
+			A[c[i]-'a']++;
+		
 		int curr_index=0;
 		for(int i=0;i<26;i++) {
-			for(int j=0;j<arr[i];j++) {
+			for(int j=0;j<A[i];j++) {
 				c[curr_index]=(char)(i+'a');
 				curr_index++;
 			}
