@@ -8,7 +8,7 @@ RS=276: get the a change using minimum notes/coins
 
 276=200+50+20+5+1=5
  */
-public class MoneyChnage {
+public class MoneyChange {
 
 	static int denominator[] = { 1, 2, 5, 10, 20, 50, 100, 200, 500, 2000 };
 

@@ -53,7 +53,7 @@ public class TowerOfHanoi {
 		return 2 * numberOfStepsToPerform(n - 1) + 1;
 	}
 
-	// TC-O(n)
+	// TC-O(1)
 	private static int numberOfStepsToPerformMoreEff(int n) {
 		return (1 << n) - 1;
 	}

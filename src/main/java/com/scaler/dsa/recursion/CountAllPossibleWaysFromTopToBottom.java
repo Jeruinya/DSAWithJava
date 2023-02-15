@@ -22,11 +22,11 @@ public class CountAllPossibleWaysFromTopToBottom {
 
 	public static void main(String[] args) {
 		int m = 3, n = 3;
-		System.out.println(numberofPaths(m, n));
+		System.out.println(numberofPaths(m-1, n-1));
 	}
 
 	private static int numberofPaths(int m, int n) {
-		if (m == 1 || n == 1)
+		if (m == 0 || n == 0)
 			return 1;
 		 // If diagonal movements are allowed then the last addition is required.
 		return numberofPaths(m - 1, n) + numberofPaths(m, n - 1);// + numberOfPaths(m-1, n-1);;

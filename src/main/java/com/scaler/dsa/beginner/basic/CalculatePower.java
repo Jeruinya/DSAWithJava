@@ -1,7 +1,5 @@
 package com.scaler.dsa.beginner.basic;
 
-import java.util.Scanner;
-
 /**
  * Problem Description You are given two integers A and B. You have to find the
  * value of A Power B. NOTE: The value of answer is always less than or equal to
@@ -12,7 +10,7 @@ public class CalculatePower {
 
 	public static void main(String[] args) {
 		long a=2;
-		int n=32;
+		int n=5;
 		System.out.println(powerNaive(a, n));
 		System.out.println(powerEfficient(a, n));
 

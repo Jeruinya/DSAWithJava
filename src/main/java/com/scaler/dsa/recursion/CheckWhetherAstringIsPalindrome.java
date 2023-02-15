@@ -6,10 +6,8 @@ Given a string check whether is palindrome or not using recursion
 public class CheckWhetherAstringIsPalindrome {
 
 	public static void main(String[] args) {
-		String str = "abacaba";
-		int s = 0, e = str.length() - 1;
-		boolean b = isPalindrome(str, s, e);
-		System.out.println(b);
+		String s = "abacaba";
+		System.out.println(isPalindrome(s, 0, s.length() - 1));
 
 	}
 

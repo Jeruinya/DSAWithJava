@@ -26,7 +26,7 @@ Explanation 2:
 public class LikeFibSequence {
 
 	public static void main(String[] args) {
-		int A=3;
+		int A=4;
 		System.out.println(nthTerm(A));
 	}
 	

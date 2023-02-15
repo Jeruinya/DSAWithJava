@@ -53,12 +53,13 @@ public class TowerofHanoiProblem {
 	static int res[][];
 	static int move=0;
 	public static void main(String args[]) {
-		int A=3;
-		res= new int[(1<<A)-1][3];
-		solveToh(A,1,2,3);
+		int n=3;
+		res= new int[(1<<n)-1][3];
+		solveToh(n,1,2,3);
 	
 		for(int i=0;i<res.length;i++)
 			System.out.println(Arrays.toString(res[i]));
+		solveToh1(3,'A','B','C');
 	}
 	private static void solveToh(int A, int src, int helper, int dest) {
 		if(A==0)
@@ -66,6 +67,16 @@ public class TowerofHanoiProblem {
 		solveToh(A-1,src,dest,helper);
 		res[move++]=new int[] {A,src,dest};
 		solveToh(A-1,helper,src,dest);
+		
+	}
+	
+
+	private static void solveToh1(int n, char src, char helper, char dest) {
+		if(n==0)
+			return;
+		solveToh1(n-1,src,dest,helper);
+		System.out.println("Move "+n+" disk from "+src+" to "+dest);
+		solveToh1(n-1,helper,src,dest);
 		
 	}
 

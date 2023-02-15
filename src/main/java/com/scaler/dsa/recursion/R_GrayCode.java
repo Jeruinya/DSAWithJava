@@ -62,25 +62,37 @@ A=3
 Observation: if we write grey code for A=2 then reverse it so we have grey code and reverse grey code.
 we can see in that in the first half of A=3 its having grey code of A=2 and in the second half reverse grey code of A=2. 
  */
-public class GrayCode {
+public class R_GrayCode {
 
 	public static void main(String[] args) {
-		int A=3;
-		ArrayList<Integer>list =getGreyCode(A);
+		int A = 3;
+		ArrayList<Integer> list = getGreyCode(A);
 		System.out.println(list);
-		
+
 	}
 
+	// TC-O(n^2) space-O(n)
 	private static ArrayList<Integer> getGreyCode(int A) {
-		ArrayList<Integer> list= new ArrayList<>();
+		ArrayList<Integer> list = new ArrayList<>();
 		list.add(0);
-		for(int i=0;i<A;i++) {
-			int currListSize=list.size();
-			for(int j=currListSize-1;j>=0;j--) 
-				list.add(list.get(j)+ (1<<i));
-			
+		for (int i = 0; i < A; i++) {
+			int currListSize = list.size();
+			for (int j = currListSize - 1; j >= 0; j--)
+				list.add(list.get(j) + (1 << i));
+
 		}
 		return list;
+	}
+
+	// TC-O(n), Space-O(n)
+	public static ArrayList<Integer> grayCode(int A) {
+		int n = 1 << A;
+		ArrayList<Integer> result = new ArrayList<>();
+		// G[n] = n ^ (n >> 1)
+		for (int i = 0; i < n; i++) {
+			result.add(i ^ (i >> 1));
+		}
+		return result;
 	}
 
 }

@@ -9,8 +9,7 @@ public class CheckArrayIsSorted {
 
 	public static void main(String[] args) {
 		int A[] = { 1, 2, 3,8, 20 };
-		boolean flag = isArraySorted(A, A.length);
-		System.out.println(flag);
+		System.out.println(isArraySorted(A, A.length));
 
 	}
 	//TC-O(n) 
