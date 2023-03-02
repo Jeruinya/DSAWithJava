@@ -42,6 +42,15 @@ public class CheckIfBTIsSymmetric {
 
 	static TreeNode root;
 
+	public static void main(String[] args) {
+		root = new TreeNode(1);
+		root.left = new TreeNode(2);
+		root.right = new TreeNode(3);
+		root.left.left = new TreeNode(4);
+		root.left.right = new TreeNode(5);
+		isSymmetric(root);
+	}
+
 	public static void isSymmetric(TreeNode A) {
 		boolean b = fn(A.left, A.right);
 		if (b == true)
@@ -52,22 +61,15 @@ public class CheckIfBTIsSymmetric {
 	}
 
 	public static boolean fn(TreeNode root1, TreeNode root2) {
-		if (root1 == null && root2 == null)
-			return true;
-		if (root1 == null || root2 == null)
-			return false;
+		 if(root1== null && root2==null)
+	            return true;
+	        if (root1 == null && root2 != null)
+	            return false;
+	         if (root1 != null && root2 == null)
+	            return false;
 
 		if (root1.val != root2.val)
 			return false;
 		return fn(root1.right, root2.left) && fn(root1.left, root2.right);
-	}
-
-	public static void main(String[] args) {
-		root = new TreeNode(1);
-		root.left = new TreeNode(2);
-		root.right = new TreeNode(3);
-		root.left.left = new TreeNode(4);
-		root.left.right = new TreeNode(5);
-		isSymmetric(root);
 	}
 }

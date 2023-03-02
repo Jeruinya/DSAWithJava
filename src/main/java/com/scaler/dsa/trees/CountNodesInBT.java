@@ -32,30 +32,23 @@ Explanation 2:
 Clearly, there are 4 nodes 1, 4, 3 and 2.
  */
 public class CountNodesInBT {
-	TreeNode root;
+	static TreeNode root;
 
-	void printSize() {
-		int count = size(root);
-		System.out.println("Size of tree is:" + count);
+	public static void main(String[] args) {
+		root = new TreeNode(1);
+		root.left = new TreeNode(2);
+		root.right = new TreeNode(3);
+		root.left.left = new TreeNode(4);
+		root.left.right = new TreeNode(5);
+		System.out.println(size(root));
+
 	}
 
-	private int size(TreeNode root) {
+	private static int size(TreeNode root) {
 		if (root == null)
 			return 0;
 		int sl = size(root.left);
 		int sr = size(root.right);
 		return sl + sr + 1;
 	}
-
-	public static void main(String[] args) {
-		CountNodesInBT tree = new CountNodesInBT();
-		tree.root = new TreeNode(1);
-		tree.root.left = new TreeNode(2);
-		tree.root.right = new TreeNode(3);
-		tree.root.left.left = new TreeNode(4);
-		tree.root.left.right = new TreeNode(5);
-		tree.printSize();
-
-	}
-
 }

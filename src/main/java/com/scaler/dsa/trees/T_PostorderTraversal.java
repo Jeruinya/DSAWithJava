@@ -39,7 +39,7 @@ Explanation 1:
 Explanation 2:
  The Preoder Traversal of the given tree is [6, 3, 2, 1].
  */
-public class PostorderTraversal {
+public class T_PostorderTraversal {
 	static TreeNode root;
 
 	public static void main(String[] args) {

@@ -9,7 +9,7 @@ Problem Constraints
 Input Format
 First and only argument is the head of the tree A.
 Output Format
-Return the head of the inverted tree.
+Return the head of the inverted 
 Input 1: 
      1
    /   \
@@ -45,39 +45,27 @@ TC--O(n), SC--O(Height)
  */
 public class InvertingBT {
 
-	TreeNode A;
-
-	InvertingBT() {
-		A = null;
-	}
-
-	private void printInvet() {
-		TreeNode node = invertTree(A);
-		// print the nodes
-		System.out.println(node);
-
-	}
-
-	public TreeNode invertTree(TreeNode A) {
-		if (A == null)
-			return null;
-		TreeNode x = invertTree(A.left);
-		TreeNode y = invertTree(A.right);
-		A.left = y;
-		A.right = x;
-
-		return A;
-	}
+	static TreeNode root;
 
 	public static void main(String[] args) {
-		InvertingBT tree = new InvertingBT();
-		tree.A = new TreeNode(1);
-		tree.A.left = new TreeNode(2);
-		tree.A.right = new TreeNode(3);
-		tree.A.left.left = new TreeNode(4);
-		tree.A.left.right = new TreeNode(5);
+		root = new TreeNode(1);
+		root.left = new TreeNode(2);
+		root.right = new TreeNode(3);
+		root.left.left = new TreeNode(4);
+		root.left.right = new TreeNode(5);
 
-		tree.printInvet();
+		System.out.println(invertTree(root));
 
+	}
+
+	public static TreeNode invertTree(TreeNode root) {
+		if (root == null)
+			return null;
+		TreeNode x = invertTree(root.left);
+		TreeNode y = invertTree(root.right);
+		root.left = y;
+		root.right = x;
+
+		return root;
 	}
 }

@@ -2,7 +2,8 @@ package com.scaler.dsa.trees;
 
 /*
 Problem Description
-Given the root of a tree A with each node having a certain value, find the count of nodes with more value than all its ancestor.
+Given the root of a tree A with each node having a certain value, find the count of nodes with more value than 
+all its ancestor(a person in your family who lived a long time before you).
 
 Problem Constraints
 1 <= Number of Nodes <= 200000
@@ -29,19 +30,21 @@ Explanation 2:
  The valid nodes are 4, 5 and 6.
  */
 public class CountNodesBTWithCondition {
-	TreeNode root;
-	int count = 0;
+	static TreeNode root;
+	static int count = 0;
 
-	CountNodesBTWithCondition() {
-		root = null;
+	public static void main(String[] args) {
+		root = new TreeNode(4);
+		root.left = new TreeNode(5);
+		root.right = new TreeNode(2);
+		root.right.left = new TreeNode(3);
+		root.right.right = new TreeNode(6);
+		System.out.println(countNodes(root, Integer.MIN_VALUE));
+		
+		System.out.println(dfs(root, Integer.MIN_VALUE));
 	}
 
-	public void solve() {
-		int count = countNodes(root, Integer.MIN_VALUE);
-		System.out.println(count);
-	}
-
-	public int countNodes(TreeNode root, int max) {
+	public static int countNodes(TreeNode root, int max) {
 		if (root == null)
 			return 0;
 		if (root.val > max) {
@@ -54,16 +57,15 @@ public class CountNodesBTWithCondition {
 		return count;
 
 	}
-
-	public static void main(String[] args) {
-		CountNodesBTWithCondition tree = new CountNodesBTWithCondition();
-		tree.root = new TreeNode(4);
-		tree.root.left = new TreeNode(5);
-		tree.root.right = new TreeNode(2);
-		tree.root.right.left = new TreeNode(3);
-		tree.root.right.right = new TreeNode(6);
-		tree.solve();
-
-	}
-
+	
+	private static int dfs(TreeNode cur, int mx){
+        if(cur == null){
+            return 0;
+        }
+        int ans = dfs(cur.left, Math.max(mx, cur.val)) + dfs(cur.right, Math.max(mx, cur.val));
+        if(cur.val > mx){
+            ++ans;
+        }
+        return ans;
+    }
 }

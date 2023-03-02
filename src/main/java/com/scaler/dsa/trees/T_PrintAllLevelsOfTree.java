@@ -1,9 +1,11 @@
 package com.scaler.dsa.trees;
-
+/*
+Given  a tree print all the nodes using level order traversal or BFS(breath first search)
+ */
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class PrintAllLevelsOfTree {
+public class T_PrintAllLevelsOfTree {
 	static TreeNode root;
 
 	public static void main(String[] args) {
@@ -40,6 +42,7 @@ public class PrintAllLevelsOfTree {
 		}
 	}
 
+	//Time complexity O(N^2) and space-O(Height)
 	private static void printAllLevelsNaive(TreeNode root) {
 		for(int k=0;k<heightHelper(root);k++) {
 			printKthLevel(root, k);

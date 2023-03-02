@@ -48,8 +48,9 @@ xplanation 2:
 Right view is described.
 
  */
-public class RightViewOfBinaryTree {
+public class V_RightViewOfBinaryTree {
 	static TreeNode root;
+	static int maxLevel = 0;
 
 	public static void main(String[] args) {
 		root = new TreeNode(1);
@@ -68,13 +69,13 @@ public class RightViewOfBinaryTree {
 		System.out.println(res2);
 	}
 
-	public static ArrayList<Integer> rightViewLevelOrder(TreeNode A) {
+	public static ArrayList<Integer> rightViewLevelOrder(TreeNode root) {
 		Queue<TreeNode> q = new LinkedList<TreeNode>();
 		ArrayList<Integer> ans = new ArrayList<Integer>();
-		if (A == null)
+		if (root == null)
 			return ans;
 
-		q.add(A);
+		q.add(root);
 		while (!q.isEmpty()) {
 			int size = q.size();
 			for (int i = 0; i < size; i++) {
@@ -94,16 +95,16 @@ public class RightViewOfBinaryTree {
 	}
 
 	// Iterative Method 2
-	public static ArrayList<Integer> rightViewLevelOrderIterative(TreeNode A) {
-		if (A == null)
+	public static ArrayList<Integer> rightViewLevelOrderIterative(TreeNode root) {
+		if (root == null)
 			return null;
 
 		Queue<TreeNode> q = new LinkedList<>();
-		q.add(A);
+		q.add(root);
 		q.add(null);
 
 		ArrayList<Integer> list = new ArrayList<>();
-		list.add(A.val);
+		list.add(root.val);
 
 		while (q.size() > 1) {
 			TreeNode f = q.poll();
@@ -126,33 +127,22 @@ public class RightViewOfBinaryTree {
 	// Using Recursion
 	public static ArrayList<Integer> rightViewLevelOrderRec(TreeNode A) {
 		ArrayList<Integer> list = new ArrayList<>();
-		printLeftView(A, 0, list);
+		rightView(A, 1, list);
 
 		return list;
 	}
 
-	public static void printLeftView(TreeNode root, int level, ArrayList<Integer> list) {
+	public static void rightView(TreeNode root, int level, ArrayList<Integer> list) {
 
 		if (root == null)
 			return;
-		if (list.size() == level)
+		if (level > maxLevel) {
 			list.add(root.val);
+			maxLevel = level;
+		}
 
-		printLeftView(root.right, level + 1, list);
-		printLeftView(root.left, level + 1, list);
+		rightView(root.right, level + 1, list);
+		rightView(root.left, level + 1, list);
 
-	}
-
-	public static ArrayList<Integer> printLeftView(TreeNode root, int level) {
-		ArrayList<Integer> list = new ArrayList<>();
-
-		if (root == null)
-			return null;
-		if (list.size() == level)
-			list.add(root.val);
-		printLeftView(root.left, level + 1);
-		printLeftView(root.right, level + 1);
-
-		return list;
 	}
 }

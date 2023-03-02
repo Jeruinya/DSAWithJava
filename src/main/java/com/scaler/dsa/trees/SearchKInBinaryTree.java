@@ -17,7 +17,6 @@ public class SearchKInBinaryTree {
 		root.left.left = new TreeNode(4);
 		root.left.right = new TreeNode(5);
 
-		System.out.println(preorder(root,5));
 		System.out.println(search(root,5));
 	}
 
@@ -30,22 +29,4 @@ public class SearchKInBinaryTree {
 		
 		return false;
 	}
-
-
-	private static boolean preorder(TreeNode root, int k) {
-		if (root == null)
-			return false;
-		if (root.val == k)
-			return true;
-		boolean f1 = preorder(root.left, k);
-		if (f1 == true)
-			return true;
-		boolean f2 = preorder(root.right, k);
-
-		if (f2 == true)
-			return true;
-
-		return false;
-	}
-
 }

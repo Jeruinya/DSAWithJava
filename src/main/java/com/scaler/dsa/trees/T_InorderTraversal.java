@@ -37,7 +37,7 @@ Explanation 1:
 Explanation 2:
  The Inorder Traversal of the given tree is [6, 1, 3, 2].
  */
-public class InorderTraversal {
+public class T_InorderTraversal {
 
 	static TreeNode root;
 

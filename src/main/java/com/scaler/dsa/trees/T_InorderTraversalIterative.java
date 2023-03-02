@@ -2,7 +2,7 @@ package com.scaler.dsa.trees;
 
 import java.util.Stack;
 
-public class InorderTraversalIterative {
+public class T_InorderTraversalIterative {
 
 	static TreeNode root;
 

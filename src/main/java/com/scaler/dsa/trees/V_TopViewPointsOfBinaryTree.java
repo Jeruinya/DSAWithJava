@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.TreeMap;
 
-import com.scaler.dsa.trees.VerticalPointsInBinaryTree.Pair;
+import com.scaler.dsa.trees.V_VerticalPointsInBinaryTree.Pair;
 
 /*
 Problem Description
@@ -48,8 +48,11 @@ Top view is described.
 
 Explanation 2:
 Top view is described.
+
+Approach: we need hashmap + level order traversal
+
  */
-public class TopViewPointsOfBinaryTree {
+public class V_TopViewPointsOfBinaryTree {
 
 	static class Pair {
 		TreeNode t;
@@ -71,15 +74,13 @@ public class TopViewPointsOfBinaryTree {
 		root.left.right = new TreeNode(5);
 		root.right.left = new TreeNode(6);
 		root.right.right = new TreeNode(7);
-		root.right.left.right = new TreeNode(8);
-		root.right.right.right = new TreeNode(9);
+		root.left.left.left = new TreeNode(8);
 
-		ArrayList<Integer> res = verticalOrderTraversal(root);
-		System.out.println(res);
-
+		System.out.println(topView(root));
+		System.out.println(topViewSimple(root));
 	}
 
-	public static ArrayList<Integer> verticalOrderTraversal(TreeNode root) {
+	public static ArrayList<Integer> topView(TreeNode root) {
 		ArrayList<Integer> ans = new ArrayList<>();
 
 		ArrayList<Integer> ar = new ArrayList<Integer>();
@@ -116,5 +117,29 @@ public class TopViewPointsOfBinaryTree {
 			ans.add(num);
 		}
 		return ans;
+	}
+
+	public static ArrayList<Integer> topViewSimple(TreeNode A) {
+		ArrayList<Integer> arr = new ArrayList<>();
+		TreeNode curr = A;
+
+		// START FROM ROOT AND TRAVERSE TILL END OF LEFT
+		while (curr != null) {
+			arr.add(curr.val);
+			curr = curr.left;
+		}
+
+		// COME BACK TO ROOT
+		if (A.right != null) {
+			curr = A.right;
+		}
+
+		// START FROM ROOT AND TRAVERSE TILL END OF RIGHT
+		while (curr != null) {
+			arr.add(curr.val);
+			curr = curr.right;
+		}
+
+		return arr;
 	}
 }

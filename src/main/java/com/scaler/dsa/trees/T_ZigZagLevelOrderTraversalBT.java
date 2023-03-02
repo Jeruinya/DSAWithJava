@@ -1,14 +1,13 @@
 package com.scaler.dsa.trees;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
 /*
 Problem Description
-Given a binary tree, return the zigzag level order traversal of its nodes values. (ie, from left to right, 
+Given a binary tree, return the zigzag level order traversal of its nodes values. (i.e, from left to right, 
 then right to left for the next level and alternate between).
 
 Problem Constraints
@@ -49,7 +48,7 @@ Output 2:
 Explanation 1:
  Return the 2D array. Each row denotes the zigzag traversal of each level.
  */
-public class ZigZagLevelOrderTraversalBT {
+public class T_ZigZagLevelOrderTraversalBT {
 
 	static TreeNode root;
 
@@ -60,11 +59,8 @@ public class ZigZagLevelOrderTraversalBT {
 		root.left.left = new TreeNode(4);
 		root.left.right = new TreeNode(5);
 
-		ArrayList<ArrayList<Integer>> res = zigzagLevelOrder(root);
-		System.out.println(res);
-
-		ArrayList<ArrayList<Integer>> res1 = zigzagLevelOrder1(root);
-		System.out.println(res1);
+		System.out.println(zigzagLevelOrder(root));
+		System.out.println(zigzagLevelOrder1(root));
 	}
 
 	public static ArrayList<ArrayList<Integer>> zigzagLevelOrder(TreeNode A) {

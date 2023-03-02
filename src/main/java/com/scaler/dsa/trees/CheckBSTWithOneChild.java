@@ -61,4 +61,24 @@ public class CheckBSTWithOneChild {
 		}
 		return "YES";
 	}
+	
+	public String solve(int[] A) {
+        int n = A.length;
+
+        if (n <= 2) {
+            return "YES";
+        }
+        int mn = Math.min(A[n - 1], A[n - 2]);
+        int mx = Math.max(A[n - 1], A[n - 2]);
+
+        for (int i = n - 3; i >= 0; i--) {
+            // Each node must be either smaller than the min node or larger than the max node
+            if (A[i] > mn && A[i] < mx) {
+                return "NO";
+            }
+            mn = Math.min(mn, A[i]);
+            mx = Math.max(mx, A[i]);
+        }
+        return "YES";
+    }
 }

@@ -1,5 +1,7 @@
 package com.scaler.dsa.trees;
-
+/*
+LCA--Lowest common Ancestor
+ */
 public class LCABST {
 
 	static TreeNode root;

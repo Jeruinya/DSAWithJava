@@ -40,7 +40,7 @@ Explanation 1:
 Explanation 2:
  The Preoder Traversal of the given tree is [1, 6, 2, 3].
  */
-public class PreorderTraversal {
+public class T_PreorderTraversal {
 	static TreeNode root;
 
 	public static void main(String[] args) {

@@ -59,7 +59,7 @@ if current node is smaller than low value then recur for right child else recur 
  */
 public class CountBSTNodesInRange {
 	static TreeNode root;
-
+	static int ans=0;
 	public static void main(String[] args) {
 		root = new TreeNode(15);
 		root.left = new TreeNode(12);
@@ -70,8 +70,18 @@ public class CountBSTNodesInRange {
 		root.right.right = new TreeNode(27);
 		root.right.left = new TreeNode(16);
 		System.out.println(countNodesInBST(root, 12, 20));
-
-	}
+		
+		traverse(root,12,20);
+		System.out.println(ans);
+    }
+    public static void traverse(TreeNode root, int B, int C) {
+        if (root == null)
+            return;
+        if (root.val >= B && root.val <= C)
+            ans++;
+        traverse(root.left, B, C);
+        traverse(root.right, B, C);
+    }
 
 	public static int countNodesInBST(TreeNode root, int low, int high) {
 		if (root == null)

@@ -1,21 +1,22 @@
 package com.scaler.dsa.trees;
+/*
+Given a list of data build binary tree from it.
+insert 1 2 4 -1 -1 5 -1 -1 3 -1 -1
+	 1
+	/ \
+   2   3
+  / \
+ 4   5   
 
+*/
 import java.util.ArrayList;
 import java.util.Scanner;
-/*
-		   1
-		  / \
-		 2   3
-		/ \
-	   4   5   
-		
- */
+
 public class BuildTree {
 
 	public static void main(String[] args) {
 		TreeNode root= buildTree();
-		ArrayList<Integer> list= preOrderTraversalRec(root);
-		System.out.println(list);
+		System.out.println(preOrderTraversalRec(root));
 		
 
 	}

@@ -31,15 +31,24 @@ Explanation 2:
  */
 public class IsIdenticalTwoBT {
 
-	TreeNode A;
-	TreeNode B;
+	static TreeNode A;
+	static TreeNode B;
+	
+	public static void main(String[] args) {
 
-	IsIdenticalTwoBT() {
-		A = null;
-		B = null;
+		 A = new TreeNode(1);
+		 A.left = new TreeNode(2);
+		 A.right = new TreeNode(3);
+
+		 B = new TreeNode(1);
+		 B.left = new TreeNode(2);
+		 B.right = new TreeNode(3);
+		
+		 System.out.println(isSameTree(A,B));
+
 	}
 
-	public int isSameTree(TreeNode A, TreeNode B) {
+	public static int isSameTree(TreeNode A, TreeNode B) {
 		if (A == null && B == null)
 			return 1;
 		if (A == null && B != null)
@@ -51,26 +60,4 @@ public class IsIdenticalTwoBT {
 
 		return 0;
 	}
-
-	public static void main(String[] args) {
-
-		IsIdenticalTwoBT tree = new IsIdenticalTwoBT();
-		tree.A = new TreeNode(1);
-		tree.A.left = new TreeNode(2);
-		tree.A.right = new TreeNode(3);
-
-		tree.B = new TreeNode(1);
-		tree.B.left = new TreeNode(2);
-		tree.B.right = new TreeNode(3);
-		
-		tree.checkIdentical();
-
-	}
-
-	private void checkIdentical() {
-		int res=isSameTree(A,B);
-		System.out.println(res);
-		
-	}
-
 }

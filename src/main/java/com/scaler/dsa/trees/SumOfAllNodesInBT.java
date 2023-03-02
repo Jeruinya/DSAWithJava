@@ -18,9 +18,7 @@ public class SumOfAllNodesInBT {
 	private static int sumOfNodes(TreeNode root) {
 		if (root == null)
 			return 0;
-		int sum = root.val + sumOfNodes(root.left) + sumOfNodes(root.right);
-
-		return sum;
+		return root.val + sumOfNodes(root.left) + sumOfNodes(root.right);
 	}
 
 }

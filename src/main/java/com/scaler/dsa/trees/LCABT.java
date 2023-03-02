@@ -22,8 +22,8 @@ public class LCABT {
 	private static int lcaOfTree(TreeNode root, int a, int b) {
 		ArrayList<Integer> list1 = new ArrayList<>();
 		ArrayList<Integer> list2 = new ArrayList<>();
-		boolean b1 = findPath(root, list1, a);
-		boolean b2 = findPath(root, list2, b);
+		findPath(root, list1, a);
+		findPath(root, list2, b);
 		int i;
 		for (i = 0; i < Math.min(list1.size(), list2.size()); i++) {
 			if (list1.get(i) != list2.get(i))

@@ -68,7 +68,7 @@ public class PathToGivenNode {
 		
 		ArrayList<Integer> res = new ArrayList<>();
 
-		boolean b = findPath(root, res,5);
+		 findPath(root, res,5);
 		System.out.println(res);
 
 	}

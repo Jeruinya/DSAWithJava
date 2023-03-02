@@ -1,7 +1,5 @@
 package com.scaler.dsa.trees;
 
-import java.util.ArrayList;
-
 /*
 Problem Description
 Given a root of binary tree A, determine if it is height-balanced.
@@ -21,6 +19,7 @@ Input 1:
     1
    / \
   2   3
+  
 Input 2: 
        1
       /
@@ -54,6 +53,23 @@ public class BalancedBinaryTree {
 		System.out.println(isBalanced1(root));
 	}
 
+	public static int isBalanced1(TreeNode A) {
+		balanced(A);
+		return balanced;
+	}
+
+	public static int balanced(TreeNode A) {
+		if (A == null)
+			return 0;
+
+		int heightLeft = 1 + balanced(A.left);
+		int heightRight = 1 + balanced(A.right);
+
+		if (Math.abs(heightLeft - heightRight) > 1)
+			return 0;
+		return Math.max(heightLeft, heightRight);
+	}
+
 	public static int isBalanced(TreeNode A) {
 
 		boolean res = isBalancedTree(A);
@@ -78,22 +94,4 @@ public class BalancedBinaryTree {
 		return 1 + Math.max(getHeight(root.left), getHeight(root.right));
 
 	}
-
-	public static int isBalanced1(TreeNode A) {
-		balanced(A);
-		return balanced;
-	}
-
-	public static int balanced(TreeNode A) {
-		if (A == null)
-			return 0;
-
-		int heightLeft = 1 + balanced(A.left);
-		int heightRight = 1 + balanced(A.right);
-
-		if (Math.abs(heightLeft - heightRight) > 1)
-			balanced = 0;
-		return Math.max(heightLeft, heightRight);
-	}
-
 }

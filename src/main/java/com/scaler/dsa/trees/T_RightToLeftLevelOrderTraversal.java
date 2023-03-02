@@ -6,7 +6,7 @@ import java.util.Queue;
 
 /*
 Problem Description
-Given a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+Given a binary tree, return the level order traversal of its nodes' values. (i.e., from right to left, level by level).
 
 Problem Constraints
 1 <= number of nodes <= 105
@@ -23,30 +23,10 @@ Input 1:
   9  20
     /  \
    15   7
-Input 2:
-   1
-  / \
- 6   2
-    /
-   3
 
-Output 1:
- [
-   [3],
-   [9, 20],
-   [15, 7]
- ]
-Output 2:
- [ 
-   [1]
-   [6, 2]
-   [3]
- ]
-
-Explanation 1:
- Return the 2D array. Each row denotes the traversal of each level.
+Output: 3 20 9 7 15
  */
-public class LeftToRightLevelOrderTraversal {
+public class T_RightToLeftLevelOrderTraversal {
 
 	static TreeNode root;
 
@@ -84,11 +64,11 @@ public class LeftToRightLevelOrderTraversal {
 
 			if (f != null) {
 				level.add(f.val);
-				if (f.left != null) {
-					q.add(f.left);
-				}
 				if (f.right != null) {
 					q.add(f.right);
+				}
+				if (f.left != null) {
+					q.add(f.left);
 				}
 			}
 		}

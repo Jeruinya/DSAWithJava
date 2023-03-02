@@ -1,7 +1,10 @@
 package com.scaler.dsa.trees;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Queue;
 import java.util.TreeMap;
 
@@ -16,7 +19,7 @@ NOTE: If 2 Tree Nodes shares the same vertical level then the one with lesser de
 Problem Constraints
 0 <= number of nodes <= 105
 Input Format
-First and only arument is a pointer to the root node of binary tree, A.
+First and only argument is a pointer to the root node of binary tree, A.
 
 Output Format
 Return a 2D array denoting the vertical order traversal of tree as shown.
@@ -51,7 +54,7 @@ Output 2:
     [9]
  ]
 Explanation 1:
- First row represent the verical line 1 and so on.
+ First row represent the vertical line 1 and so on.
  
 Output of below will be:
 Vertical order traversal is 
@@ -62,12 +65,12 @@ Vertical order traversal is
 	7 
 	9 
 	
-1. Need to create custom pair object to store the  Treenode and the level
+1. Need to create custom pair object to store the  TreeNode and the level
 2. HashMap is used to store the nodes that are in the same vertical level, where key is the level and the value is a list of node values which are in the same level
 3. A queue is used to store the nodes at the same horizontal level.
 4. After hashMap is formed, we need to just iterate through the map and add values to a ArrayList<ArrayList<Integer>> and return
  */
-public class VerticalPointsInBinaryTree {
+public class V_VerticalPointsInBinaryTree {
 
 	static class Pair {
 		TreeNode t;
@@ -92,8 +95,38 @@ public class VerticalPointsInBinaryTree {
 		root.right.left.right = new TreeNode(8);
 		root.right.right.right = new TreeNode(9);
 
-		ArrayList<ArrayList<Integer>> res = verticalOrderTraversal(root);
+		System.out.println(verticalOrderTraversal(root));
+
+		TreeMap<Integer, ArrayList<Integer>> hm = new TreeMap<>();
+		verticalOrder(root, 0, hm);
+
+		ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+
+		for (Map.Entry<Integer, ArrayList<Integer>> entry : hm.entrySet())
+			res.add(entry.getValue());
+
 		System.out.println(res);
+
+		// To print the tree in vertical order from right to left just needs to reverse the key and print
+		// TreeMap<Integer, ArrayList<Integer>> hm = new TreeMap<>(Collections.reverseOrder());
+
+	}
+
+	private static void verticalOrder(TreeNode root, int dist, TreeMap<Integer, ArrayList<Integer>> hm) {
+		if (root == null)
+			return;
+
+		if (hm.containsKey(dist)) {
+			ArrayList<Integer> list = hm.get(dist);
+			list.add(root.val);
+			hm.put(dist, list);
+		} else {
+			ArrayList<Integer> newlist = new ArrayList<>();
+			newlist.add(root.val);
+			hm.put(dist, newlist);
+		}
+		verticalOrder(root.left, dist - 1, hm);
+		verticalOrder(root.right, dist + 1, hm);
 
 	}
 

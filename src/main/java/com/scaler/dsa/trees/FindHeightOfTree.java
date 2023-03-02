@@ -1,7 +1,7 @@
 package com.scaler.dsa.trees;
 /*
 Problem Description
-You are given the root node of a binary tree A. You have to find the height of the given tree.
+You are given the root node of a binary tree A. You have to find the height of the given  
 A binary tree's height is the number of nodes along the longest path from the root node down to the farthest leaf node.
 Problem Constraints
 1 <= Number of nodes in the tree <= 105
@@ -9,7 +9,7 @@ Problem Constraints
 Input Format
 The first and only argument is a tree node A.
 Output Format
-Return an integer denoting the height of the tree.
+Return an integer denoting the height of the  
 Input 1:
  Values =  1 
           / \     
@@ -21,10 +21,8 @@ Input 2:
         /         
        2                                    
 
-Output 1:
- 2 
-Output 2:
- 3 
+Output 1: 2 
+Output 2: 3 
 
 Explanation 1:
  Distance of node having value 1 from root node = 1
@@ -39,30 +37,23 @@ Explanation 2:
  */
 
 public class FindHeightOfTree {
-	TreeNode root;
+	static TreeNode root;
 
 	public static void main(String[] args) {
-		FindHeightOfTree tree = new FindHeightOfTree();
-		tree.root = new TreeNode(1);
-		tree.root.left = new TreeNode(2);
-		tree.root.right = new TreeNode(3);
-		tree.root.left.left = new TreeNode(4);
-		tree.root.left.right = new TreeNode(5);
+		root = new TreeNode(1);
+		root.left = new TreeNode(2);
+		root.right = new TreeNode(3);
+		root.left.left = new TreeNode(4);
+		root.left.right = new TreeNode(5);
 
-		tree.printHeight();
-
-	}
-
-	private void printHeight() {
-		int height = findHeight(root);
-		System.out.println("Height of the tree is:" + height);
+		System.out.println(findHeight(root));
 
 	}
 
-	private int findHeight(TreeNode root) {
+	private static int findHeight(TreeNode root) {
 		if (root == null)
 			return 0;
 
-		return  Math.max(findHeight(root.left), findHeight(root.right))+1;
+		return Math.max(findHeight(root.left), findHeight(root.right)) + 1;
 	}
 }
