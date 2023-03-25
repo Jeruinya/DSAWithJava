@@ -1,4 +1,4 @@
-package com.scaler.design;
+package com.scaler.designPattern;
 
 import java.util.ArrayList;
 import java.util.Arrays;

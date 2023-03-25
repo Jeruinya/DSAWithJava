@@ -1,4 +1,4 @@
-package com.scaler.design;
+package com.scaler.designPattern;
 
 import com.scaler.design.impl.CivilEngineer;
 import com.scaler.design.impl.House;

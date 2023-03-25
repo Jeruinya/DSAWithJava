@@ -1,4 +1,4 @@
-package com.scaler.design;
+package com.scaler.designPattern;
 
 import com.scaler.design.impl.EmailNotification;
 import com.scaler.design.impl.Notification;

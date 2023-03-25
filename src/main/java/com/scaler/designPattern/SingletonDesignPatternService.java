@@ -1,4 +1,4 @@
-package com.scaler.design;
+package com.scaler.designPattern;
 
 public class SingletonDesignPatternService {
 

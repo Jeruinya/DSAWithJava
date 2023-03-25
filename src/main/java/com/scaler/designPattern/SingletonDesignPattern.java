@@ -1,4 +1,4 @@
-package com.scaler.design;
+package com.scaler.designPattern;
 
 //Classical Java implementation of singleton
 //Not thread safe and there could be chance of creating two objects if two threads executed simultaneously.

@@ -10,6 +10,7 @@ path are colored (note that there may be more than one path in the tree of the s
 public class DiameterOfTree {
 
 	static TreeNode root;
+	static int diameter;
 
 	public static void main(String[] args) {
 		root = new TreeNode(50);
@@ -22,10 +23,11 @@ public class DiameterOfTree {
 		root.right.right = new TreeNode(80);
 
 		System.out.println(diameter(root));
-		System.out.println(diameter(root));
+		System.out.println(diameterOfBinaryTree(root));
 
 	}
 
+	//T.C-O(N^2) Space-O(H)
 	private static int diameter(TreeNode root) {
 		if (root == null)
 			return 0;
@@ -46,4 +48,19 @@ public class DiameterOfTree {
 
 		return 1 + Math.max(height(root.left), height(root.right));
 	}
+	
+	static int getMaxDepth(TreeNode root) {
+		if(root == null) 
+			return 0;
+		
+		int leftSubtreeDepth = getMaxDepth(root.left);
+		int rightSubtreeDepth = getMaxDepth(root.right);
+		diameter = Math.max(diameter, leftSubtreeDepth + rightSubtreeDepth);
+		return Math.max(leftSubtreeDepth, rightSubtreeDepth) + 1;
+	}
+    public static int diameterOfBinaryTree(TreeNode root) {
+        diameter = 0;
+		getMaxDepth(root);
+		return diameter;
+    }
 }
