@@ -1,4 +1,4 @@
-package com.collections.programs.stream;
+package com.java.features.java8;
 
 import java.util.stream.Stream;
 
