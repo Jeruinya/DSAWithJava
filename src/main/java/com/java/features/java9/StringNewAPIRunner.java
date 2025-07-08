@@ -15,5 +15,7 @@ public class StringNewAPIRunner {
        System.out.println(str);
        System.out.println("My name is %s. My age is %d".formatted("Kamlesh",34));
 
+       System.out.print("Hello");
+
     }
 }
