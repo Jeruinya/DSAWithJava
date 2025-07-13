@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 /*
 There are two players A and B who are interested in playing a game of numbers. 
-In each move a player pick two distinct number, let’s say a1 and a2 and then replace all a2 by a1 or a1 by a2. 
+In each move a player pick two distinct number, letï¿½s say a1 and a2 and then replace all a2 by a1 or a1 by a2. 
 They stop playing game if any one of them is unable to pick two number and the player who is 
 unable to pick two distinct number in an array, loses the game. First player always move first and then second. 
 Task is to find which player wins. 

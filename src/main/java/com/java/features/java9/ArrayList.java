@@ -2,6 +2,8 @@ package com.java.features.java9;
 
 import java.util.Arrays;
 import java.util.List;
+//JEP JDK enhancement proposal document
+//LTS  Long term supported version
 
 public class ArrayList {
     public static void main(String args[]) {
