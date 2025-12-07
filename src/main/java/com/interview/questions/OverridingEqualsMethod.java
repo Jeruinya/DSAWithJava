@@ -1,4 +1,4 @@
-package com.scaler.designPattern;
+package com.interview.questions;
 
 class Employees {
 	private String name;

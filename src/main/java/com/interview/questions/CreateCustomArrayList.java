@@ -1,4 +1,4 @@
-package com.scaler.designPattern;
+package com.interview.questions;
 
 import java.util.ArrayList;
 import java.util.Arrays;
