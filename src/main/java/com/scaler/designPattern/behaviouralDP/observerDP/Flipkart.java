@@ -1,5 +1,8 @@
 package com.scaler.designPattern.behaviouralDP.observerDP;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Flipkart {
     private static Flipkart instance;
     private List<OrderPlacedSubscriber> orderPlacedSubscribers = new ArrayList<>();
